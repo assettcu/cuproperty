@@ -1,0 +1,67 @@
+Application:	CU Property
+Description:	Application designed to facilitate CU equipment between programs and people within the University.
+Author: 	Ryan Carney-Mogan
+Organization:	ASSETT at the University of Colorado Boulder
+Date Created:	September 3rd, 2013
+Contact:	Ryan.Carney-Mogan@colorado.edu
+
+---- Things You Should Know ----
+The CU Property application is split into two directories:
+
+1. The Yii framework
+2. The Web application
+
+The Yii framework has the core framework files that the web application needs to serve up a webpage. It is highly recommended that you subversion the Yii framework and run a process that updates the framework in the background. This ensures the framework has the latest code and is the most secure. You can have multiple instances of the web application all running off the one framework.
+
+Both the framework and the web application are essential to have the application working as a whole.
+
+---- Pre-installation Requirements ----
+
+1. PHP >5.3
+2. Apache >2.1
+3. MySQL >5.1
+
+---- Installation Instructions ----
+
+1. Unzip the cuproperty application. It will contain two folders: "framework" and "cuproperty"
+
+2. Typically you would put the "framework" folder outside your root web directory. For example if my root web directory is located in "C:/htdocs/web/" then I would probably put the framework so it looks like the following: "C:/htdocs/framework/". However, you can put the framework in the web directory, just be sure to restrict access to permit only the web application to access the files.
+
+3. After moving the framework, move the web application "cuproperty" into your target web directory. Typically it would go into the root web directory so it would look like this: "C:/htdocs/web/cuproperty/".
+
+4. Several changes to the index.php file in the root directory need to be made (found in "cuproperty/index.php").
+
+	a. Line 4: references the framework's main class. You will need to change the "/../" to reference the framework directly depending where you put it relative to the CU Property application.
+	b. Line 13,17: need to change the paths to the correct location of the library folder. Line 13 would look like the following using our above example: "C:/htdocs/web/cuproperty/library". Line 17 would change depending on what the url is of the web application.
+
+5. You will need to change the configuration file located in "cuproperty/protected/config/main.php" to point to the database. Look for 
+
+	'db'=>array(
+		'connectionString' 	=> 'mysql:host=localhost;dbname=cuproperty',
+		'emulatePrepare' 	=> true,
+		'username' 		=> 'cuproperty',
+		'password' 		=> '',
+		'charset' 		=> 'utf8',
+		'tablePrefix' 		=> ''
+	),
+	
+Change the dbname to the database name you created in your MySQL host. Change the password and username to the account you gave permissions to access that database. Table prefixes should remain empty (unless you add table prefixes). Access permissions should at least include "Delete", "Insert", "Select", "Update".
+
+6. Be sure the ".install" file is located in your root CU Property directory. It will be needed to install the application.
+
+7. Open the application in a browser. It should automatically redirect to the installation page and install the tables required by the application. It will then redirect to the home page.
+
+The application should now be set up.
+
+---- Troubleshooting ----
+
+1. The tables didn't install correctly. What do I do?
+You can do a batch import using the .sql file found in "cuproperty/library/setup". Just open up MySQL and run the import command using the cuproperty_setup.sql file.
+Alternatively, you can setup the database tables manually. The classes used in the application have the table schemas saved in the comments. Look in the directory "cuproperty/protected/models" for any class with "Obj" in its name. These classes are the ones that interact with the database. Each "Obj" class corresponds to a table in the database. The comments inside of these classes have the database structure inside of them.
+
+2. The application won't load. It says it can't find a file. What do I do?
+Usually this means you are not including the framework properly. Double check to make sure the "cuproperty/index.php" file is including the "yii.php" file properly from the framework directory. Be sure the paths are pointing to the framework directory. It's important to have the proper number of "../" paths. This is a common mistake.
+
+3. Some of the images or included templates are not loading. What do I do?
+Make sure you've changed the main directives in the "cuproperty/index.php" class. They should point to the local library in both the local path as well as the web url path.
+Otherwise, there might be remnant pieces of code referencing old paths. This application was tied into a network framework so there might be references that are orphaned.
