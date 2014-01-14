@@ -1,6 +1,6 @@
 Application:	CU Property
 Description:	Application designed to facilitate CU equipment between programs and people within the University.
-Author: 	Ryan Carney-Mogan
+Author:		Ryan Carney-Mogan
 Organization:	ASSETT at the University of Colorado Boulder
 Date Created:	September 3rd, 2013
 Contact:	Ryan.Carney-Mogan@colorado.edu
@@ -11,7 +11,10 @@ The CU Property application is split into two directories:
 1. The Yii framework
 2. The Web application
 
-The Yii framework has the core framework files that the web application needs to serve up a webpage. It is highly recommended that you subversion the Yii framework and run a process that updates the framework in the background. This ensures the framework has the latest code and is the most secure. You can have multiple instances of the web application all running off the one framework.
+The Yii framework has the core framework files that the web application needs to serve up a webpage. 
+It is highly recommended that you subversion the Yii framework and run a process that updates 
+the framework in the background. This ensures the framework has the latest code and is the most secure. 
+You can have multiple instances of the web application all running off the one framework.
 
 Both the framework and the web application are essential to have the application working as a whole.
 
@@ -23,15 +26,15 @@ Both the framework and the web application are essential to have the application
 
 ---- Installation Instructions ----
 
-1.  Download Yii framework (https://github.com/assettcu/yii)
+1.  Download Yii framework (https://github.com/yiisoft/yii)
 
 2.  Typically you would put the "framework" folder outside your root web directory. 
-    For example if my root web directory is located in "C:/htdocs/web/" then I would probably put the framework 
-    so it looks like the following: "C:/htdocs/framework/". However, you can put the framework in the web directory,
+    For example if my root web directory is located in "/htdocs/web/" then I would probably put the framework 
+    so it looks like the following: "/htdocs/framework/". However, you can put the framework in the web directory,
     just be sure to restrict access to permit only the web application to access the files.
 
 3.  After moving the framework, download the web application "cuproperty" into your target web directory. 
-    Typically it would go into the root web directory so it would look like this: "C:/htdocs/web/cuproperty/".
+    Typically it would go into the root web directory so it would look like this: "/htdocs/web/cuproperty/".
 
 4.  Several changes to the index.php file in the root directory need to be made (found in "cuproperty/index.php").
 
