@@ -43,6 +43,7 @@ class Flashes {
 					case "success": echo '<div class="ui-state-highlight flash ui-corner-all">'.$icon.$iconclose.$message.'</div>'; break;
 					case "error": echo '<div class="ui-state-error flash ui-corner-all">'.$icon.$iconclose.$message.'</div>'; break;
                     case "normal": echo '<div class="ui-widget-content flash ui-corner-all">'.$icon.$iconclose.$message.'</div>'; break;
+                    case "warning": echo '<div class="ui-state-highlight flash ui-corner-all">'.$icon.$iconclose.$message.'</div>'; break;
 					default: echo '<div class="ui-state-active flash ui-corner-all">'.$icon.$iconclose.$message.'</div>'; break;
 				}
 				
@@ -70,9 +71,10 @@ class Flashes {
 	{
 		$icon = "<div class='message-icon'>";
 		switch($type) {
-			case "success": 	$icon .= StdLib::load_image("check-64","16px","16px"); 			break;
-			case "error": 		$icon .= StdLib::load_image("attention","16px","16px"); 		break;
-			default: 			$icon .= StdLib::load_image("flag_mark_blue","16px","16px"); 	break;
+			case "success": 	$icon .= StdLib::load_image("check-64","16px"); 		break;
+			case "error": 		$icon .= StdLib::load_image("attention","16px"); 		break;
+            case "warning":     $icon .= StdLib::load_image("flag_mark_red","16px");    break;  
+			default: 			$icon .= StdLib::load_image("flag_mark_blue","16px"); 	break;
 		}
 		if($icon!="") {
 			$icon .= "</div>";
