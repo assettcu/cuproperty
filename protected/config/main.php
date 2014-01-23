@@ -16,8 +16,8 @@ $mainconfig = array(
 	// autoloading model and component classes
 	'import'=>array(
 		'application.models.*',
+        'application.models.system.*',
 		'application.components.*',
-		// teniasiss arithmetization
 	),
 
 	'modules'=>array(
