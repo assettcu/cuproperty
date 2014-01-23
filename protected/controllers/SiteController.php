@@ -54,21 +54,228 @@ class SiteController extends Controller
 	 */
 	public function actionInstall()
 	{
-		$installcommand = getcwd()."\\.install";
-		# Check to see if installation command file exists
-		if(is_file($installcommand)) {
-			# Load the installer page (everything should be automated)
-			$this->render('install');
-			# Remove the installation command file
-			unlink($installcommand);
-			# Setup a reload timer
-			echo "<script>window.setTimeout(function(){window.location.reload()},5000);window.setInterval(function(){var time=$('#time').text();time=parseInt(time);if(time==0)return;time--;$('#time').text(time);},1000);</script>";
-		
-		# No command file exists so redirect to homepage
-		} else {
-			$this->redirect(Yii::app()->createUrl('index'));
-			exit;
-		}
+        # Let's destroy any sessions currently, just in case.
+        @Yii::app()->session->destroy();
+        
+        # Does the application need installing? Check if database exists.
+        $config_ext = Yii::app()->basePath."\\config\\main-ext.php";
+        if(is_file($config_ext)) {
+            Yii::app()->user->setFlash("warning","This application is already installed. Please delete the main-ext.php file to re-install.");
+            $this->redirect(Yii::app()->createUrl('index'));
+        }
+        
+        # Submitted form. Technically only one stage but verifies form was submitted.
+        if(isset($_REQUEST["stage"]) and $_REQUEST["stage"] == "init") {
+            
+            # Define a couple of local functions first
+            # Function to change field name
+            function lookupfieldname($field) {
+                switch($field) {
+                    case "db-host": return "Database Host";
+                    case "db-name": return "Database Name";
+                    case "db-username": return "Database Username";
+                    case "db-password": return "Database Password";
+                    case "table-prefix": return "Table Prefix";
+                    default: return $field;
+                }
+            }
+            
+            # Function to serve up table specific SQL queries
+            function get_table_sql($table) {
+                switch($table) {
+                    case "emails":
+                        return "
+                            CREATE TABLE `emails` (
+                              `emailid` int(255) NOT NULL AUTO_INCREMENT,
+                              `emailfrom` varchar(50) NOT NULL,
+                              `propertyid` int(255) NOT NULL,
+                              `date_sent` datetime NOT NULL,
+                              PRIMARY KEY (`emailid`)
+                            ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
+                        ";
+                    break;
+                    case "images":
+                        return "
+                            CREATE TABLE `images` (
+                              `imageid` int(255) NOT NULL AUTO_INCREMENT,
+                              `propertyid` int(255) NOT NULL,
+                              `location` varchar(255) NOT NULL,
+                              `sorder` int(100) NOT NULL DEFAULT '0',
+                              `who_uploaded` varchar(25) NOT NULL,
+                              `date_uploaded` datetime NOT NULL,
+                              PRIMARY KEY (`imageid`)
+                            ) ENGINE=InnoDB AUTO_INCREMENT=119 DEFAULT CHARSET=latin1;
+                        ";
+                    break;
+                    case "property":
+                        return "
+                            CREATE TABLE `property` (
+                              `propertyid` int(255) NOT NULL AUTO_INCREMENT,
+                              `department` varchar(255) NOT NULL,
+                              `contactname` varchar(60) NOT NULL,
+                              `contactemail` varchar(255) DEFAULT NULL,
+                              `contactphone` varchar(25) DEFAULT NULL,
+                              `status` enum('posted','removed') NOT NULL DEFAULT 'posted',
+                              `description` text,
+                              `postedby` varchar(255) NOT NULL,
+                              `date_added` datetime NOT NULL,
+                              `date_updated` datetime DEFAULT NULL,
+                              PRIMARY KEY (`propertyid`)
+                            ) ENGINE=InnoDB AUTO_INCREMENT=1265 DEFAULT CHARSET=latin1;
+                        ";
+                    return;
+                    case "users":
+                        return "
+                            CREATE TABLE `users` (
+                              `username` varchar(50) NOT NULL,
+                              `email` varchar(255) NOT NULL,
+                              `name` varchar(255) NOT NULL,
+                              `permission` int(10) NOT NULL DEFAULT '1',
+                              `active` tinyint(1) NOT NULL DEFAULT '1',
+                              `attempts` tinyint(1) NOT NULL DEFAULT '0',
+                              `last_login` datetime DEFAULT NULL,
+                              `preferences` text,
+                              PRIMARY KEY (`username`)
+                            ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+                        ";
+                    break;
+                    default: return "";
+                }
+            }
+            
+            # Does the application need installing? Check if database exists, and can connect
+            try {
+                # Required fields
+                $required = array(
+                    "db-host",
+                    "db-name",
+                    "db-username",
+                    "db-password",
+                    "table-prefix"
+                );
+                
+                # Did all the required fields get passed in?
+                if(count(array_intersect($required, array_keys($_REQUEST))) != count($required)) {
+                    throw new Exception("Not all required fields were submitted.");
+                }
+                
+                # Verify the required unempty fields
+                foreach($required as $field) {
+                    # Skip the fields that can be empty
+                    if($field == "table-prefix" or $field == "db-password") {
+                        continue;
+                    }
+                    # Check if empty, throw error if they are.
+                    if(empty($_REQUEST[$field])) {
+                        throw new Exception("Field <i>".lookupfieldname($field)."</i> cannot be empty.");
+                    }
+                }
+
+                # Try connecting to the database with the passed in credentials
+                try {
+                    # Setup connection details
+                    $dsn = 'mysql:host='.$_REQUEST["db-host"].';dbname='.$_REQUEST["db-name"];
+                    $username = $_REQUEST["db-username"];
+                    $password = $_REQUEST["db-password"];
+                    $prefix = $_REQUEST["table-prefix"];
+                    
+                    # Make the connection
+                    $conn = new CDbConnection($dsn, $username, $password);
+                    $conn->active = true;
+                    $conn->setActive(true);
+                }
+                catch(Exception $e) {
+                    throw new Exception("Could not connect to database. Make sure you have created the database first. Details: ".$e->getMessage());
+                }
+
+                # Setup the database params for saving in the extended configuration
+                $db_params = array(
+                    'components'=>array(
+                        'db'=>array(
+                            'connectionString'  => $dsn,
+                            'emulatePrepare'    => true,
+                            'username'          => $username,
+                            'password'          => $password,
+                            'charset'           => 'utf8',
+                            'tablePrefix'       => $prefix,
+                        ),
+                    ),
+                    'params'=>array(
+                        'LOCALAPP_SERVER'           => $_SERVER["HTTP_HOST"],
+                    ),
+                );
+                
+                # Make sure to only overwrite if explicitly asked to
+                $config_ext = Yii::app()->basePath."\\config\\main-ext.php";
+                if(is_file($config_ext) and !isset($_REQUEST["overwrite"])) {
+                    throw new Exception("Database configuration already exists. Select the overwrite option to overwrite this config.");
+                }
+                
+                # Open up the file and write the new configuration.
+                $handle = fopen($config_ext,"w");
+                fwrite($handle,"<?php return ");
+                fwrite($handle,var_export($db_params,true));
+                fwrite($handle,"; ?>");
+                fclose($handle);
+                
+                # These are the required tables for installation
+                $tables = array(
+                    "emails",
+                    "images",
+                    "property",
+                    "users"
+                );
+                
+                # Loop through each of the tables
+                foreach($tables as $table) {
+                    
+                    # Do a simple query to determine if table exists already
+                    $q = "DESCRIBE ".$prefix.$table;
+                    $command = $conn->createCommand($q);
+                    try {
+                        $command->queryAll();
+                    }
+                    # This will invoke if a SQL error occured
+                    catch(Exception $e) {
+                        # Code 42 is the code that says the table does not exist
+                        if($e->getCode() == 42) {
+                            # Add table to the database using Yii transactions
+                            $transaction = $conn->beginTransaction();
+                            try {
+                                # Custom function to get table specific querys
+                                $q = get_table_sql($table);
+                                $command = $conn->createCommand($q);
+                                $command->execute();
+                                $transaction->commit();
+                                
+                            # If there was an error adding the table to the database exit gracefully
+                            } catch(Exception $f) {
+                                $transaction->rollback();
+                                throw new Exception("Could not install tables: ".$f->getMessage());
+                                return;
+                            }
+                        }
+                        # Any other code is probably something we should take a look at
+                        else {
+                            throw new Exception("Could not install tables: ".$e->getMessage());
+                        }
+                    }
+                }
+                
+                # If we made it to here, installation is a success!
+                Yii::app()->user->setFlash("success","Successfully installed CU Property application.");
+                $this->redirect(Yii::app()->createUrl('index'));
+                exit;
+                
+            } 
+            # Catch all the errors and output them as Flashes
+            catch(Exception $e) {
+                Yii::app()->user->setFlash("error",$e->getMessage());
+            }
+        }
+        
+        # Render the form interface
+        $this->render("install");
 	}
 
 	/**
