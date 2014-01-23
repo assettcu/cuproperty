@@ -217,6 +217,15 @@ div.flash {
 	margin-right:7px;
 }
 
+/** Static messages **/
+div.notice {
+	padding:10px;
+	font-size: 13px;
+	margin-bottom:15px;
+	margin-top:5px;
+	padding-left:10px;
+}
+
 /** Buttons need different spacing **/
 .ui-button-text {
 	padding:3px 5px;

@@ -14,52 +14,8 @@ if(!Yii::app()->user->isGuest) {
     $user = new UserObj(Yii::app()->user->name);
 }
 ?>
-<style>
-table#haves-table {
-    border-spacing:3px;
-    width:100%;
-}
-table#haves-table tr th {
-    border:2px solid #ccc;
-    padding:5px;
-    color:#333;
-    background-color:#eee;
-    font-weight:bold;
-}
-table#haves-table tr td {
-    padding:5px;
-    padding-left:10px;
-}
-.ui-widget-content a {
-    color:#09a;
-}
-table#haves-table tbody tr.odd td {
-    background-color:#f0f0f0;
-}
-table#haves-table tr td.propid {
-    padding:0px;
-}
-span.name {
-    color:#09f;
-}
-table.modal-table tr th {
-    vertical-align:top;
-},
-table.modal-table tr td {
-    vertical-align:middle;
-}
-table.modal-table tr td {
-    padding-left:15px;
-}
-table.modal-table tr th div {
-    padding:5px;
-    border:2px solid #ccc;
-    background-color:#fff;
-    min-width:100px;
-}
-</style>
 
-<div class="ui-widget-content ui-corner-all" style="padding:10px;margin-bottom:15px;">
+<div class="ui-widget-content ui-corner-all notice">
     You can find the surplus of CU Property on this page. To place an advertisement for surplus equipment, please click on "Add CU Equipment" button in the menu.
 </div>
 
