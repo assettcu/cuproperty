@@ -8,6 +8,12 @@ $frameworkzip   = $frameworkdir.'yii.zip';
 $installed      = is_file($frameworkdir."yii-master/framework/yiic.php");
 $error_msg      = "";
 
+# Make the directory if it doesn't exist
+if(!is_dir($frameworkdir)) {
+    mkdir($frameworkdir);
+}
+
+# Someone pressed the install/upgrade button
 if(isset($_REQUEST["upgrade"])) {
 
     # function to extract the framework from the Yii zip file
@@ -15,25 +21,31 @@ if(isset($_REQUEST["upgrade"])) {
     {
         global $frameworkzip, $frameworkdir;
         
+        # If we have the yii framework zip file lets unpack it!
         if(file_exists($zipfile)) {
+            
             $zip = new ZipArchive;
             $files = array();
+            
+            # Open the zip file for extraction
             if($zip->open($zipfile) === TRUE) {
+                # Let's iterate through the files and only pull out the ones in the "framework" directory
+                # There are other folders which are not used by the system, such as "demos" and "requirements"
                 for($i = 0; $i < $zip->numFiles; $i++) {
                     $entry = $zip->getNameIndex($i);
-                    # Use strpos() to check if the entry name contains the directory we want to extract
                     if (strcmp(substr($entry, 0, strlen("yii-master/framework/")),"yii-master/framework/")==0) {
-                        # Add the entry to our array if it is in our desired directory
                         $files[] = $entry;
                     }
                 }
                 # Feed $files array to extractTo() to get only the files we want
                 $success = $zip->extractTo($frameworkdir, $files);
                 $zip->close();
+                
+                # Return the status of the extraction (true or false)
                 return $success;
             }
         }
-        
+        # If we got to here, something went wrong so return false
         return false;
     }
     
@@ -76,11 +88,12 @@ if(isset($_REQUEST["upgrade"])) {
     $status = upgradeYii();
     
     # Check status and redirect
-    if($status === TRUE and !isset($_REQUEST["remote"])) {
+    if($status === TRUE) {
         header("Location: index.php?".(($installed===TRUE)?"upgrade":"install")."=true");
         exit;
     }
     else {
+        # Error message for not completing an install/upgrade
         $error_msg = "Could not upgrade Yii. Please check the code or contact an administrator.";
     }
 }
