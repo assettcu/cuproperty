@@ -44,7 +44,7 @@ $theme = "bluebird";
 		<div id="logo">
 			<div id="logo-text" style="position:relative;">
                 <div id="logo-image" style="position:absolute;top:5px;left:15px;">
-                    <?=StdLib::load_image('aperture',"48px");?>
+                    <?php echo StdLib::load_image('aperture',"48px");?>
                 </div>
 				<?php echo CHtml::encode(Yii::app()->name); ?>
 			</div>
