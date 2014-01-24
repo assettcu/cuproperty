@@ -1,8 +1,14 @@
 <?php
 
 // change the following paths if necessary
-$yii=dirname(__FILE__).'/../yii/framework/yii.php';
+$yii=dirname(__FILE__).'/framework/yii-master/framework/yii.php';
 $config=dirname(__FILE__).'/protected/config/main.php';
+
+# If Yii framework does not exist, then let's update it
+if(!is_file($yii)) {
+    header("Location: yii-update.php");
+    exit;
+}
 
 // remove the following lines when in production mode
 defined('YII_DEBUG') or define('YII_DEBUG',true);

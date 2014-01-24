@@ -36,6 +36,12 @@ class SiteController extends Controller
 	 */
 	public function actionIndex()
 	{
+	    if(isset($_REQUEST["upgrade"]) and $_REQUEST["upgrade"]=="true") {
+	        Yii::app()->user->setFlash("success","Successfully upgraded the Yii framework.");
+	    }
+        if(isset($_REQUEST["install"]) and $_REQUEST["install"]=="true") {
+            Yii::app()->user->setFlash("success","Successfully installed the Yii framework.");
+        }
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
 		$this->render('index');
