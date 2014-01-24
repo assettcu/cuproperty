@@ -33,10 +33,14 @@ if(isset($_REQUEST["upgrade"])) {
                 # There are other folders which are not used by the system, such as "demos" and "requirements"
                 for($i = 0; $i < $zip->numFiles; $i++) {
                     $entry = $zip->getNameIndex($i);
-                    if (strcmp(substr($entry, 0, strlen("yii-master/framework/")),"yii-master/framework/")==0) {
+                    if (
+                        (strcmp(substr($entry, 0, strlen("yii-master/requirements/")),"yii-master/requirements/"))==0 or 
+                        (strcmp(substr($entry, 0, strlen("yii-master/framework/")),"yii-master/framework/")==0)
+                    ) {
                         $files[] = $entry;
                     }
                 }
+                
                 # Feed $files array to extractTo() to get only the files we want
                 $success = $zip->extractTo($frameworkdir, $files);
                 $zip->close();
@@ -88,8 +92,12 @@ if(isset($_REQUEST["upgrade"])) {
     $status = upgradeYii();
     
     # Check status and redirect
-    if($status === TRUE) {
-        header("Location: index.php?".(($installed===TRUE)?"upgrade":"install")."=true");
+    if($status === TRUE and $installed === TRUE) {
+        header("Location: index.php?upgrade=true");
+        exit;
+    }
+    else if($status === TRUE and $installed === FALSE) {
+        header("Location: install?yii=installed");
         exit;
     }
     else {

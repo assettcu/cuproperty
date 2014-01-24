@@ -38,9 +38,13 @@ class SiteController extends Controller
 	{
 	    if(isset($_REQUEST["upgrade"]) and $_REQUEST["upgrade"]=="true") {
 	        Yii::app()->user->setFlash("success","Successfully upgraded the Yii framework.");
+            $this->redirect(Yii::app()->createUrl('index'));
+            exit;
 	    }
         if(isset($_REQUEST["install"]) and $_REQUEST["install"]=="true") {
             Yii::app()->user->setFlash("success","Successfully installed the Yii framework.");
+            $this->redirect(Yii::app()->createUrl('index'));
+            exit;
         }
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
@@ -62,6 +66,12 @@ class SiteController extends Controller
 	{
         # Let's destroy any sessions currently, just in case.
         @Yii::app()->session->destroy();
+        
+        if(isset($_REQUEST["yii"]) and $_REQUEST["yii"] == "installed") {
+            Yii::app()->user->setFlash("success","Succssfully installed the Yii Framework! Continue the installation by filling in the form below.");
+            $this->redirect("install");
+            exit;
+        }
         
         # Does the application need installing? Check if database exists.
         $config_ext = Yii::app()->basePath."\\config\\main-ext.php";
