@@ -15,6 +15,9 @@ defined('YII_DEBUG') or define('YII_DEBUG',true);
 // specify how many levels of call stack should be shown in each log message
 defined('YII_TRACE_LEVEL') or define('YII_TRACE_LEVEL',3);
 
+// define the root of this application
+defined('_ROOT_') or define('_ROOT_',dirname(__FILE__));
+
 // define local library paths (see StdLib class)
 defined('LOCAL_LIBRARY_PATH') or define('LOCAL_LIBRARY_PATH','c:\\web\\compass.colorado.edu\\cuproperty\\library\\');
 defined('LOCAL_IMAGE_LIBRARY') or define('LOCAL_IMAGE_LIBRARY',LOCAL_LIBRARY_PATH."images\\");
