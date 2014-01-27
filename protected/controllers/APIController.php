@@ -14,4 +14,9 @@
 class APIController extends Controller
 {
     
+    public function actionVersion()
+    {
+        
+    }
+    
 }
