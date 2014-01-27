@@ -9,47 +9,6 @@ $flashes = new Flashes();
 $flashes->render();
 ?>
 
-<style>
-table#post-form-table tr th {
-    vertical-align: top;
-}
-table#post-form-table tr th div {
-    padding:5px;
-    border:2px solid #ccc;
-    background-color:#f0f0f0;
-}
-table#post-form-table tr td {
-    padding-left:15px;
-}
-
-input#contactname {
-    width:200px;    
-}
-
-input#department,
-input#contactemail {
-    width:300px;
-}
-.hint {
-    color:#999;
-}
-div.hint {
-    float:left;
-}
-div.button-container {
-    margin-top:10px;
-    margin-left:25px;
-}
-div.button-container button {
-    padding:3px;
-    padding-left:10px;
-    padding-right:10px;
-}
-textarea {
-    font-family: Verdana, Geneva, sans-serif;
-}
-</style>
-
 <!-- Load Queue widget CSS and jQuery -->
 <style type="text/css">@import url(<?php echo WEB_LIBRARY_PATH; ?>jquery/modules/plupload/js/jquery.plupload.queue/css/jquery.plupload.queue.css);</style>
 

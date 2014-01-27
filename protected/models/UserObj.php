@@ -27,6 +27,7 @@
  *      permission	    (int 10)               		Level of the user permissions (Not Null)
  *      active		    (tinyint 1)                	Whether user is active or not (0 or 1 usually) (Not Null)
  *      attempts        (tinyint 1)   				Attempts to login (Not Null)
+ *      watchlist       (text)                      Watchlist of keywords for postings
  *      last_login     	(datetime)                  Last Login date
  * 		preferences		(text)						Metadata field for application specific preferences (usually not used)
  * 
@@ -58,6 +59,14 @@ class UserObj extends FactoryObj
 	{
 		parent::__construct("username","users",$userid);
 	}
+
+    public function pre_save()
+    {
+        # New User, set their watchlist to their username
+        if(!$this->is_valid_id()) {
+            $this->watchlist = $this->username;
+        }
+    }
 
 	public function login()
 	{

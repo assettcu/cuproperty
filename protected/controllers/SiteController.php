@@ -59,6 +59,17 @@ class SiteController extends Controller
         $this->render('siteinfo');
     }
 
+    public function actionNeed()
+    {
+        $this->noGuest();
+        
+        # Load the user so we can grab their current watchlist
+        $user = new UserObj(Yii::app()->user->name);
+        $params["user"] = $user;
+        
+        $this->render('need',$params);
+    }
+
 	/**
 	 * Installation action. To be done only once when the application is first being setup.
 	 */
@@ -377,8 +388,9 @@ class SiteController extends Controller
                     $count++;
                 }
                 
-				# If no errors occured then set flash and redirect home
+				# If no errors occured then run cron, set flash, and redirect home
                 if(!Yii::app()->user->hasFlash("error")) {
+                    Cron::run_cron();                                      
                     Yii::app()->user->setFlash("success","Successfully updated CU Property advertisement.");
                     $this->redirect(Yii::app()->createUrl('index'));
                     exit;

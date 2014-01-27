@@ -97,6 +97,7 @@ class Mail
         # Subject and Body of email
         $mail->Subject    = $subject;
         $mail->Body       = $text;
+        $mail->IsHTML(true);
 
         # Setup "To" portion of email
         if(is_array($to)) {

@@ -54,7 +54,8 @@ $theme = "bluebird";
 				<?php else: ?>
 				<a href="<?=Yii::app()->createUrl('logout')?>">Logout (<?=Yii::app()->user->name?>)</a>
 				<?php endif; ?>
-                <a href="<?=Yii::app()->createUrl('post');?>">Add CU Equipment</a>
+                <a href="<?=Yii::app()->createUrl('need');?>">Need?</a>
+                <a href="<?=Yii::app()->createUrl('post');?>">Add CU Property</a>
 				<a href="<?=Yii::app()->baseUrl;?>/">Home</a>
 			</div>
 		</div>
