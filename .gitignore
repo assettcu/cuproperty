@@ -1,5 +1,5 @@
-app/
-framework/
-protected/runtime/
+app
+framework
+protected/runtime
 protected/config/main-ext.php
-images/property/
+images/property
