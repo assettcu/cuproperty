@@ -26,47 +26,30 @@ Both the framework and the web application are essential to have the application
 
 ---- Installation Instructions ----
 
-1.  Download Yii framework (https://github.com/yiisoft/yii)
+1.  Download the main CU Property application, https://github.com/assettcu/cuproperty/archive/master.zip
 
-2.  Typically you would put the "framework" folder outside your root web directory. 
-    For example if my root web directory is located in "/htdocs/web/" then I would probably put the framework 
-    so it looks like the following: "/htdocs/framework/". However, you can put the framework in the web directory,
-    just be sure to restrict access to permit only the web application to access the files.
-
-3.  After moving the framework, download the web application "cuproperty" into your target web directory. 
-    Typically it would go into the root web directory so it would look like this: "/htdocs/web/cuproperty/".
-
-4.  Several changes to the index.php file in the root directory need to be made (found in "cuproperty/index.php").
-
-	a. Line 4: references the framework's main class. You will need to change the "/../" to reference 
-	   the framework directly depending where you put it relative to the CU Property application.
-	b. Line 13,17: need to change the paths to the correct location of the library folder. 
-	   Line 13 would look like the following using our above example: "C:/htdocs/web/cuproperty/library". 
-	   Line 17 would change depending on what the url is of the web application.
-
-5.  You will need to change the configuration file located in "cuproperty/protected/config/main.php" to point 
-    to the database. Look for 
-
-	'db'=>array(
-		'connectionString' 	=> 'mysql:host=localhost;dbname=cuproperty',
-		'emulatePrepare' 	=> true,
-		'username' 		=> 'cuproperty',
-		'password' 		=> '',
-		'charset' 		=> 'utf8',
-		'tablePrefix' 		=> ''
-	),
+2.  Extract the folder to your root web directory (for example: /htdocs/web/cuproperty)
 	
-    Change the dbname to the database name you created in your MySQL host. Change the password and username 
-    to the account you gave permissions to access that database. Table prefixes should remain empty 
-    (unless you add table prefixes). 
+3.  Create a database in your MySQL Server with a user to access it. 
     
-    Access permissions should at least include "Delete", "Insert", "Select", "Update".
+    User access permissions should at least include "Delete", "Insert", "Select", "Update", "Create", "Drop".
 
-6.  Be sure the ".install" file is located in your root CU Property directory. 
-    It will be needed to install the application.
+4.  Open the application in a browser by navigating to where you placed it in your web directory. 
+    The application should automatically redirect you to the Yii installation page.
 
-7.  Open the application in a browser. It should automatically redirect to the installation page and install 
-    the tables required by the application. It will then redirect to the home page.
+5.  Click on the button to install the Yii framework.
+
+6.  Once the Yii framework is installed you will be brought to a page that has the Yii Requirements. If there are any
+    requirements that fail then you will need to change the server to accomodate the failed requirements.
+
+7.  If the framework passes/warns on all tests, then fill in the database connection information including host,
+    username, password, and database name. Check the "overwrite" box if there already exists a database connection
+    configuration file (on first setup, this is not necessary).
+    
+8.  Click the installation button.
+
+9.  You should be sent to the front page where the application will be successfully setup. You can now start using
+    the application.
 
 The application should now be set up.
 
