@@ -23,9 +23,9 @@ if(!Yii::app()->user->isGuest) {
     <thead>
         <tr>
             <th class="calign" width="50px">Post ID</th>
-            <th width="200px">Department/Program</th>
-            <th width="280px">Contact</th>
-            <th>CU Property</th>
+            <th width="200px" id="haves-table-dept-header">Department/Program</th>
+            <th width="280px" id="haves-table-contact-header">Contact</th>
+            <th id="haves-table-property-header">CU Property</th>
             <th class="calign" width="180px">Last Updated</th>
         </tr>
     </thead>
@@ -178,5 +178,46 @@ jQuery(function($) {
        return false; 
     });
     
+});
+</script>
+
+<?php # Below is the simple walkthrough for the application ?>
+<link rel="stylesheet" href="<?php echo WEB_LIBRARY_PATH; ?>/jquery/modules/joyride/joyride-2.1.css">
+<!-- Tip Content -->
+<ol id="joyRideTipContent">
+    <li data-id="haves-table" data-text="Next" data-options="tipLocation:top;tipAnimation:fade">
+        <p>This is the bulletin board where all the CU Property will be posted.</p>
+    </li>
+    <li data-id="haves-table-property-header" data-text="Next" data-options="tipLocation:top;tipAnimation:fade">
+        <p>View property description and images of the posting here.</p>
+    </li>
+    <li data-id="haves-table-contact-header" data-text="Next" data-options="tipLocation:top;tipAnimation:fade">
+        <p>Like what you see? Then contact the poster by clicking on the mail icon next to their name.</p>
+    </li>
+    <li data-id="mainmenu-addprop" data-button="Next" data-options="tipLocation:top;tipAnimation:fade">
+        <p>Do you have CU Property to give away? The click here to get your property posted on the bulletin board.</p>
+    </li>
+    <li data-id="mainmenu-need" data-button="Next" data-options="tipLocation:top;tipAnimation:fade">
+        <p>Need property? Click here to add keywords to your personal "watchlist". You will receive an email when a property is posted that matches one of your keywords!</p>
+    </li>
+    <li data-id="mainmenu-login" data-button="Close" data-options="tipLocation:top;tipAnimation:fade">
+        <p>Don't forget to logout when you're done with everything!</p>
+    </li>
+</ol>
+
+<!-- Run the plugin -->
+<script type="text/javascript" src="<?php echo WEB_LIBRARY_PATH; ?>/jquery/modules/joyride/modernizr.mq.js"></script>
+<script type="text/javascript" src="<?php echo WEB_LIBRARY_PATH; ?>/jquery/modules/joyride/jquery.joyride-2.1.js"></script>
+<script>
+$(window).load(function() {
+    $('#joyRideTipContent').joyride({
+        autoStart : <?php echo (!Yii::app()->user->isGuest and $user->loaded and $user->walkthrough == 0); ?>,
+        postRideCallback:       function() {
+            $.ajax({
+               url:     "<?php echo Yii::app()->createUrl('ajax/completedWalkthrough'); ?>",
+               data:    "username=<?php echo Yii::app()->user->name; ?>" 
+            });
+        }
+    });
 });
 </script>

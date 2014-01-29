@@ -2,7 +2,7 @@
 /**
  * Ajax Controller
  *
- * The main Controller class for the entire application. This handles all the action requests
+ * The AJAX Controller class for the entire application. This handles all the ajax requests
  * and redirects or routes them through the proper channels. Setting up classes and processing
  * forms are done in the appropriate action functions.
  * 
@@ -26,6 +26,19 @@ class AjaxController extends Controller
     {
         $cron = new Cron;
         $cron->parse_watchlist();
+    }
+    
+    public function actionCompletedWalkthrough()
+    {
+        if(!isset($_REQUEST["username"])) {
+            return false;
+        }
+        $user = new UserObj($_REQUEST["username"]);
+        if(!$user->loaded) {
+            return false;
+        }
+        $user->walkthrough = 1;
+        return $user->save();
     }
     
     /**

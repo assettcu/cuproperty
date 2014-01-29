@@ -15,6 +15,7 @@ $theme = "bluebird";
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/ie.css" media="screen, projection" />
 	<![endif]-->
 
+    <link rel="icon" type="image/png" href="<?php echo WEB_IMAGE_LIBRARY; ?>/aperture.png" />
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/main.css" />
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/table.css" />
@@ -50,13 +51,13 @@ $theme = "bluebird";
 			</div>
 			<div id="mainmenu">
 				<?php if(Yii::app()->user->isGuest): ?>
-				<a href="<?=Yii::app()->createUrl('login')?>">Login</a>
+				<a href="<?=Yii::app()->createUrl('login')?>" id="mainmenu-login">Login</a>
 				<?php else: ?>
-				<a href="<?=Yii::app()->createUrl('logout')?>">Logout (<?=Yii::app()->user->name?>)</a>
+				<a href="<?=Yii::app()->createUrl('logout')?>" id="mainmenu-login">Logout (<?=Yii::app()->user->name?>)</a>
 				<?php endif; ?>
-                <a href="<?=Yii::app()->createUrl('need');?>">Need?</a>
-                <a href="<?=Yii::app()->createUrl('post');?>">Add CU Property</a>
-				<a href="<?=Yii::app()->baseUrl;?>/">Home</a>
+                <a href="<?=Yii::app()->createUrl('need');?>" id="mainmenu-need">Need?</a>
+                <a href="<?=Yii::app()->createUrl('post');?>" id="mainmenu-addprop">Add CU Property</a>
+				<a href="<?=Yii::app()->baseUrl;?>/" id="mainmenu-home">Home</a>
 			</div>
 		</div>
 
@@ -71,6 +72,7 @@ $theme = "bluebird";
 		<div style="padding-top:10px;">
 			Copyright &copy; <?php echo date('Y'); ?> by the University of Colorado Boulder.<br/>
 			Developed by the <a href="http://assett.colorado.edu">ASSETT program</a><br/>
+			Having issues? Contact the developers by leaving an issue.
 		</div>
 	</div><!-- footer -->
 

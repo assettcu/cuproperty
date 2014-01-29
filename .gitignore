@@ -3,3 +3,4 @@ framework
 protected/runtime
 protected/config/main-ext.php
 images/property
+debug.log
