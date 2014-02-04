@@ -4,8 +4,11 @@
  * 
  * The purpose of this class is mainly log emails in our email database. If clients use our system to email each other
  * we want to make sure there are no communication errors. If one party said they had not received an email we can
- * check the system to verify. We do not store any of the email's contents, just from who it was sent and which property
- * it was concerning.
+ * check the system to verify. We do not store any of the email's contents, just the people conversating and which property
+ * it's concerning.
+ * 
+ * The system will also log croned emails. The system checks user watchlists for any property matches and will email the
+ * users if there are matches. The system will record these emails as well, including the matched keywords.
  * 
  * 
  * @author      Ryan Carney-Mogan
@@ -18,6 +21,7 @@
  * @schema      
  * 		emailid				(int 255)			Email Identifying number (PK, Not Null, Auto-increments)
  *      emailfrom			(varchar 50)		What email is the originator (Not Null)
+ *      emailto             (varchar 50)        Who the email is going to (Not Null)
  * 		propertyid			(int 255)			Identifying number of the property (Not Null)
  *      matchedkeywords     (text)              Cron job will create emails based on matched keywords
  * 		date_sent			(datetime)			Date and Time of email sent (Not Null)

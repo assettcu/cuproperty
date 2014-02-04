@@ -46,5 +46,17 @@ class PropertyManager
         }
         return $property;
     }
-   
+    
+    /**
+     * Load My Property
+     * 
+     * Loads all the property of the user.
+     * 
+     * @param   (string)    $username       Username of property to load.
+     * @return  (object[])                  Returns array of Property objects
+     */
+    public function load_my_property()
+    {
+        # Currently empty, needs to be filled
+    }
 }

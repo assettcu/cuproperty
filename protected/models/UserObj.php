@@ -15,7 +15,7 @@
  * 
  * @author      Ryan Carney-Mogan
  * @category    Core_Classes
- * @version     1.0.2
+ * @version     1.0.3
  * @copyright   Copyright (c) 2013 University of Colorado Boulder (http://colorado.edu)
  * 
  * @database    cuproperty
@@ -28,6 +28,7 @@
  *      active		    (tinyint 1)                	Whether user is active or not (0 or 1 usually) (Not Null)
  *      attempts        (tinyint 1)   				Attempts to login (Not Null)
  *      watchlist       (text)                      Watchlist of keywords for postings
+ *      walkthrough     (tinyint 1)                 Whether user has completed the walkthrough or not (Not Null)
  *      last_login     	(datetime)                  Last Login date
  * 		preferences		(text)						Metadata field for application specific preferences (usually not used)
  * 

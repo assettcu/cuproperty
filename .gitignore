@@ -4,3 +4,5 @@ protected/runtime
 protected/config/main-ext.php
 images/property
 debug.log
+images/thumbs.db
+library/images/thumbs.db

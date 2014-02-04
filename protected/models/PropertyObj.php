@@ -7,7 +7,7 @@
  * 
  * @author      Ryan Carney-Mogan
  * @category    Core_Classes
- * @version     1.0.1
+ * @version     1.0.2
  * @copyright   Copyright (c) 2013 University of Colorado Boulder (http://colorado.edu)
  * 
  * @database    cuproperty
@@ -21,6 +21,7 @@
  *      status          (enum 'posted','removed')   Status of the post of the property (Not Null)
  *      description     (text)                      Description of the property
  *      postedby        (varchar 25)                Username of property creator (Not Null)
+ *      croned          (tinyint 1)                 Whether this post has been run through cron or not (Not Null)
  *      date_added      (datetime)                  Date property was added (Not Null)
  *      date_updated    (datetime)                  Date property was updated
  * 
@@ -46,9 +47,8 @@ class PropertyObj extends FactoryObj
         if(!$this->loaded and !$this->is_valid_id()) {
             $this->postedby     = Yii::app()->user->name;
             $this->date_added   = date("Y-m-d H:i:s");
+            $this->date_updated = date("Y-m-d H:i:s");
         }
-        
-        $this->date_updated = date("Y-m-d H:i:s");
     }
     
     /**

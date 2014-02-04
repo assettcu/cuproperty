@@ -17,6 +17,7 @@
  *      propertyid			(int 255)			Property ID associated with image (Not Null)
  * 		location			(varchar 255)		Location of the file (Not Null)
  * 		sorder				(int 100)			Order of the image according to other images of the same property (Not Null)
+ *      who_uploaded        (varchar 25)        Username of uploader
  * 		date_uploaded		(datetime)			Date and Time of image upload (Not Null)
  * 
  */
