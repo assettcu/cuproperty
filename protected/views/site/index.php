@@ -16,7 +16,7 @@ if(!Yii::app()->user->isGuest) {
 ?>
 
 <div class="ui-widget-content ui-corner-all notice">
-    You can find the surplus of CU Property on this page. To place an advertisement for surplus equipment, please click on "Add CU Equipment" button in the menu.
+    You can find the surplus of CU Property on this page. To place an advertisement for surplus equipment, please click on "Add CU Property" button in the menu.
 </div>
 
 <table id="haves-table">
@@ -45,7 +45,7 @@ if(!Yii::app()->user->isGuest) {
                 <td>
                     <span class="contactname"><?php echo $property->contactname; ?></span><br/>
                     <span class="contactemail"><?php echo $property->contactemail; ?></span>
-                    <?php if(!Yii::app()->user->isGuest): ?>
+                    <?php if(!Yii::app()->user->isGuest and $property->postedby != Yii::app()->user->name): ?>
                         <a href="#" class="email-contact" title="Email this contact."><?php echo StdLib::load_image("mail_next","16px","16px"); ?></a>
                     <?php endif; ?>
                 </td>

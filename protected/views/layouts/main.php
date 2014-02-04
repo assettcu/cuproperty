@@ -43,11 +43,13 @@ $theme = "bluebird";
 
 	<div id="header">
 		<div id="logo">
-			<div id="logo-text" style="position:relative;">
-                <div id="logo-image" style="position:absolute;top:5px;left:15px;">
-                    <?php echo StdLib::load_image('aperture',"48px");?>
-                </div>
-				<?php echo CHtml::encode(Yii::app()->name); ?>
+			<div id="logo-text">
+			    <a href="<?php echo Yii::app()->baseUrl; ?>">
+                    <div id="logo-image" style="position:absolute;top:5px;left:15px;">
+                        <?php echo StdLib::load_image('aperture',"48px");?>
+                    </div>
+    				<?php echo CHtml::encode(Yii::app()->name); ?>
+				</a>
 			</div>
 			<div id="mainmenu">
 				<?php if(Yii::app()->user->isGuest): ?>

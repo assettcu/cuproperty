@@ -18,7 +18,7 @@ $flashes->render();
 
 <h1>Post CU Property</h1>
 
-<div class="ui-widget-content ui-corner-all" style="padding:10px;margin-bottom:15px;">
+<div class="ui-widget-content ui-corner-all notice">
     You can post anything your department has to give away.
 </div>
 
@@ -106,12 +106,12 @@ $flashes->render();
     <hr style="margin-top:25px;"/>
     
     <div class="button-container">
-        <button class="cancel">Cancel</button>
+        <button class="cancel"><span class="message-icon"><?php echo StdLib::load_image("close_delete","16px"); ?></span> Cancel</button>
         <?php if($property->loaded) : ?>
-            <button class="remove">Remove Post</button>
-            <button class="submit">Update Post</button>
+            <button class="remove"><span class="message-icon"><?php echo StdLib::load_image("trash_box","16px"); ?></span> Delete Post</button>
+            <button class="submit"><span class="message-icon"><?php echo StdLib::load_image("save","16px"); ?></span> Update Post</button>
         <?php else: ?>
-            <button class="submit" disabled="disabled">Post Equipment</button>
+            <button class="submit" disabled="disabled"><span class="message-icon"><?php echo StdLib::load_image("save","16px"); ?></span> Post Equipment</button>
             <span class="hint" id="post-stop-hint"> You must agree to the terms of agreement.</span>
         <?php endif; ?>
     </div>

@@ -110,9 +110,6 @@ div.button-container {
     margin-left:25px;
 }
 div.button-container button {
-    padding:3px;
-    padding-left:10px;
-    padding-right:10px;
 }
 table#post-form-table tr td textarea {
     font-family: Verdana, Geneva, sans-serif;
