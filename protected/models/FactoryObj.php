@@ -14,7 +14,7 @@
  * 
  * @author      Ryan Carney-Mogan
  * @category    Core_Classes
- * @version     1.0.1
+ * @version     1.0.3
  * @copyright   Copyright (c) 2013 University of Colorado Boulder (http://colorado.edu)
  * 
  */
@@ -23,7 +23,8 @@ class FactoryObj
 {
     # Private local variables
 	private $error_msg = "";       # Error message for when procedures fail
-    
+    private $autoincrement = "0";  # Default autoincrement
+         
     # Public local variables
 	public $loaded = false;        # Whether the object was loaded from the DB
 
@@ -417,6 +418,368 @@ class FactoryObj
 	{
 		return $this->error_msg;
 	}
+
+    /**
+     * Has Matching Schema
+     * 
+     * Checks to see if the database table schemas match. Used for updating logic.
+     * 
+     * @return  (boolean)
+     */
+    public function has_matching_schema()
+    {
+        return (strcmp($this->get_schema_version(),$this->get_current_schema_version()) == 0);
+    }
+    
+    /**
+     * Get Schema
+     * 
+     * This returns the schema this class should have in the database.
+     * This might differ from get_current_schema() which gets what the database current has.
+     * MD5 hashing the schema is used to compare the database and the object schema.
+     * 
+     * @return  (array)
+     */
+    public function get_schema()
+    {
+        /** This function is meant to be overloaded **/
+        return array();
+    }
+    
+    /**
+     * Upgrade
+     * 
+     * This function should be overloaded with the logic to upgrade the table.
+     * Ideally, if columns are added/removed/changed then the logic for changing the
+     * table appropriately would go here.
+     * 
+     * @return  (boolean)
+     */
+
+    
+    /**
+     * Upgrade
+     * 
+     * This will automatically make changes to the tables and their columns.
+     * The upgrade can only do so much before a human needs to manually make changes.
+     * For instance, column name changes need to be done manually in the code.
+     * The system cannot differentiate between a new column and a renamed column unless
+     * explicitly specified.
+     * 
+     * @return  (boolean)
+     */
+    public function upgrade()
+    {
+        # Grab the schemas, both old and new
+        $old_schema = $this->get_current_schema();
+        $new_schema = $this->get_schema();
+        
+        # Loop through each column and compare
+        foreach($new_schema as $index=>$column) {
+            # If we're out of the range of the old schema, need to do some checking and adding
+            if(!isset($old_schema[$index])) {
+                $col_reordered = FALSE;
+                # Search for field with the same name in a different spot
+                for($a=0;$a<count($new_schema);$a++) {
+                    # We found the new spot for this field
+                    if($old_schema[$a]["Field"] == $new_schema[$index]["Field"]) {
+                        $col_schema = $new_schema[$index];
+                        $col_schema["Method"] = "MODIFY";
+                        if($a == 0) {
+                            $col_schema["First"] = "";
+                        } else {
+                            $col_schema["After"] = $old_schema[$a-1]["Field"];
+                        }
+                        $col_reordered = TRUE;
+                        if(!$this->update_table_schema(array($col_schema))) {
+                            return false;
+                        }
+                        $a=count($new_schema)+1;
+                    }
+                }
+                # If we did not reorder the column, then we added a new column
+                if($col_reordered === FALSE) {
+                    $col_schema = $new_schema[$index];
+                    $col_schema["Method"] = "ADD";
+                    if(!$this->update_table_schema(array($col_schema))) {
+                        return false;
+                    }
+                }
+                continue;
+            }
+
+            # Stringify, hash, and compare schemas
+            if(strcmp($this->get_version($old_schema[$index]),$this->get_version($new_schema[$index]))!=0) {
+                # Updating a current column description
+                if($old_schema[$index]["Field"] == $new_schema[$index]["Field"]) {
+                    $col_schema = $new_schema[$index];
+                    $col_schema["Method"] = "MODIFY";
+                    if(!$this->update_table_schema(array($col_schema))) {
+                        return false;
+                    }
+                    continue;
+                }
+                # If the current column names don't match, we need to find if its been reordered
+                else if($old_schema[$index]["Field"] != $new_schema[$index]["Field"]) {
+                    $col_reordered = FALSE;
+                    # Search for field with the same name in a different spot
+                    for($a=0;$a<count($new_schema);$a++) {
+                        # We found the new spot for this field
+                        if($old_schema[$a]["Field"] == $new_schema[$index]["Field"]) {
+                            $col_schema = $new_schema[$index];
+                            $col_schema["Method"] = "MODIFY";
+                            if($a == 0) {
+                                $col_schema["First"] = "";
+                            } else {
+                                $col_schema["After"] = $old_schema[$a-1]["Field"];
+                            }
+                            $this->update_table_schema(array($col_schema));
+                            $a=count($new_schema)+1;
+                        }
+                    }
+                    
+                    # If we did not reorder the column, then we added a new column
+                    if($col_reordered === FALSE) {
+                        $col_schema = $new_schema[$index];
+                        $col_schema["Method"] = "ADD";
+                        if($index == 0) {
+                            $col_schema["First"] = "";
+                        } else {
+                            $col_schema["After"] = $new_schema[$index-1]["Field"];
+                        }
+                        if(!$this->update_table_schema(array($col_schema))) {
+                            return false;
+                        }
+                    }
+                    continue;
+                }
+            }
+        }
+
+        return true;
+    }
+    
+    /**
+     * Get Current Schema
+     * 
+     * Returns the current table schema setup.
+     * 
+     * @return (array)
+     */
+    public function get_current_schema()
+    {
+        $conn = Yii::app()->db;
+        $query = "
+            DESCRIBE {{".$this->table."}};
+        ";
+        try {
+            $result = $conn->createCommand($query)->queryAll();
+        }
+        catch (Exception $e) {
+            # There is no table!
+            if($e->getCode()==42) {
+                return null;
+            }
+            else {
+                echo "There was a problem looking up table ".$this->table."<br/>";
+                echo $e->getMessage();
+                exit;
+            }
+        }
+        
+        return $result;
+    }
+    
+    /**
+     * Get Schema Version
+     * 
+     * Hashes a stringified schema which is the object schema's "fingerprint".
+     * 
+     * @return  (string)
+     */
+    public function get_schema_version()
+    {
+        return $this->get_version($this->get_schema());
+    }
+    
+    /**
+     * Get Current Schema Version
+     * 
+     * Hashes a stringified schema which is the current schema's "fingerprint".
+     * 
+     * @return  (string)
+     */
+    public function get_current_schema_version()
+    {
+        return $this->get_version($this->get_current_schema());
+    }
+
+    /**
+     * Get Version
+     * 
+     * Creates a hash of a stringified object. This is the "fingerprint" of the object.
+     * 
+     * @return  (string)
+     */
+    public function get_version($object)
+    {
+        if(!is_string($object)) {
+            $object = json_encode($object);
+        }
+        return md5($object);
+    }
+
+    /**
+     * Create table schema
+     * 
+     * This makes the query to create the table associated with this object.
+     * 
+     * @return  (string)
+     */
+    public function create_table_schema()
+    {
+        $outline = $this->get_schema();
+        $q = "CREATE TABLE    {{".$this->table."}} (\n";
+        
+        $primarykey = null;
+        $flag_auto  = FALSE;
+        
+        foreach($outline as $column) {
+            if($column["Key"] == "PRI") {
+                $primarykey = $column;
+            }
+            if($column["Extra"] == "auto_increment") {
+                $flag_auto = TRUE;
+            }
+            $q .=   "`".$column["Field"]."` ".$column["Type"].(($column["Null"]=="YES")?"":" NOT NULL").
+                    ((is_null($column["Default"]))?"":" DEFAULT '".$column["Default"]."'").((!empty($column["Extra"]))?" ".$column["Extra"]:"").", \n";
+        }
+        if(!is_null($primarykey)) {
+            $q .= "PRIMARY KEY (`".$primarykey["Field"]."`) \n";
+        }
+        $q .= ") ENGINE=InnoDB ";
+        if($flag_auto === TRUE) {
+            $q .= "AUTO_INCREMENT=".$this->autoincrement." ";
+        }
+        $q .= "DEFAULT CHARSET=latin1";
+        
+        return $q;
+    }
+    
+    /**
+     * Update Table Schema
+     * 
+     * Takes a schema for each column and updates the table with the new schema.
+     * Used for upgrading table information.
+     * 
+     * @return  (bool)      Returns whether the table was altered or not (whether successful or not)
+     */
+    protected function update_table_schema($newschema)
+    {
+        $current_schema = $this->get_current_schema();
+        $changes_made   = FALSE;
+        $conn = Yii::app()->db;
+        
+        # This table doesn't exist, we need to recreate it
+        if(is_null($current_schema)) {
+            # Create the query based on the object's schema
+            $new_table_q = $this->create_table_schema();
+            # Execute the table change
+            try {
+                $conn->createCommand($new_table_q)->execute();
+            } 
+            # If an error happens while altering table, we need to output the debugging error
+            catch(Exception $e) {
+                if(defined(YII_DEBUG_MODE) and YII_DEBUG_MODE == TRUE) {
+                    echo "Error creating table: <br/>";
+                    StdLib::vdump($e->getMessage());
+                    exit;
+                }
+                else {
+                    $this->set_error("Error creating table ".$this->table.": ".$e->getMessage());
+                    throw new Exception("Error creating table ".$this->table.": ".$e->getMessage());
+                }
+            }
+            # If we recreated the table, then we don't need to alter it
+            return true;
+        }
+        
+        
+        foreach($newschema as $columnname => $schema) {
+            $column_exists_flag = FALSE;
+            
+            # If adding or modifying a field
+            if($schema["Method"]=="ADD" or $schema["Method"]=="MODIFY") {
+                # Make sure that if the column already exists that we modify it, instead of re-adding
+                foreach($current_schema as $column) {
+                    if($column["Field"] == $schema["Field"]) {
+                        $column_exists_flag = TRUE;
+                    }
+                }
+                # Modify a column that already exists
+                if($column_exists_flag===TRUE) {
+                    $query = "
+                        ALTER TABLE     {{".$this->table."}}
+                        MODIFY COLUMN   `".$schema["Field"]."`
+                                        ".$schema["Type"]."
+                                        ".(($schema["Null"]!="NO")?"":"NOT NULL")."
+                                        ".(($schema["Default"]==NULL)?"":("DEFAULT '".$schema["Default"])."'")."
+                                        ".((array_key_exists("First", $schema))?"FIRST":"")."
+                                        ".((array_key_exists("After", $schema) and !array_key_exists("First",$schema))?"AFTER ".$schema["After"]:"")."
+                    ";
+                }
+                # Add a column
+                else {
+                    $query = "
+                        ALTER TABLE     {{".$this->table."}}
+                        ADD             `".$schema["Field"]."`
+                                        ".$schema["Type"]."
+                                        ".(($schema["Null"]!="NO")?"":"NOT NULL")."
+                                        ".(($schema["Default"]==NULL)?"":("DEFAULT '".$schema["Default"])."'")."
+                                        ".((array_key_exists("First", $schema))?"FIRST":"")."
+                                        ".((array_key_exists("After", $schema) and !array_key_exists("First",$schema))?"AFTER ".$schema["After"]:"")."
+                    ";
+                }
+            }
+            # Remove the field from the table
+            else if($schema["Method"]=="REMOVE") {
+                $query = "
+                    ALTER TABLE     {{".$this->table."}}
+                    DROP            `".$schema["Field"]."`;
+                ";
+            }
+            # Change the field's name
+            else if($schema["Method"]=="CHANGE") {
+                $query = "
+                    ALTER TABLE     {{".$this->table."}}
+                    CHANGE          ".$schema["Prevfield"]." ".$schema["Field"]."
+                                    ".$schema["Type"]."
+                ";
+            }
+            
+            # Execute the table change
+            try {
+                $conn->createCommand($query)->execute();
+            } 
+            # If an error happens while altering table, we need to output the debugging error
+            catch(Exception $e) {
+                if(defined(YII_DEBUG) and YII_DEBUG == TRUE) {
+                    echo "Error altering table: <br/>";
+                    StdLib::vdump($e->getMessage());
+                    exit;
+                }
+                else {
+                    $this->set_error("Error updating the table ".$this->table.": ".$e->getMessage());
+                    throw new Exception("Error updating the table ".$this->table.": ".$e->getMessage());
+                }
+            }
+            
+            # Note that changes have been made
+            $changes_made = TRUE;
+        }
+        
+        return $changes_made;
+    }
 }
 
 

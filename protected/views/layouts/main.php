@@ -74,7 +74,7 @@ $theme = "bluebird";
 		<div style="padding-top:10px;">
 			Copyright &copy; <?php echo date('Y'); ?> by the University of Colorado Boulder.<br/>
 			Developed by the <a href="http://assett.colorado.edu">ASSETT program</a><br/>
-			Having issues? Contact the developers by leaving an issue.
+			Having issues? Contact the developers by leaving an issue ticket.
 		</div>
 	</div><!-- footer -->
 

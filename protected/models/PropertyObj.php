@@ -29,12 +29,129 @@
  
 class PropertyObj extends FactoryObj
 {
+    # Sets the default autoincrement when creating the table
+    private $autoincrement = "1000";
     
     public function __construct($propertyid=null)
     {
         parent::__construct("propertyid","property",$propertyid);
     }
     
+    /**
+     * Get Schema
+     * 
+     * This returns the schema this class should have in the database.
+     * This might differ from get_current_schema() which gets what the database current has.
+     * MD5 hashing the schema is used to compare the database and the object schema.
+     * 
+     * @return  (array)
+     */
+    public function get_schema() {
+        # Schema version 4f19fc27355339ab98b7a695eb3b5fce
+        return array(
+            array(
+                "Field"     => "propertyid",
+                "Type"      => "int(255)",
+                "Null"      => "NO",
+                "Key"       => "PRI",
+                "Default"   => NULL,
+                "Extra"     => "auto_increment",
+            ),
+            array(
+                "Field"     => "department",
+                "Type"      => "varchar(255)",
+                "Null"      => "NO",
+                "Key"       => "",
+                "Default"   => NULL,
+                "Extra"     => "",
+            ),
+            array(
+                "Field"     => "contactname",
+                "Type"      => "varchar(60)",
+                "Null"      => "NO",
+                "Key"       => "",
+                "Default"   => NULL,
+                "Extra"     => "",
+            ),
+            array(
+                "Field"     => "contactemail",
+                "Type"      => "varchar(255)",
+                "Null"      => "YES",
+                "Key"       => "",
+                "Default"   => NULL,
+                "Extra"     => "",
+            ),
+            array(
+                "Field"     => "contactphone",
+                "Type"      => "varchar(25)",
+                "Null"      => "YES",
+                "Key"       => "",
+                "Default"   => NULL,
+                "Extra"     => "",
+            ),
+            array(
+                "Field"     => "status",
+                "Type"      => "enum('posted','removed')",
+                "Null"      => "NO",
+                "Key"       => "",
+                "Default"   => "posted",
+                "Extra"     => "",
+            ),
+            array(
+                "Field"     => "description",
+                "Type"      => "text",
+                "Null"      => "YES",
+                "Key"       => "",
+                "Default"   => NULL,
+                "Extra"     => "",
+            ),
+            array(
+                "Field"     => "postedby",
+                "Type"      => "varchar(50)",
+                "Null"      => "NO",
+                "Key"       => "",
+                "Default"   => NULL,
+                "Extra"     => "",
+            ),
+            array(
+                "Field"     => "croned",
+                "Type"      => "tinyint(1)",
+                "Null"      => "NO",
+                "Key"       => "",
+                "Default"   => "0",
+                "Extra"     => "",
+            ),
+            array(
+                "Field"     => "date_added",
+                "Type"      => "datetime",
+                "Null"      => "NO",
+                "Key"       => "",
+                "Default"   => NULL,
+                "Extra"     => "",
+            ),
+            array(
+                "Field"     => "date_updated",
+                "Type"      => "datetime",
+                "Null"      => "YES",
+                "Key"       => "",
+                "Default"   => NULL,
+                "Extra"     => "",
+            ),
+        );
+    }
+
+    /**
+     * Update Schema
+     * 
+     * The only reason to modify this function is if a column has updated its name or
+     * a column has been removed.
+     * 
+     * @return  (boolean)
+     */
+    public function upgrade()
+    {
+        return parent::upgrade();
+    }
     
 	/**
 	 * Pre-Save
@@ -143,4 +260,5 @@ class PropertyObj extends FactoryObj
         
         return $this->images;
     }
+    
 }

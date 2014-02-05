@@ -1,6 +1,6 @@
 /*
- * Author: Ryan Carney-Mogan
- * MySQL - 5.5.10-log : Database - cuproperty
+SQLyog Community v11.01 (64 bit)
+MySQL - 5.5.10 : Database - cuproperty
 *********************************************************************
 */
 
@@ -23,7 +23,9 @@ DROP TABLE IF EXISTS `emails`;
 CREATE TABLE `emails` (
   `emailid` int(255) NOT NULL AUTO_INCREMENT,
   `emailfrom` varchar(50) NOT NULL,
+  `emailto` varchar(50) NOT NULL,
   `propertyid` int(255) NOT NULL,
+  `matchedkeywords` text,
   `date_sent` datetime NOT NULL,
   PRIMARY KEY (`emailid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -40,7 +42,24 @@ CREATE TABLE `images` (
   `who_uploaded` varchar(25) NOT NULL,
   `date_uploaded` datetime NOT NULL,
   PRIMARY KEY (`imageid`)
-) ENGINE=InnoDB AUTO_INCREMENT=119 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
+
+/*Table structure for table `issues` */
+
+DROP TABLE IF EXISTS `issues`;
+
+CREATE TABLE `issues` (
+  `issueid` int(255) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `category` varchar(255) NOT NULL,
+  `description` text NOT NULL,
+  `status` enum('new','inprogress','done') NOT NULL DEFAULT 'new',
+  `comment` text,
+  `who_commented` varchar(25) DEFAULT NULL,
+  `date_submitted` datetime NOT NULL,
+  PRIMARY KEY (`issueid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*Table structure for table `property` */
 
@@ -55,10 +74,11 @@ CREATE TABLE `property` (
   `status` enum('posted','removed') NOT NULL DEFAULT 'posted',
   `description` text,
   `postedby` varchar(255) NOT NULL,
+  `croned` tinyint(1) NOT NULL DEFAULT '0',
   `date_added` datetime NOT NULL,
   `date_updated` datetime DEFAULT NULL,
   PRIMARY KEY (`propertyid`)
-) ENGINE=InnoDB AUTO_INCREMENT=1265 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=1000 DEFAULT CHARSET=latin1;
 
 /*Table structure for table `users` */
 
@@ -71,6 +91,8 @@ CREATE TABLE `users` (
   `permission` int(10) NOT NULL DEFAULT '1',
   `active` tinyint(1) NOT NULL DEFAULT '1',
   `attempts` tinyint(1) NOT NULL DEFAULT '0',
+  `watchlist` text,
+  `walkthrough` tinyint(1) NOT NULL DEFAULT '0',
   `last_login` datetime DEFAULT NULL,
   `preferences` text,
   PRIMARY KEY (`username`)

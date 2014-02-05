@@ -20,23 +20,12 @@ class UserIdentity extends CUserIdentity
         $username = $this->username;
         $password = $this->password;
         
-        try
-        {
-            Yii::app()->db;
-            $dbload = true;
-        } catch (Exception $e) {
-            # If Connection doesn't exist
-            $dbload = false;
-        }
-        
         # Check if user exists or is locked out
-        if($dbload) {
-            $user = new UserObj($username);
-            if($user->loaded and isset($user->active,$user->attempts) and ($user->active==0 or $user->attempts>5))
-            {
-                $this->errorCode=ERROR_MAX_ATTEMPTS;
-                return !$this->errorCode;
-            }
+        $user = new UserObj($username);
+        if($user->loaded and isset($user->active,$user->attempts) and ($user->active==0 or $user->attempts>5))
+        {
+            $this->errorCode=ERROR_MAX_ATTEMPTS;
+            return !$this->errorCode;
         }
         
         # The new Authentication System
@@ -63,57 +52,42 @@ class UserIdentity extends CUserIdentity
             foreach($valid_groups as $group=>$permlevel) {
                 if($adauth->is_member($group)) {
                     // Update only if membership changed or new user
-                    if($dbload === true and !$user->loaded or ($user->loaded and $user->member != $group)) {
+                    if($user->loaded === FALSE) {
                         $user->permission = $permlevel;
-                        $user->member = $group;
-                    } else if($dbload===false and (!isset($permission) or $permlevel > $permission)) {
-                        $permission = $permlevel;
-                        $belongsto  = $group;
                     }
                     break;
                 }
             }
             
-            if($dbload===false) {
-                if(!isset($permission)) {
-                    $this->errorCode = ERROR_AUTH_GROUP_INVALID;
-                    return !$this->errorCode;
-                }
-                Yii::app()->user->setState("group",$belongsto);
-                Yii::app()->user->setState("permission",$permission);
-            } else {
+            if(is_null($user->permission) and !$user->loaded) {
+                $user->permission = 1;
+            }
             
-                if(is_null($user->permission) and !$user->loaded) {
-                    $user->permission = 1;
-                }
+            $user->email = $info[0]["mail"][0];
+            $user->name = $info[0]["displayname"][0];
+            
+            if($user->permission==0) {
+                $this->errorCode = ERROR_AUTH_GROUP_INVALID;
+            }
                 
-                $user->email = $info[0]["mail"][0];
-                $user->name = $info[0]["displayname"][0];
-                
-                if($user->permission==0) {
-                    $this->errorCode = ERROR_AUTH_GROUP_INVALID;
-                }
-                    
-                if(!$this->errorCode) {
-                    $user->last_login = date("Y-m-d H:i:s");
-                    $user->attempts = 0;
-                    $user->save();
-                    $user->load();
-                }
-                
-                # Switch to the directory and lookup user's CU affiliation (student/staff/faculty)
-                $adauth->change_controller("directory");
-                $info = $adauth->lookup_user();
-                $user->roles = $this->parse_roles($info[0]["edupersonaffiliation"]);
-                
-                # Save and reload
+            if(!$this->errorCode) {
+                $user->last_login = date("Y-m-d H:i:s");
+                $user->attempts = 0;
                 $user->save();
                 $user->load();
-                
             }
+            
+            # Switch to the directory and lookup user's CU affiliation (student/staff/faculty)
+            $adauth->change_controller("directory");
+            $info = $adauth->lookup_user();
+            $user->roles = $this->parse_roles($info[0]["edupersonaffiliation"]);
+            
+            # Save and reload
+            $user->save();
+            $user->load();
 
         } else {
-            if($dbload === true and $user->loaded)
+            if($user->loaded)
             {
                 $user->attempts++;
                 $user->save();

@@ -30,7 +30,7 @@
  
 class EmailObj extends FactoryObj
 {
-    public $error = "";
+    public $error           = "";
     public $matchedkeywords = "";
     
     /**
@@ -40,7 +40,83 @@ class EmailObj extends FactoryObj
      */
     public function __construct($emailid=null) 
     {
-        parent::__construct("emailid","emails",$emailid);
+        parent::__construct("emailid", "emails", $emailid);
+    }
+    
+    /**
+     * Get Schema
+     * 
+     * This returns the schema this class should have in the database.
+     * This might differ from get_current_schema() which gets what the database current has.
+     * MD5 hashing the schema is used to compare the database and the object schema.
+     * 
+     * @return  (array)
+     */
+    public function get_schema() {
+        # Schema version 1b2f12ec31b0a17f1bcbc4eae89a639e
+        return array(
+            array(
+                "Field"     => "emailid",
+                "Type"      => "int(255)",
+                "Null"      => "NO",
+                "Key"       => "PRI",
+                "Default"   => NULL,
+                "Extra"     => "auto_increment",
+            ),
+            array(
+                "Field"     => "emailfrom",
+                "Type"      => "varchar(50)",
+                "Null"      => "NO",
+                "Key"       => "",
+                "Default"   => NULL,
+                "Extra"     => "",
+            ),
+            array(
+                "Field"     => "emailto",
+                "Type"      => "varchar(50)",
+                "Null"      => "NO",
+                "Key"       => "",
+                "Default"   => NULL,
+                "Extra"     => "",
+            ),
+            array(
+                "Field"     => "propertyid",
+                "Type"      => "int(255)",
+                "Null"      => "NO",
+                "Key"       => "",
+                "Default"   => NULL,
+                "Extra"     => "",
+            ),
+            array(
+                "Field"     => "matchedkeywords",
+                "Type"      => "text",
+                "Null"      => "YES",
+                "Key"       => "",
+                "Default"   => NULL,
+                "Extra"     => "",
+            ),
+            array(
+                "Field"     => "date_sent",
+                "Type"      => "datetime",
+                "Null"      => "NO",
+                "Key"       => "",
+                "Default"   => NULL,
+                "Extra"     => "",
+            ),
+        );
+    }
+
+    /**
+     * Update Schema
+     * 
+     * The only reason to modify this function is if a column has updated its name or
+     * a column has been removed.
+     * 
+     * @return  (boolean)
+     */
+    public function upgrade()
+    {
+        return parent::upgrade();
     }
     
     /**
@@ -159,4 +235,5 @@ Below is a description of the property with the highlighted matching keywords:
         
         return true;
     }
+
 }

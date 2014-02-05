@@ -1,5 +1,7 @@
 <?php
 // Load various settings set for the application and display them.
+$flashes = new Flashes;
+$flashes->render();
 
 try {
     Yii::app()->db;

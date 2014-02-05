@@ -61,6 +61,114 @@ class UserObj extends FactoryObj
 		parent::__construct("username","users",$userid);
 	}
 
+    /**
+     * Get Schema
+     * 
+     * This returns the schema this class should have in the database.
+     * This might differ from get_current_schema() which gets what the database current has.
+     * MD5 hashing the schema is used to compare the database and the object schema.
+     * 
+     * @return  (array)
+     */
+    public function get_schema() {
+        # Schema version 016cbb028ec982903e27baa82e52f224
+        return array(
+            array(
+                "Field"     => "username",
+                "Type"      => "varchar(50)",
+                "Null"      => "NO",
+                "Key"       => "PRI",
+                "Default"   => NULL,
+                "Extra"     => "",
+            ),
+            array(
+                "Field"     => "name",
+                "Type"      => "varchar(255)",
+                "Null"      => "NO",
+                "Key"       => "",
+                "Default"   => NULL,
+                "Extra"     => "",
+            ),
+            array(
+                "Field"     => "email",
+                "Type"      => "varchar(255)",
+                "Null"      => "NO",
+                "Key"       => "",
+                "Default"   => NULL,
+                "Extra"     => "",
+            ),
+            array(
+                "Field"     => "permission",
+                "Type"      => "int(10)",
+                "Null"      => "NO",
+                "Key"       => "",
+                "Default"   => "1",
+                "Extra"     => "",
+            ),
+            array(
+                "Field"     => "active",
+                "Type"      => "tinyint(1)",
+                "Null"      => "NO",
+                "Key"       => "",
+                "Default"   => "1",
+                "Extra"     => "",
+            ),
+            array(
+                "Field"     => "attempts",
+                "Type"      => "tinyint(1)",
+                "Null"      => "NO",
+                "Key"       => "",
+                "Default"   => "0",
+                "Extra"     => "",
+            ),
+            array(
+                "Field"     => "watchlist",
+                "Type"      => "text",
+                "Null"      => "YES",
+                "Key"       => "",
+                "Default"   => NULL,
+                "Extra"     => "",
+            ),
+            array(
+                "Field"     => "walkthrough",
+                "Type"      => "tinyint(1)",
+                "Null"      => "NO",
+                "Key"       => "",
+                "Default"   => "0",
+                "Extra"     => "",
+            ),
+            array(
+                "Field"     => "last_login",
+                "Type"      => "datetime",
+                "Null"      => "YES",
+                "Key"       => "",
+                "Default"   => NULL,
+                "Extra"     => "",
+            ),
+            array(
+                "Field"     => "preferences",
+                "Type"      => "text",
+                "Null"      => "YES",
+                "Key"       => "",
+                "Default"   => NULL,
+                "Extra"     => "",
+            ),
+        );
+    }
+
+    /**
+     * Update Schema
+     * 
+     * The only reason to modify this function is if a column has updated its name or
+     * a column has been removed.
+     * 
+     * @return  (boolean)
+     */
+    public function upgrade()
+    {
+        return parent::upgrade();
+    }
+    
     public function pre_save()
     {
         # New User, set their watchlist to their username

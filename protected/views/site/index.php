@@ -211,7 +211,7 @@ jQuery(function($) {
 <script>
 $(window).load(function() {
     $('#joyRideTipContent').joyride({
-        autoStart : <?php echo (!Yii::app()->user->isGuest and $user->loaded and $user->walkthrough == 0); ?>,
+        autoStart : <?php echo (!Yii::app()->user->isGuest and $user->loaded and $user->walkthrough == 0) ? "true" : "false"; ?>,
         postRideCallback:       function() {
             $.ajax({
                url:     "<?php echo Yii::app()->createUrl('ajax/completedWalkthrough'); ?>",

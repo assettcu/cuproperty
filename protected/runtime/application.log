@@ -2319,3 +2319,1458 @@ Stack trace:
 REQUEST_URI=/cuproperty/library/jquery/modules/cookie/jquery.cookie.js
 HTTP_REFERER=https://compass.colorado.edu/cuproperty/
 ---
+2014/02/04 12:28:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "issues".' in C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php:483
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(270): CController->missingAction('issues')
+#1 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): CController->run('issues')
+#2 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController('site/issues')
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\web\compass.colorado.edu\cuproperty\index.php(30): CApplication->run()
+#5 {main}
+REQUEST_URI=/cuproperty/issues
+---
+2014/02/04 12:52:09 [error] [exception.CException] exception 'CException' with message 'Property "CWebApplication.username" is not defined.' in C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CModule.php(105): CComponent->__get('username')
+#1 C:\web\compass.colorado.edu\cuproperty\protected\views\site\issues.php(16): CModule->__get('username')
+#2 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CBaseController.php(126): require('C:\web\compass....')
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\web\compass....', NULL, true)
+#4 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(869): CBaseController->renderFile('C:\web\compass....', NULL, true)
+#5 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(782): CController->renderPartial('issues', NULL, true)
+#6 C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php(80): CController->render('issues')
+#7 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\actions\CInlineAction.php(49): SiteController->actionIssues()
+#8 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#10 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): CController->run('issues')
+#12 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController('site/issues')
+#13 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 C:\web\compass.colorado.edu\cuproperty\index.php(30): CApplication->run()
+#15 {main}
+REQUEST_URI=/cuproperty/issues
+HTTP_REFERER=https://compass.colorado.edu/cuproperty/login?redirect=https%3A%2F%2Fcompass.colorado.edu%2Fcuproperty%2Fissues
+---
+2014/02/04 14:44:26 [error] [exception.CException] exception 'CException' with message 'SiteController and its behaviors do not have a method or closure named "get_schema".' in C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\protected\models\EmailObj.php(116): CComponent->__call('get_schema', Array)
+#1 C:\web\compass.colorado.edu\cuproperty\protected\models\EmailObj.php(116): SiteController->get_schema()
+#2 C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php(353): EmailObj->matching_schema()
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\actions\CInlineAction.php(49): SiteController->actionUpgrade()
+#4 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): CController->run('upgrade')
+#8 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController('site/upgrade')
+#9 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\web\compass.colorado.edu\cuproperty\index.php(30): CApplication->run()
+#11 {main}
+REQUEST_URI=/cuproperty/upgrade
+---
+2014/02/04 15:26:31 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''
+                    
+                    1' at line 6. The SQL statement executed was: 
+                ALTER TABLE     emails
+                ADD
+                    `emailto`
+                    varchar(50)
+                    
+                    '
+                    
+                    1
+            .
+in C:\web\compass.colorado.edu\cuproperty\protected\models\EmailObj.php (158)
+in C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php (355)
+in C:\web\compass.colorado.edu\cuproperty\index.php (30)
+2014/02/04 15:26:31 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''
+                    
+                    1' at line 6. The SQL statement executed was: 
+                ALTER TABLE     emails
+                ADD
+                    `emailto`
+                    varchar(50)
+                    
+                    '
+                    
+                    1
+            ' in C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\protected\models\EmailObj.php(158): CDbCommand->execute()
+#1 C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php(355): EmailObj->upgrade()
+#2 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\actions\CInlineAction.php(49): SiteController->actionUpgrade()
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): CController->run('upgrade')
+#7 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController('site/upgrade')
+#8 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\web\compass.colorado.edu\cuproperty\index.php(30): CApplication->run()
+#10 {main}
+REQUEST_URI=/cuproperty/upgrade
+---
+2014/02/04 15:27:29 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''
+                    
+                    AFTER emailfrom' at line 6. The SQL statement executed was: 
+                ALTER TABLE     emails
+                ADD
+                    `emailto`
+                    varchar(50)
+                    
+                    '
+                    
+                    AFTER emailfrom
+            .
+in C:\web\compass.colorado.edu\cuproperty\protected\models\EmailObj.php (158)
+in C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php (355)
+in C:\web\compass.colorado.edu\cuproperty\index.php (30)
+2014/02/04 15:27:29 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''
+                    
+                    AFTER emailfrom' at line 6. The SQL statement executed was: 
+                ALTER TABLE     emails
+                ADD
+                    `emailto`
+                    varchar(50)
+                    
+                    '
+                    
+                    AFTER emailfrom
+            ' in C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\protected\models\EmailObj.php(158): CDbCommand->execute()
+#1 C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php(355): EmailObj->upgrade()
+#2 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\actions\CInlineAction.php(49): SiteController->actionUpgrade()
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): CController->run('upgrade')
+#7 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController('site/upgrade')
+#8 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\web\compass.colorado.edu\cuproperty\index.php(30): CApplication->run()
+#10 {main}
+REQUEST_URI=/cuproperty/upgrade
+---
+2014/02/04 15:27:38 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''
+                    
+                    AFTER emailfrom' at line 6. The SQL statement executed was: 
+                ALTER TABLE     emails
+                ADD
+                    `emailto`
+                    varchar(50)
+                    
+                    '
+                    
+                    AFTER emailfrom
+            .
+in C:\web\compass.colorado.edu\cuproperty\protected\models\EmailObj.php (158)
+in C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php (355)
+in C:\web\compass.colorado.edu\cuproperty\index.php (30)
+2014/02/04 15:27:38 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''
+                    
+                    AFTER emailfrom' at line 6. The SQL statement executed was: 
+                ALTER TABLE     emails
+                ADD
+                    `emailto`
+                    varchar(50)
+                    
+                    '
+                    
+                    AFTER emailfrom
+            ' in C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\protected\models\EmailObj.php(158): CDbCommand->execute()
+#1 C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php(355): EmailObj->upgrade()
+#2 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\actions\CInlineAction.php(49): SiteController->actionUpgrade()
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): CController->run('upgrade')
+#7 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController('site/upgrade')
+#8 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\web\compass.colorado.edu\cuproperty\index.php(30): CApplication->run()
+#10 {main}
+REQUEST_URI=/cuproperty/upgrade
+---
+2014/02/04 15:27:44 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''
+                    
+                    AFTER emailfrom' at line 6. The SQL statement executed was: 
+                ALTER TABLE     emails
+                ADD
+                    `emailto`
+                    varchar(50)
+                    
+                    '
+                    
+                    AFTER emailfrom
+            .
+in C:\web\compass.colorado.edu\cuproperty\protected\models\EmailObj.php (158)
+in C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php (355)
+in C:\web\compass.colorado.edu\cuproperty\index.php (30)
+2014/02/04 15:27:44 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''
+                    
+                    AFTER emailfrom' at line 6. The SQL statement executed was: 
+                ALTER TABLE     emails
+                ADD
+                    `emailto`
+                    varchar(50)
+                    
+                    '
+                    
+                    AFTER emailfrom
+            ' in C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\protected\models\EmailObj.php(158): CDbCommand->execute()
+#1 C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php(355): EmailObj->upgrade()
+#2 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\actions\CInlineAction.php(49): SiteController->actionUpgrade()
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): CController->run('upgrade')
+#7 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController('site/upgrade')
+#8 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\web\compass.colorado.edu\cuproperty\index.php(30): CApplication->run()
+#10 {main}
+REQUEST_URI=/cuproperty/upgrade
+---
+2014/02/04 15:28:15 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''
+                    
+                    AFTER emailfrom' at line 6. The SQL statement executed was: 
+                ALTER TABLE     emails
+                ADD
+                    `emailto`
+                    varchar(50)
+                    
+                    '
+                    
+                    AFTER emailfrom
+            .
+in C:\web\compass.colorado.edu\cuproperty\protected\models\EmailObj.php (158)
+in C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php (355)
+in C:\web\compass.colorado.edu\cuproperty\index.php (30)
+2014/02/04 15:28:15 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''
+                    
+                    AFTER emailfrom' at line 6. The SQL statement executed was: 
+                ALTER TABLE     emails
+                ADD
+                    `emailto`
+                    varchar(50)
+                    
+                    '
+                    
+                    AFTER emailfrom
+            ' in C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\protected\models\EmailObj.php(158): CDbCommand->execute()
+#1 C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php(355): EmailObj->upgrade()
+#2 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\actions\CInlineAction.php(49): SiteController->actionUpgrade()
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): CController->run('upgrade')
+#7 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController('site/upgrade')
+#8 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\web\compass.colorado.edu\cuproperty\index.php(30): CApplication->run()
+#10 {main}
+REQUEST_URI=/cuproperty/upgrade
+---
+2014/02/04 15:29:19 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''
+                    
+                    AFTER emailfrom' at line 6. The SQL statement executed was: 
+                ALTER TABLE     emails
+                ADD
+                    `emailto`
+                    varchar(50)
+                    
+                    '
+                    
+                    AFTER emailfrom
+            .
+in C:\web\compass.colorado.edu\cuproperty\protected\models\EmailObj.php (158)
+in C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php (355)
+in C:\web\compass.colorado.edu\cuproperty\index.php (30)
+2014/02/04 15:29:19 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''
+                    
+                    AFTER emailfrom' at line 6. The SQL statement executed was: 
+                ALTER TABLE     emails
+                ADD
+                    `emailto`
+                    varchar(50)
+                    
+                    '
+                    
+                    AFTER emailfrom
+            ' in C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\protected\models\EmailObj.php(158): CDbCommand->execute()
+#1 C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php(355): EmailObj->upgrade()
+#2 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\actions\CInlineAction.php(49): SiteController->actionUpgrade()
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): CController->run('upgrade')
+#7 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController('site/upgrade')
+#8 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\web\compass.colorado.edu\cuproperty\index.php(30): CApplication->run()
+#10 {main}
+REQUEST_URI=/cuproperty/upgrade
+---
+2014/02/04 15:29:59 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42S21]: Column already exists: 1060 Duplicate column name 'emailto'. The SQL statement executed was: 
+                ALTER TABLE     emails
+                ADD
+                    `emailto`
+                    varchar(50)
+                    
+                    DEFAULT 'NULL'
+                    
+                    AFTER emailfrom
+            .
+in C:\web\compass.colorado.edu\cuproperty\protected\models\EmailObj.php (158)
+in C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php (355)
+in C:\web\compass.colorado.edu\cuproperty\index.php (30)
+2014/02/04 15:29:59 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S21]: Column already exists: 1060 Duplicate column name 'emailto'. The SQL statement executed was: 
+                ALTER TABLE     emails
+                ADD
+                    `emailto`
+                    varchar(50)
+                    
+                    DEFAULT 'NULL'
+                    
+                    AFTER emailfrom
+            ' in C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\protected\models\EmailObj.php(158): CDbCommand->execute()
+#1 C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php(355): EmailObj->upgrade()
+#2 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\actions\CInlineAction.php(49): SiteController->actionUpgrade()
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): CController->run('upgrade')
+#7 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController('site/upgrade')
+#8 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\web\compass.colorado.edu\cuproperty\index.php(30): CApplication->run()
+#10 {main}
+REQUEST_URI=/cuproperty/upgrade
+---
+2014/02/04 15:31:10 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42S21]: Column already exists: 1060 Duplicate column name 'emailto'. The SQL statement executed was: 
+                ALTER TABLE     emails
+                ADD
+                    `emailto`
+                    varchar(50)
+                    
+                    DEFAULT 'NULL'
+                    
+                    AFTER emailfrom
+            .
+in C:\web\compass.colorado.edu\cuproperty\protected\models\EmailObj.php (158)
+in C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php (355)
+in C:\web\compass.colorado.edu\cuproperty\index.php (30)
+2014/02/04 15:31:10 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S21]: Column already exists: 1060 Duplicate column name 'emailto'. The SQL statement executed was: 
+                ALTER TABLE     emails
+                ADD
+                    `emailto`
+                    varchar(50)
+                    
+                    DEFAULT 'NULL'
+                    
+                    AFTER emailfrom
+            ' in C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\protected\models\EmailObj.php(158): CDbCommand->execute()
+#1 C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php(355): EmailObj->upgrade()
+#2 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\actions\CInlineAction.php(49): SiteController->actionUpgrade()
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): CController->run('upgrade')
+#7 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController('site/upgrade')
+#8 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\web\compass.colorado.edu\cuproperty\index.php(30): CApplication->run()
+#10 {main}
+REQUEST_URI=/cuproperty/upgrade
+---
+2014/02/04 15:33:28 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''
+                    
+                    AFTER emailfrom' at line 6. The SQL statement executed was: 
+                ALTER TABLE     emails
+                ADD
+                    `emailto`
+                    varchar(50)
+                    NOT NULL
+                    '
+                    
+                    AFTER emailfrom
+            .
+in C:\web\compass.colorado.edu\cuproperty\protected\models\EmailObj.php (158)
+in C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php (355)
+in C:\web\compass.colorado.edu\cuproperty\index.php (30)
+2014/02/04 15:33:28 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''
+                    
+                    AFTER emailfrom' at line 6. The SQL statement executed was: 
+                ALTER TABLE     emails
+                ADD
+                    `emailto`
+                    varchar(50)
+                    NOT NULL
+                    '
+                    
+                    AFTER emailfrom
+            ' in C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\protected\models\EmailObj.php(158): CDbCommand->execute()
+#1 C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php(355): EmailObj->upgrade()
+#2 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\actions\CInlineAction.php(49): SiteController->actionUpgrade()
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): CController->run('upgrade')
+#7 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController('site/upgrade')
+#8 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\web\compass.colorado.edu\cuproperty\index.php(30): CApplication->run()
+#10 {main}
+REQUEST_URI=/cuproperty/upgrade
+---
+2014/02/04 15:33:53 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''
+                    
+                    AFTER emailfrom' at line 6. The SQL statement executed was: 
+                ALTER TABLE     emails
+                ADD
+                    `emailto`
+                    varchar(50)
+                    NOT NULL
+                    '
+                    
+                    AFTER emailfrom
+            .
+in C:\web\compass.colorado.edu\cuproperty\protected\models\EmailObj.php (158)
+in C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php (355)
+in C:\web\compass.colorado.edu\cuproperty\index.php (30)
+2014/02/04 15:33:53 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''
+                    
+                    AFTER emailfrom' at line 6. The SQL statement executed was: 
+                ALTER TABLE     emails
+                ADD
+                    `emailto`
+                    varchar(50)
+                    NOT NULL
+                    '
+                    
+                    AFTER emailfrom
+            ' in C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\protected\models\EmailObj.php(158): CDbCommand->execute()
+#1 C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php(355): EmailObj->upgrade()
+#2 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\actions\CInlineAction.php(49): SiteController->actionUpgrade()
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): CController->run('upgrade')
+#7 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController('site/upgrade')
+#8 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\web\compass.colorado.edu\cuproperty\index.php(30): CApplication->run()
+#10 {main}
+REQUEST_URI=/cuproperty/upgrade
+---
+2014/02/04 15:33:55 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''
+                    
+                    AFTER emailfrom' at line 6. The SQL statement executed was: 
+                ALTER TABLE     emails
+                ADD
+                    `emailto`
+                    varchar(50)
+                    NOT NULL
+                    '
+                    
+                    AFTER emailfrom
+            .
+in C:\web\compass.colorado.edu\cuproperty\protected\models\EmailObj.php (158)
+in C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php (355)
+in C:\web\compass.colorado.edu\cuproperty\index.php (30)
+2014/02/04 15:33:55 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''
+                    
+                    AFTER emailfrom' at line 6. The SQL statement executed was: 
+                ALTER TABLE     emails
+                ADD
+                    `emailto`
+                    varchar(50)
+                    NOT NULL
+                    '
+                    
+                    AFTER emailfrom
+            ' in C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\protected\models\EmailObj.php(158): CDbCommand->execute()
+#1 C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php(355): EmailObj->upgrade()
+#2 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\actions\CInlineAction.php(49): SiteController->actionUpgrade()
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): CController->run('upgrade')
+#7 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController('site/upgrade')
+#8 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\web\compass.colorado.edu\cuproperty\index.php(30): CApplication->run()
+#10 {main}
+REQUEST_URI=/cuproperty/upgrade
+---
+2014/02/04 15:34:44 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''
+                    
+                    AFTER emailfrom' at line 6. The SQL statement executed was: 
+                ALTER TABLE     emails
+                ADD
+                    `emailto`
+                    varchar(50)
+                    NOT NULL
+                    '
+                    
+                    AFTER emailfrom
+            .
+in C:\web\compass.colorado.edu\cuproperty\protected\models\EmailObj.php (158)
+in C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php (355)
+in C:\web\compass.colorado.edu\cuproperty\index.php (30)
+2014/02/04 15:34:44 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''
+                    
+                    AFTER emailfrom' at line 6. The SQL statement executed was: 
+                ALTER TABLE     emails
+                ADD
+                    `emailto`
+                    varchar(50)
+                    NOT NULL
+                    '
+                    
+                    AFTER emailfrom
+            ' in C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\protected\models\EmailObj.php(158): CDbCommand->execute()
+#1 C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php(355): EmailObj->upgrade()
+#2 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\actions\CInlineAction.php(49): SiteController->actionUpgrade()
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): CController->run('upgrade')
+#7 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController('site/upgrade')
+#8 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\web\compass.colorado.edu\cuproperty\index.php(30): CApplication->run()
+#10 {main}
+REQUEST_URI=/cuproperty/upgrade
+---
+2014/02/04 15:35:16 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42S21]: Column already exists: 1060 Duplicate column name 'emailto'. The SQL statement executed was: 
+                ALTER TABLE     emails
+                ADD
+                    `emailto`
+                    varchar(50)
+                    NOT NULL
+                    
+                    
+                    AFTER emailfrom
+            .
+in C:\web\compass.colorado.edu\cuproperty\protected\models\EmailObj.php (158)
+in C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php (355)
+in C:\web\compass.colorado.edu\cuproperty\index.php (30)
+2014/02/04 15:35:16 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S21]: Column already exists: 1060 Duplicate column name 'emailto'. The SQL statement executed was: 
+                ALTER TABLE     emails
+                ADD
+                    `emailto`
+                    varchar(50)
+                    NOT NULL
+                    
+                    
+                    AFTER emailfrom
+            ' in C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\protected\models\EmailObj.php(158): CDbCommand->execute()
+#1 C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php(355): EmailObj->upgrade()
+#2 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\actions\CInlineAction.php(49): SiteController->actionUpgrade()
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): CController->run('upgrade')
+#7 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController('site/upgrade')
+#8 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\web\compass.colorado.edu\cuproperty\index.php(30): CApplication->run()
+#10 {main}
+REQUEST_URI=/cuproperty/upgrade
+---
+2014/02/04 15:49:05 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42S21]: Column already exists: 1060 Duplicate column name 'emailto'. The SQL statement executed was: 
+                        ALTER TABLE     emails
+                        ADD             `emailto`
+                                        varchar(50)
+                                        NOT NULL
+                                        
+                                        
+                                        AFTER emailfrom
+                    .
+in C:\web\compass.colorado.edu\cuproperty\protected\models\EmailObj.php (189)
+in C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php (355)
+in C:\web\compass.colorado.edu\cuproperty\index.php (30)
+2014/02/04 15:49:05 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S21]: Column already exists: 1060 Duplicate column name 'emailto'. The SQL statement executed was: 
+                        ALTER TABLE     emails
+                        ADD             `emailto`
+                                        varchar(50)
+                                        NOT NULL
+                                        
+                                        
+                                        AFTER emailfrom
+                    ' in C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\protected\models\EmailObj.php(189): CDbCommand->execute()
+#1 C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php(355): EmailObj->upgrade()
+#2 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\actions\CInlineAction.php(49): SiteController->actionUpgrade()
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): CController->run('upgrade')
+#7 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController('site/upgrade')
+#8 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\web\compass.colorado.edu\cuproperty\index.php(30): CApplication->run()
+#10 {main}
+REQUEST_URI=/cuproperty/upgrade
+---
+2014/02/04 16:45:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "update".' in C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php:483
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(270): CController->missingAction('update')
+#1 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): CController->run('update')
+#2 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController('site/update')
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\web\compass.colorado.edu\cuproperty\index.php(30): CApplication->run()
+#5 {main}
+REQUEST_URI=/cuproperty/update
+---
+2014/02/05 10:46:40 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'cuproperty.emails' doesn't exist. The SQL statement executed was: 
+            DESCRIBE emails;
+        .
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (460)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (430)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\system\System.php (249)
+2014/02/05 10:47:41 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'cuproperty.emails' doesn't exist. The SQL statement executed was: 
+            DESCRIBE emails;
+        .
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (461)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (430)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\system\System.php (249)
+2014/02/05 10:47:46 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'cuproperty.emails' doesn't exist. The SQL statement executed was: 
+            DESCRIBE emails;
+        .
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (461)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (430)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\system\System.php (249)
+2014/02/05 10:48:06 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'cuproperty.emails' doesn't exist. The SQL statement executed was: 
+            DESCRIBE emails;
+        .
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (461)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (430)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\system\System.php (249)
+2014/02/05 10:49:34 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'cuproperty.emails' doesn't exist. The SQL statement executed was: 
+            DESCRIBE emails;
+        .
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (461)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (430)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\system\System.php (249)
+2014/02/05 10:49:34 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'cuproperty.emails' doesn't exist. The SQL statement executed was: 
+            DESCRIBE emails;
+        .
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (461)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\EmailObj.php (122)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\system\System.php (250)
+2014/02/05 10:49:34 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'cuproperty.emails' doesn't exist. The SQL statement executed was: 
+            DESCRIBE emails;
+        .
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (461)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (525)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\EmailObj.php (153)
+2014/02/05 10:49:56 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'cuproperty.emails' doesn't exist. The SQL statement executed was: 
+            DESCRIBE emails;
+        .
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (461)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (430)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\system\System.php (249)
+2014/02/05 10:49:56 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'cuproperty.emails' doesn't exist. The SQL statement executed was: 
+            DESCRIBE emails;
+        .
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (461)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\EmailObj.php (122)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\system\System.php (250)
+2014/02/05 10:49:56 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'cuproperty.emails' doesn't exist. The SQL statement executed was: 
+            DESCRIBE emails;
+        .
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (461)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (525)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\EmailObj.php (153)
+2014/02/05 10:50:07 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'cuproperty.emails' doesn't exist. The SQL statement executed was: 
+            DESCRIBE emails;
+        .
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (461)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (430)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\system\System.php (249)
+2014/02/05 10:50:07 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'cuproperty.emails' doesn't exist. The SQL statement executed was: 
+            DESCRIBE emails;
+        .
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (461)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\EmailObj.php (122)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\system\System.php (250)
+2014/02/05 10:50:07 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'cuproperty.emails' doesn't exist. The SQL statement executed was: 
+            DESCRIBE emails;
+        .
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (461)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (525)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\EmailObj.php (153)
+2014/02/05 10:50:22 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'cuproperty.emails' doesn't exist. The SQL statement executed was: 
+            DESCRIBE emails;
+        .
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (461)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (430)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\system\System.php (249)
+2014/02/05 10:50:22 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'cuproperty.emails' doesn't exist. The SQL statement executed was: 
+            DESCRIBE emails;
+        .
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (461)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\EmailObj.php (122)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\system\System.php (250)
+2014/02/05 10:50:22 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'cuproperty.emails' doesn't exist. The SQL statement executed was: 
+            DESCRIBE emails;
+        .
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (461)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (523)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\EmailObj.php (153)
+2014/02/05 10:50:40 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'cuproperty.emails' doesn't exist. The SQL statement executed was: 
+            DESCRIBE emails;
+        .
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (461)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (430)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\system\System.php (249)
+2014/02/05 10:50:40 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'cuproperty.emails' doesn't exist. The SQL statement executed was: 
+            DESCRIBE emails;
+        .
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (461)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\EmailObj.php (122)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\system\System.php (250)
+2014/02/05 10:50:40 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'cuproperty.emails' doesn't exist. The SQL statement executed was: 
+            DESCRIBE emails;
+        .
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (461)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (523)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\EmailObj.php (153)
+2014/02/05 10:51:53 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'cuproperty.emails' doesn't exist. The SQL statement executed was: 
+            DESCRIBE emails;
+        .
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (461)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (430)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\system\System.php (249)
+2014/02/05 10:51:53 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'cuproperty.emails' doesn't exist. The SQL statement executed was: 
+            DESCRIBE emails;
+        .
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (461)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\EmailObj.php (122)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\system\System.php (250)
+2014/02/05 10:51:53 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'cuproperty.emails' doesn't exist. The SQL statement executed was: 
+            DESCRIBE emails;
+        .
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (461)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (523)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\EmailObj.php (153)
+2014/02/05 10:52:38 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'cuproperty.emails' doesn't exist. The SQL statement executed was: 
+            DESCRIBE emails;
+        .
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (461)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (430)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\system\System.php (249)
+2014/02/05 10:52:38 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'cuproperty.emails' doesn't exist. The SQL statement executed was: 
+            DESCRIBE emails;
+        .
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (461)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\EmailObj.php (122)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\system\System.php (250)
+2014/02/05 10:52:38 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'cuproperty.emails' doesn't exist. The SQL statement executed was: 
+            DESCRIBE emails;
+        .
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (461)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (523)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\EmailObj.php (153)
+2014/02/05 10:52:47 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'cuproperty.emails' doesn't exist. The SQL statement executed was: 
+            DESCRIBE emails;
+        .
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (461)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (430)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\system\System.php (249)
+2014/02/05 10:52:47 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'cuproperty.emails' doesn't exist. The SQL statement executed was: 
+            DESCRIBE emails;
+        .
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (461)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\EmailObj.php (122)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\system\System.php (250)
+2014/02/05 10:52:47 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'cuproperty.emails' doesn't exist. The SQL statement executed was: 
+            DESCRIBE emails;
+        .
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (461)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (523)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\EmailObj.php (153)
+2014/02/05 10:52:49 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'cuproperty.emails' doesn't exist. The SQL statement executed was: 
+            DESCRIBE emails;
+        .
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (461)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (430)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\system\System.php (249)
+2014/02/05 10:52:49 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'cuproperty.emails' doesn't exist. The SQL statement executed was: 
+            DESCRIBE emails;
+        .
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (461)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\EmailObj.php (122)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\system\System.php (250)
+2014/02/05 10:52:49 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'cuproperty.emails' doesn't exist. The SQL statement executed was: 
+            DESCRIBE emails;
+        .
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (461)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (523)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\EmailObj.php (153)
+2014/02/05 10:53:44 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'cuproperty.emails' doesn't exist. The SQL statement executed was: 
+            DESCRIBE emails;
+        .
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (461)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (430)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\system\System.php (249)
+2014/02/05 10:53:44 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'cuproperty.emails' doesn't exist. The SQL statement executed was: 
+            DESCRIBE emails;
+        .
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (461)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\EmailObj.php (122)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\system\System.php (250)
+2014/02/05 10:53:44 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'cuproperty.emails' doesn't exist. The SQL statement executed was: 
+            DESCRIBE emails;
+        .
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (461)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (523)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\EmailObj.php (153)
+2014/02/05 10:55:17 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'cuproperty.emails' doesn't exist. The SQL statement executed was: 
+            DESCRIBE emails;
+        .
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (461)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (430)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\system\System.php (249)
+2014/02/05 10:55:17 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'cuproperty.emails' doesn't exist. The SQL statement executed was: 
+            DESCRIBE emails;
+        .
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (461)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\EmailObj.php (122)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\system\System.php (250)
+2014/02/05 10:55:17 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'cuproperty.emails' doesn't exist. The SQL statement executed was: 
+            DESCRIBE emails;
+        .
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (461)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (523)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\EmailObj.php (153)
+2014/02/05 10:55:17 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42S21]: Column already exists: 1060 Duplicate column name 'emailto'. The SQL statement executed was: 
+                        ALTER TABLE     emails
+                        ADD             `emailto`
+                                        varchar(50)
+                                        NOT NULL
+                                        
+                                        
+                                        AFTER emailfrom
+                    .
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (604)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\EmailObj.php (153)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\system\System.php (250)
+2014/02/05 10:55:53 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'emails' already exists. The SQL statement executed was: CREATE TABLE    emails (
+`emailid` int(255) NOT NULL auto_increment, 
+`emailfrom` varchar(50) NOT NULL, 
+`emailto` varchar(50) NOT NULL, 
+`propertyid` int(255) NOT NULL, 
+`matchedkeywords` text, 
+`date_sent` datetime NOT NULL, 
+PRIMARY KEY (`emailid`) 
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1.
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (533)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\EmailObj.php (153)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\system\System.php (250)
+2014/02/05 11:53:20 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42000]: Syntax error or access violation: 1065 Query was empty. The SQL statement executed was: .
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (667)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (478)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\system\System.php (259)
+2014/02/05 12:18:27 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'name' in 'users'. The SQL statement executed was: 
+                        ALTER TABLE     users
+                        MODIFY COLUMN   `name`
+                                        varchar(255)
+                                        NOT NULL
+                                        
+                                        
+                                        AFTER name
+                    .
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (723)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (550)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\system\System.php (259)
+2014/02/05 12:19:30 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'name' in 'users'. The SQL statement executed was: 
+                        ALTER TABLE     users
+                        MODIFY COLUMN   `name`
+                                        varchar(255)
+                                        NOT NULL
+                                        
+                                        
+                                        AFTER name
+                    .
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (723)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (550)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\system\System.php (259)
+2014/02/05 12:20:50 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'name' in 'users'. The SQL statement executed was: 
+                        ALTER TABLE     users
+                        MODIFY COLUMN   `name`
+                                        varchar(255)
+                                        NOT NULL
+                                        
+                                        
+                                        AFTER name
+                    .
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (726)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (553)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\system\System.php (259)
+2014/02/05 12:20:59 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'name' in 'users'. The SQL statement executed was: 
+                        ALTER TABLE     users
+                        MODIFY COLUMN   `name`
+                                        varchar(255)
+                                        NOT NULL
+                                        
+                                        
+                                        AFTER name
+                    .
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (726)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (553)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\system\System.php (259)
+2014/02/05 12:44:53 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'cuproperty.property' doesn't exist. The SQL statement executed was: 
+            SELECT          propertyid
+            FROM            property
+            WHERE           status = :status
+            ORDER BY        date_updated DESC;
+        .
+in C:\web\compass.colorado.edu\cuproperty\protected\models\PropertyManager.php (38)
+in C:\web\compass.colorado.edu\cuproperty\protected\views\site\index.php (10)
+in C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php (77)
+2014/02/05 12:44:53 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'cuproperty.property' doesn't exist. The SQL statement executed was: 
+            SELECT          propertyid
+            FROM            property
+            WHERE           status = :status
+            ORDER BY        date_updated DESC;
+        ' in C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\web\compass.colorado.edu\cuproperty\protected\models\PropertyManager.php(38): CDbCommand->queryAll()
+#2 C:\web\compass.colorado.edu\cuproperty\protected\views\site\index.php(10): PropertyManager->load_property()
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CBaseController.php(126): require('C:\web\compass....')
+#4 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\web\compass....', NULL, true)
+#5 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(869): CBaseController->renderFile('C:\web\compass....', NULL, true)
+#6 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#7 C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php(77): CController->render('index')
+#8 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#9 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#11 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): CController->run('')
+#13 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#14 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\web\compass.colorado.edu\cuproperty\index.php(30): CApplication->run()
+#16 {main}
+REQUEST_URI=/cuproperty/
+---
+2014/02/05 12:48:24 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'cuproperty.emails' doesn't exist. The SQL statement executed was: DESCRIBE emails.
+in C:\web\compass.colorado.edu\cuproperty\protected\models\system\System.php (201)
+in C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php (38)
+in C:\web\compass.colorado.edu\cuproperty\index.php (33)
+2014/02/05 12:48:24 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'cuproperty.emails' doesn't exist. The SQL statement executed was: 
+            DESCRIBE emails;
+        .
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (576)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (614)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (431)
+2014/02/05 12:48:24 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'cuproperty.emails' doesn't exist. The SQL statement executed was: 
+            DESCRIBE emails;
+        .
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (576)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (474)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\EmailObj.php (119)
+2014/02/05 12:48:24 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'cuproperty.emails' doesn't exist. The SQL statement executed was: 
+            DESCRIBE emails;
+        .
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (576)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (679)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (504)
+2014/02/05 12:48:25 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'cuproperty.images' doesn't exist. The SQL statement executed was: 
+            DESCRIBE images;
+        .
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (576)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (614)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (431)
+2014/02/05 12:48:25 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'cuproperty.images' doesn't exist. The SQL statement executed was: 
+            DESCRIBE images;
+        .
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (576)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (474)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\ImageObj.php (120)
+2014/02/05 12:48:25 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'cuproperty.images' doesn't exist. The SQL statement executed was: 
+            DESCRIBE images;
+        .
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (576)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (679)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (504)
+2014/02/05 12:48:25 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'cuproperty.property' doesn't exist. The SQL statement executed was: 
+            DESCRIBE property;
+        .
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (576)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (614)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (431)
+2014/02/05 12:48:25 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'cuproperty.property' doesn't exist. The SQL statement executed was: 
+            DESCRIBE property;
+        .
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (576)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (474)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\PropertyObj.php (153)
+2014/02/05 12:48:25 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'cuproperty.property' doesn't exist. The SQL statement executed was: 
+            DESCRIBE property;
+        .
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (576)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (679)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (504)
+2014/02/05 12:48:26 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'cuproperty.users' doesn't exist. The SQL statement executed was: 
+            DESCRIBE users;
+        .
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (576)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (614)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (431)
+2014/02/05 12:48:26 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'cuproperty.users' doesn't exist. The SQL statement executed was: 
+            DESCRIBE users;
+        .
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (576)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (474)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\UserObj.php (169)
+2014/02/05 12:48:26 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'cuproperty.users' doesn't exist. The SQL statement executed was: 
+            DESCRIBE users;
+        .
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (576)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (679)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (504)
+2014/02/05 12:48:28 [error] [php] Undefined property: UserObj::$name (C:\web\compass.colorado.edu\cuproperty\protected\views\site\index.php:101)
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(869): SiteController->renderFile()
+#1 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(782): SiteController->renderPartial()
+#2 C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php(63): SiteController->render()
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#4 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(286): SiteController->runAction()
+#6 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#7 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): SiteController->run()
+#8 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\web\compass.colorado.edu\cuproperty\index.php(33): CWebApplication->run()
+REQUEST_URI=/cuproperty/
+in C:\web\compass.colorado.edu\cuproperty\protected\views\site\index.php (101)
+in C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php (63)
+in C:\web\compass.colorado.edu\cuproperty\index.php (33)
+2014/02/05 12:49:37 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'cuproperty.emails' doesn't exist. The SQL statement executed was: DESCRIBE emails.
+in C:\web\compass.colorado.edu\cuproperty\protected\models\system\System.php (201)
+in C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php (38)
+in C:\web\compass.colorado.edu\cuproperty\index.php (33)
+2014/02/05 12:49:37 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'cuproperty.emails' doesn't exist. The SQL statement executed was: 
+            DESCRIBE emails;
+        .
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (576)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (614)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (431)
+2014/02/05 12:49:37 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'cuproperty.emails' doesn't exist. The SQL statement executed was: 
+            DESCRIBE emails;
+        .
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (576)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (474)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\EmailObj.php (119)
+2014/02/05 12:49:37 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'cuproperty.emails' doesn't exist. The SQL statement executed was: 
+            DESCRIBE emails;
+        .
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (576)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (679)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (504)
+2014/02/05 12:49:37 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'cuproperty.images' doesn't exist. The SQL statement executed was: 
+            DESCRIBE images;
+        .
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (576)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (614)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (431)
+2014/02/05 12:49:37 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'cuproperty.images' doesn't exist. The SQL statement executed was: 
+            DESCRIBE images;
+        .
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (576)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (474)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\ImageObj.php (120)
+2014/02/05 12:49:37 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'cuproperty.images' doesn't exist. The SQL statement executed was: 
+            DESCRIBE images;
+        .
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (576)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (679)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (504)
+2014/02/05 12:49:38 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'cuproperty.property' doesn't exist. The SQL statement executed was: 
+            DESCRIBE property;
+        .
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (576)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (614)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (431)
+2014/02/05 12:49:38 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'cuproperty.property' doesn't exist. The SQL statement executed was: 
+            DESCRIBE property;
+        .
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (576)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (474)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\PropertyObj.php (153)
+2014/02/05 12:49:38 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'cuproperty.property' doesn't exist. The SQL statement executed was: 
+            DESCRIBE property;
+        .
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (576)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (679)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (504)
+2014/02/05 12:49:39 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'cuproperty.users' doesn't exist. The SQL statement executed was: 
+            DESCRIBE users;
+        .
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (576)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (614)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (431)
+2014/02/05 12:49:39 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'cuproperty.users' doesn't exist. The SQL statement executed was: 
+            DESCRIBE users;
+        .
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (576)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (474)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\UserObj.php (169)
+2014/02/05 12:49:39 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'cuproperty.users' doesn't exist. The SQL statement executed was: 
+            DESCRIBE users;
+        .
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (576)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (679)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (504)
+2014/02/05 13:01:47 [error] [php] Undefined property: UserObj::$member (C:\web\compass.colorado.edu\cuproperty\protected\components\UserIdentity.php:66)
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\validators\CValidator.php(213): CInlineValidator->validateAttribute()
+#1 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CModel.php(159): CInlineValidator->validate()
+#2 C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php(277): LoginForm->validate()
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#4 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(286): SiteController->runAction()
+#6 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#7 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): SiteController->run()
+#8 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\web\compass.colorado.edu\cuproperty\index.php(33): CWebApplication->run()
+REQUEST_URI=/cuproperty/login?redirect=https%3A%2F%2Fcompass.colorado.edu%2Fcuproperty%2Fpost
+in C:\web\compass.colorado.edu\cuproperty\protected\components\UserIdentity.php (66)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\LoginForm.php (61)
+in C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php (277)
+2014/02/05 13:02:37 [error] [php] Undefined property: UserObj::$member (C:\web\compass.colorado.edu\cuproperty\protected\components\UserIdentity.php:66)
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\validators\CValidator.php(213): CInlineValidator->validateAttribute()
+#1 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CModel.php(159): CInlineValidator->validate()
+#2 C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php(276): LoginForm->validate()
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#4 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(286): SiteController->runAction()
+#6 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#7 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): SiteController->run()
+#8 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\web\compass.colorado.edu\cuproperty\index.php(33): CWebApplication->run()
+REQUEST_URI=/cuproperty/login?redirect=https%3A%2F%2Fcompass.colorado.edu%2Fcuproperty%2Fpost
+in C:\web\compass.colorado.edu\cuproperty\protected\components\UserIdentity.php (66)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\LoginForm.php (61)
+in C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php (276)
+2014/02/05 13:02:45 [error] [php] Undefined property: UserObj::$member (C:\web\compass.colorado.edu\cuproperty\protected\components\UserIdentity.php:66)
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\validators\CValidator.php(213): CInlineValidator->validateAttribute()
+#1 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CModel.php(159): CInlineValidator->validate()
+#2 C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php(276): LoginForm->validate()
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#4 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(286): SiteController->runAction()
+#6 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#7 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): SiteController->run()
+#8 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\web\compass.colorado.edu\cuproperty\index.php(33): CWebApplication->run()
+REQUEST_URI=/cuproperty/login
+in C:\web\compass.colorado.edu\cuproperty\protected\components\UserIdentity.php (66)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\LoginForm.php (61)
+in C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php (276)
+2014/02/05 13:03:24 [error] [php] Undefined property: UserObj::$member (C:\web\compass.colorado.edu\cuproperty\protected\components\UserIdentity.php:66)
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\validators\CValidator.php(213): CInlineValidator->validateAttribute()
+#1 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CModel.php(159): CInlineValidator->validate()
+#2 C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php(276): LoginForm->validate()
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#4 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(286): SiteController->runAction()
+#6 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#7 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): SiteController->run()
+#8 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\web\compass.colorado.edu\cuproperty\index.php(33): CWebApplication->run()
+REQUEST_URI=/cuproperty/login
+in C:\web\compass.colorado.edu\cuproperty\protected\components\UserIdentity.php (66)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\LoginForm.php (61)
+in C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php (276)
+2014/02/05 13:03:29 [error] [php] Undefined property: UserObj::$member (C:\web\compass.colorado.edu\cuproperty\protected\components\UserIdentity.php:66)
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\validators\CValidator.php(213): CInlineValidator->validateAttribute()
+#1 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CModel.php(159): CInlineValidator->validate()
+#2 C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php(276): LoginForm->validate()
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#4 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(286): SiteController->runAction()
+#6 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#7 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): SiteController->run()
+#8 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\web\compass.colorado.edu\cuproperty\index.php(33): CWebApplication->run()
+REQUEST_URI=/cuproperty/login
+in C:\web\compass.colorado.edu\cuproperty\protected\components\UserIdentity.php (66)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\LoginForm.php (61)
+in C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php (276)
+2014/02/05 13:03:51 [error] [php] Undefined property: UserObj::$watchlist (C:\web\compass.colorado.edu\cuproperty\protected\views\site\need.php:18)
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(869): SiteController->renderFile()
+#1 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(782): SiteController->renderPartial()
+#2 C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php(103): SiteController->render()
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\actions\CInlineAction.php(49): SiteController->actionNeed()
+#4 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(286): SiteController->runAction()
+#6 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#7 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): SiteController->run()
+#8 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\web\compass.colorado.edu\cuproperty\index.php(33): CWebApplication->run()
+REQUEST_URI=/cuproperty/need
+in C:\web\compass.colorado.edu\cuproperty\protected\views\site\need.php (18)
+in C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php (103)
+in C:\web\compass.colorado.edu\cuproperty\index.php (33)
+2014/02/05 13:04:00 [error] [php] Undefined property: UserObj::$member (C:\web\compass.colorado.edu\cuproperty\protected\components\UserIdentity.php:66)
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\validators\CValidator.php(213): CInlineValidator->validateAttribute()
+#1 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CModel.php(159): CInlineValidator->validate()
+#2 C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php(276): LoginForm->validate()
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#4 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(286): SiteController->runAction()
+#6 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#7 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): SiteController->run()
+#8 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\web\compass.colorado.edu\cuproperty\index.php(33): CWebApplication->run()
+REQUEST_URI=/cuproperty/login?redirect=https%3A%2F%2Fcompass.colorado.edu%2Fcuproperty%2Fpost
+in C:\web\compass.colorado.edu\cuproperty\protected\components\UserIdentity.php (66)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\LoginForm.php (61)
+in C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php (276)
+2014/02/05 13:04:39 [error] [php] Undefined property: UserObj::$member (C:\web\compass.colorado.edu\cuproperty\protected\components\UserIdentity.php:66)
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\validators\CValidator.php(213): CInlineValidator->validateAttribute()
+#1 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CModel.php(159): CInlineValidator->validate()
+#2 C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php(276): LoginForm->validate()
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#4 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(286): SiteController->runAction()
+#6 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#7 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): SiteController->run()
+#8 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\web\compass.colorado.edu\cuproperty\index.php(33): CWebApplication->run()
+REQUEST_URI=/cuproperty/login?redirect=https%3A%2F%2Fcompass.colorado.edu%2Fcuproperty%2Fpost
+in C:\web\compass.colorado.edu\cuproperty\protected\components\UserIdentity.php (66)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\LoginForm.php (61)
+in C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php (276)
+2014/02/05 13:05:02 [error] [php] Undefined property: UserObj::$member (C:\web\compass.colorado.edu\cuproperty\protected\components\UserIdentity.php:66)
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\validators\CValidator.php(213): CInlineValidator->validateAttribute()
+#1 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CModel.php(159): CInlineValidator->validate()
+#2 C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php(277): LoginForm->validate()
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#4 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(286): SiteController->runAction()
+#6 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#7 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): SiteController->run()
+#8 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\web\compass.colorado.edu\cuproperty\index.php(33): CWebApplication->run()
+REQUEST_URI=/cuproperty/login?redirect=https%3A%2F%2Fcompass.colorado.edu%2Fcuproperty%2Fpost
+in C:\web\compass.colorado.edu\cuproperty\protected\components\UserIdentity.php (66)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\LoginForm.php (61)
+in C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php (277)
+2014/02/05 13:05:11 [error] [php] Undefined property: UserObj::$member (C:\web\compass.colorado.edu\cuproperty\protected\components\UserIdentity.php:66)
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\validators\CValidator.php(213): CInlineValidator->validateAttribute()
+#1 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CModel.php(159): CInlineValidator->validate()
+#2 C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php(277): LoginForm->validate()
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#4 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(286): SiteController->runAction()
+#6 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#7 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): SiteController->run()
+#8 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\web\compass.colorado.edu\cuproperty\index.php(33): CWebApplication->run()
+REQUEST_URI=/cuproperty/login
+in C:\web\compass.colorado.edu\cuproperty\protected\components\UserIdentity.php (66)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\LoginForm.php (61)
+in C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php (277)
+2014/02/05 13:05:29 [error] [php] Undefined property: UserObj::$member (C:\web\compass.colorado.edu\cuproperty\protected\components\UserIdentity.php:66)
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\validators\CValidator.php(213): CInlineValidator->validateAttribute()
+#1 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CModel.php(159): CInlineValidator->validate()
+#2 C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php(276): LoginForm->validate()
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#4 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(286): SiteController->runAction()
+#6 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#7 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): SiteController->run()
+#8 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\web\compass.colorado.edu\cuproperty\index.php(33): CWebApplication->run()
+REQUEST_URI=/cuproperty/login
+in C:\web\compass.colorado.edu\cuproperty\protected\components\UserIdentity.php (66)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\LoginForm.php (61)
+in C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php (276)
+2014/02/05 13:05:52 [error] [php] Undefined property: UserObj::$member (C:\web\compass.colorado.edu\cuproperty\protected\components\UserIdentity.php:66)
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\validators\CValidator.php(213): CInlineValidator->validateAttribute()
+#1 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CModel.php(159): CInlineValidator->validate()
+#2 C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php(276): LoginForm->validate()
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#4 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(286): SiteController->runAction()
+#6 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#7 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): SiteController->run()
+#8 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\web\compass.colorado.edu\cuproperty\index.php(33): CWebApplication->run()
+REQUEST_URI=/cuproperty/login
+in C:\web\compass.colorado.edu\cuproperty\protected\components\UserIdentity.php (66)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\LoginForm.php (61)
+in C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php (276)
+2014/02/05 13:05:54 [error] [php] Undefined property: UserObj::$watchlist (C:\web\compass.colorado.edu\cuproperty\protected\views\site\need.php:18)
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(869): SiteController->renderFile()
+#1 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(782): SiteController->renderPartial()
+#2 C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php(103): SiteController->render()
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\actions\CInlineAction.php(49): SiteController->actionNeed()
+#4 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(286): SiteController->runAction()
+#6 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#7 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): SiteController->run()
+#8 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\web\compass.colorado.edu\cuproperty\index.php(33): CWebApplication->run()
+REQUEST_URI=/cuproperty/need
+in C:\web\compass.colorado.edu\cuproperty\protected\views\site\need.php (18)
+in C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php (103)
+in C:\web\compass.colorado.edu\cuproperty\index.php (33)
+2014/02/05 13:05:57 [error] [php] Undefined property: UserObj::$watchlist (C:\web\compass.colorado.edu\cuproperty\protected\views\site\need.php:18)
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(869): SiteController->renderFile()
+#1 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(782): SiteController->renderPartial()
+#2 C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php(103): SiteController->render()
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\actions\CInlineAction.php(49): SiteController->actionNeed()
+#4 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(286): SiteController->runAction()
+#6 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#7 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): SiteController->run()
+#8 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\web\compass.colorado.edu\cuproperty\index.php(33): CWebApplication->run()
+REQUEST_URI=/cuproperty/need
+in C:\web\compass.colorado.edu\cuproperty\protected\views\site\need.php (18)
+in C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php (103)
+in C:\web\compass.colorado.edu\cuproperty\index.php (33)
+2014/02/05 13:06:01 [error] [php] Undefined property: UserObj::$watchlist (C:\web\compass.colorado.edu\cuproperty\protected\views\site\need.php:18)
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(869): SiteController->renderFile()
+#1 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(782): SiteController->renderPartial()
+#2 C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php(103): SiteController->render()
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\actions\CInlineAction.php(49): SiteController->actionNeed()
+#4 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(286): SiteController->runAction()
+#6 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#7 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): SiteController->run()
+#8 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\web\compass.colorado.edu\cuproperty\index.php(33): CWebApplication->run()
+REQUEST_URI=/cuproperty/need
+in C:\web\compass.colorado.edu\cuproperty\protected\views\site\need.php (18)
+in C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php (103)
+in C:\web\compass.colorado.edu\cuproperty\index.php (33)
+2014/02/05 13:06:32 [error] [php] Undefined property: UserObj::$watchlist (C:\web\compass.colorado.edu\cuproperty\protected\views\site\need.php:18)
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(869): SiteController->renderFile()
+#1 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(782): SiteController->renderPartial()
+#2 C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php(103): SiteController->render()
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\actions\CInlineAction.php(49): SiteController->actionNeed()
+#4 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(286): SiteController->runAction()
+#6 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#7 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): SiteController->run()
+#8 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\web\compass.colorado.edu\cuproperty\index.php(33): CWebApplication->run()
+REQUEST_URI=/cuproperty/need
+in C:\web\compass.colorado.edu\cuproperty\protected\views\site\need.php (18)
+in C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php (103)
+in C:\web\compass.colorado.edu\cuproperty\index.php (33)
+2014/02/05 13:06:46 [error] [php] Undefined property: UserObj::$watchlist (C:\web\compass.colorado.edu\cuproperty\protected\views\site\need.php:18)
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(869): SiteController->renderFile()
+#1 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(782): SiteController->renderPartial()
+#2 C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php(103): SiteController->render()
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\actions\CInlineAction.php(49): SiteController->actionNeed()
+#4 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(286): SiteController->runAction()
+#6 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#7 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): SiteController->run()
+#8 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\web\compass.colorado.edu\cuproperty\index.php(33): CWebApplication->run()
+REQUEST_URI=/cuproperty/need
+in C:\web\compass.colorado.edu\cuproperty\protected\views\site\need.php (18)
+in C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php (103)
+in C:\web\compass.colorado.edu\cuproperty\index.php (33)
+2014/02/05 13:07:10 [error] [php] Undefined property: UserObj::$watchlist (C:\web\compass.colorado.edu\cuproperty\protected\views\site\need.php:18)
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(869): SiteController->renderFile()
+#1 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(782): SiteController->renderPartial()
+#2 C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php(103): SiteController->render()
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\actions\CInlineAction.php(49): SiteController->actionNeed()
+#4 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(286): SiteController->runAction()
+#6 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#7 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): SiteController->run()
+#8 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\web\compass.colorado.edu\cuproperty\index.php(33): CWebApplication->run()
+REQUEST_URI=/cuproperty/need
+in C:\web\compass.colorado.edu\cuproperty\protected\views\site\need.php (18)
+in C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php (103)
+in C:\web\compass.colorado.edu\cuproperty\index.php (33)
+2014/02/05 13:07:36 [error] [php] Undefined property: UserObj::$member (C:\web\compass.colorado.edu\cuproperty\protected\components\UserIdentity.php:66)
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\validators\CValidator.php(213): CInlineValidator->validateAttribute()
+#1 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CModel.php(159): CInlineValidator->validate()
+#2 C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php(277): LoginForm->validate()
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#4 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(286): SiteController->runAction()
+#6 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#7 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): SiteController->run()
+#8 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\web\compass.colorado.edu\cuproperty\index.php(33): CWebApplication->run()
+REQUEST_URI=/cuproperty/login
+in C:\web\compass.colorado.edu\cuproperty\protected\components\UserIdentity.php (66)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\LoginForm.php (61)
+in C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php (277)
+2014/02/05 13:10:29 [error] [php] Undefined variable: dbload (C:\web\compass.colorado.edu\cuproperty\protected\components\UserIdentity.php:62)
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\validators\CValidator.php(213): CInlineValidator->validateAttribute()
+#1 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CModel.php(159): CInlineValidator->validate()
+#2 C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php(277): LoginForm->validate()
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#4 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(286): SiteController->runAction()
+#6 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#7 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): SiteController->run()
+#8 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\web\compass.colorado.edu\cuproperty\index.php(33): CWebApplication->run()
+REQUEST_URI=/cuproperty/login
+in C:\web\compass.colorado.edu\cuproperty\protected\components\UserIdentity.php (62)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\LoginForm.php (61)
+in C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php (277)
