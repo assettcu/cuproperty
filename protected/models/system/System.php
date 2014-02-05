@@ -14,12 +14,24 @@ class System
     }
     
     public function init() {
-        $this->objects = array(
-            new EmailObj(),
-            new ImageObj(),
-            new PropertyObj(),
-            new UserObj()
-        );
+        try {
+            Yii::app()->db->setActive(true);
+            # !IMPORTANT! These objects must be instantiated in order for the system
+            # to recognize the connections to the tables.
+            $this->objects = array(
+                new EmailObj(),
+                new ImageObj(),
+                new IssueObj(),
+                new PropertyObj(),
+                new UserObj()
+            );
+        }
+        catch(Exception $e) {
+            $this->set_error("System is unhealthy: ".$e->getMessage());
+            return false;   
+        }
+        
+        return true;
     }
     
     public function install()
@@ -64,6 +76,7 @@ class System
                 $conn = new CDbConnection($dsn, $username, $password);
                 $conn->active = true;
                 $conn->setActive(true);
+                Yii::app()->db->setActive(false);
             }
             catch(Exception $e) {
                 throw new Exception("Could not connect to database. Make sure you have created the database first. Details: ".$e->getMessage());
@@ -88,8 +101,8 @@ class System
             
             # Make sure to only overwrite if explicitly asked to
             $config_ext = Yii::app()->basePath."\\config\\main-ext.php";
-            if(is_file($config_ext) and !isset($_REQUEST["overwrite"])) {
-                throw new Exception("Database configuration already exists. Select the overwrite option to overwrite this config.");
+            if(is_file($config_ext)) {
+                throw new Exception("Database configuration already exists. Delete this configuration in order to install this application.");
             }
             
             # Open up the file and write the new configuration.
@@ -99,55 +112,8 @@ class System
             fwrite($handle,"; ?>");
             fclose($handle);
             
-            # Initialize the System
-            $this->init();
-            
-            # These are the required tables for installation
-            foreach($this->objects as $obj) {
-                $tables[] = $obj->table;
-            }
-            
-            # Loop through each of the tables
-            foreach($tables as $table) {
-                
-                # Do a simple query to determine if table exists already
-                $q = "DESCRIBE ".$prefix.$table;
-                $command = $conn->createCommand($q);
-                try {
-                    $command->queryAll();
-                }
-                # This will invoke if a SQL error occured
-                catch(Exception $e) {
-                    # Code 42 is the code that says the table does not exist
-                    if($e->getCode() == 42) {
-                        # Add table to the database using Yii transactions
-                        $transaction = $conn->beginTransaction();
-                        try {
-                            # Custom function to get table specific querys
-                            $q = get_table_sql($table);
-                            $command = $conn->createCommand($q);
-                            $command->execute();
-                            $transaction->commit();
-                            
-                        # If there was an error adding the table to the database exit gracefully
-                        } catch(Exception $f) {
-                            $transaction->rollback();
-                            throw new Exception("Could not install tables: ".$f->getMessage());
-                            return;
-                        }
-                    }
-                    # Any other code is probably something we should take a look at
-                    else {
-                        throw new Exception("Could not install tables: ".$e->getMessage());
-                    }
-                }
-            }
-            
-            # If we made it to here, installation is a success!
-            Yii::app()->user->setFlash("success","Successfully installed CU Property application.");
-            $this->redirect(Yii::app()->createUrl('index'));
-            exit;
-            
+            # Make read-only
+            chmod($config_ext, 0060);
         } 
         # Catch all the errors and output them as Flashes
         catch(Exception $e) {
@@ -155,6 +121,7 @@ class System
             return false;
         }
         
+        # If we made it to here, installation is a success!
         return true;
     }
     

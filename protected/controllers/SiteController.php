@@ -42,12 +42,12 @@ class SiteController extends Controller
                 # Update the system
                 if($system->update()) {
                     if(YII_DEBUG) {
-                        Yii::app()->user->setFlash("warning","The system updated successfully.");
+                        Yii::app()->user->setFlash("warning","The system has automatically updated the database and table structures.");
                     }
                 }
                 else {
                     Yii::app()->user->setFlash("error","The system is not configured properly and could not update itself. Error Log: ".$system->get_error());
-                    //$this->redirect(Yii::app()->createUrl('error'));
+                    $this->redirect(Yii::app()->createUrl('error'));
                     exit;
                 }
             }
@@ -141,7 +141,7 @@ class SiteController extends Controller
             
             # Install the system
             if($system->install()) {
-                Yii::app()->user->setFlash("success","Installation successfully completed!");
+                # Redirect to main page, the system will catch that we have no tables installed and will install them.
                 $this->redirect(Yii::app()->baseUrl);
                 exit;
             }
