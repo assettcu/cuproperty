@@ -7,7 +7,13 @@ class System
     private $error_flag     = FALSE;
     private $error_msg      = "";
     
-    public function __construct() {
+    public function __construct($init=TRUE) {
+        if($init===TRUE) {
+            $this->init();
+        }
+    }
+    
+    public function init() {
         $this->objects = array(
             new EmailObj(),
             new ImageObj(),
@@ -92,6 +98,9 @@ class System
             fwrite($handle,var_export($db_params,true));
             fwrite($handle,"; ?>");
             fclose($handle);
+            
+            # Initialize the System
+            $this->init();
             
             # These are the required tables for installation
             foreach($this->objects as $obj) {

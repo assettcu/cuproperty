@@ -32,8 +32,8 @@ class SiteController extends Controller
 
     protected function beforeAction($event)
     {
-        # Do this for every page except the update page
-        if($event->getId() != "update" and $event->getId() != "error") {
+        # Do this for every page except the update, error, and install pages
+        if($event->getId() != "update" and $event->getId() != "error" and $event->getId() != "install") {
             # Takes ~0.15 seconds to check system
             $system = new System;
             if(!$system->healthy()) {
@@ -136,7 +136,10 @@ class SiteController extends Controller
         
         # Submitted form. Technically only one stage but verifies form was submitted.
         if(isset($_REQUEST["stage"]) and $_REQUEST["stage"] == "init") {
-            $system = new System;
+            # Create a new System without initializing
+            $system = new System(false);
+            
+            # Install the system
             if($system->install()) {
                 Yii::app()->user->setFlash("success","Installation successfully completed!");
                 $this->redirect(Yii::app()->baseUrl);
