@@ -76,7 +76,6 @@ class System
                 $conn = new CDbConnection($dsn, $username, $password);
                 $conn->active = true;
                 $conn->setActive(true);
-                Yii::app()->db->setActive(false);
             }
             catch(Exception $e) {
                 throw new Exception("Could not connect to database. Make sure you have created the database first. Details: ".$e->getMessage());
