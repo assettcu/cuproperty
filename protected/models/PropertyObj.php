@@ -32,6 +32,9 @@ class PropertyObj extends FactoryObj
     # Sets the default autoincrement when creating the table
     private $autoincrement = "1000";
     
+    # Which field was errored, if any
+    public $error_field = "";
+    
     public function __construct($propertyid=null)
     {
         parent::__construct("propertyid","property",$propertyid);
@@ -192,18 +195,23 @@ class PropertyObj extends FactoryObj
     public function run_check()
     {
         if($this->department == "") {
+            $this->error_field = "department";
             return !$this->set_error("Department/Program name cannot be empty");
         }
         if($this->contactname == "") {
+            $this->error_field = "contactname";
             return !$this->set_error("Contact Name cannot be empty.");
         }
         if($this->contactemail == "") {
+            $this->error_field = "contactemail";
             return !$this->set_error("Contact Email cannot be empty.");
         }
         if(!preg_match("/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i",$this->contactemail)) {
+            $this->error_field = "contactemail";
             return !$this->set_error("Contact Email is malformed or incorrect. Check to make sure it is valid.");
         }
         if($this->description == "") {
+            $this->error_field = "description";
             return !$this->set_error("Description of CU Property cannot be empty.");
         }
         return true;

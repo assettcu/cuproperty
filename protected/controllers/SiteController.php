@@ -179,6 +179,7 @@ class SiteController extends Controller
 		# Initialize variables
         $params = array();
         $property = new PropertyObj();
+        $error = "";
         
 		# Setup page if we're editing an existing post
         if(isset($_GET["id"])) {
@@ -188,69 +189,78 @@ class SiteController extends Controller
             # Could not find post
             if(!$property->loaded) {
                 Yii::app()->user->setFlash("error","Could not find post with this id.");
+                $this->redirect(Yii::app()->baseUrl);
+                exit;
             }
         }
         
-		# If user submitted form...
-        if(isset($_POST["propertyform"])) {
-            	
-            // StdLib::vdump($_POST);
-            
-            # If the user set up the form to remove post
-            if(isset($_POST["remove-property"]) and $_POST["remove-property"]==1) {
-                $property->status = "removed";
-                if(!$property->save()) {
-                    Yii::app()->user->setFlash("error",$property->get_error());
-                } else {
-                    Yii::app()->user->setFlash("success","Successfully removed post.");
-                    $this->redirect(Yii::app()->createUrl('index'));
-                    exit;
-                }
-				
-			# Otherwise lets save the updated/new post information
-            } else {
-            	
-            	# Set property values from form
-                $property->department       = $_POST["department"];
-                $property->contactname      = $_POST["contactname"];
-                $property->contactemail     = $_POST["contactemail"];
-                $property->description      = $_POST["description"];
+        try {
+		    # If user submitted form...
+            if(isset($_POST["propertyform"])) {
                 
-                # Save post
-                if(!$property->save()) {
-                    Yii::app()->user->setFlash("error",$property->get_error());
-                    goto render_property_view;
-                }
-                
-                # Save the image files
-                $count = 0;
-                while(isset($_POST["html5_uploader_".$count."_tmpname"])) {
-                    $image = new ImageObj();
-                    $image->propertyid = $property->propertyid;
-                    $image->location = "images/property/".Yii::app()->user->name."/".$_POST["html5_uploader_".$count."_tmpname"];
-                    $image->sorder = $count;
-                    $image->who_uploaded = Yii::app()->user->name;
-                    $image->date_uploaded = date("Y-m-d H:i:s");
-                    if(!$image->save()) {
-                        Yii::app()->user->setFlash("error","Error: ".$image->get_error());
+                # If the user set up the form to remove post
+                if(isset($_POST["remove-property"]) and $_POST["remove-property"]==1) {
+                    $property->status = "removed";
+                    if(!$property->save()) {
+                        $error = $property->error_field;
+                        throw new Exception($property->get_error());
+                    } else {
+                        Yii::app()->user->setFlash("success","Successfully removed post.");
+                        $this->redirect(Yii::app()->createUrl('index'));
+                        exit;
                     }
-                    $count++;
-                }
-                
-				# If no errors occured then run cron, set flash, and redirect home
-                if(!Yii::app()->user->hasFlash("error")) {
-                    Cron::run_cron();                                      
-                    Yii::app()->user->setFlash("success","Successfully updated CU Property advertisement.");
-                    $this->redirect(Yii::app()->createUrl('index'));
-                    exit;
+    				
+    			# Otherwise lets save the updated/new post information
+                } else {
+                	
+                	# Set property values from form
+                    $property->department       = $_POST["department"];
+                    $property->contactname      = $_POST["contactname"];
+                    $property->contactemail     = $_POST["contactemail"];
+                    $property->description      = $_POST["description"];
+                    
+                    # Save post
+                    if(!$property->save()) {
+                        $error = $property->error_field;
+                        throw new Exception($property->get_error());
+                    }
+                    
+                    # Save the image files
+                    $count = 0;
+                    while(isset($_POST["html5_uploader_".$count."_tmpname"])) {
+                        $image = new ImageObj();
+                        $image->propertyid = $property->propertyid;
+                        $image->location = "images/property/".Yii::app()->user->name."/".$_POST["html5_uploader_".$count."_tmpname"];
+                        $image->sorder = $count;
+                        $image->who_uploaded = Yii::app()->user->name;
+                        $image->date_uploaded = date("Y-m-d H:i:s");
+                        if(!$image->save()) {
+                            throw new Exception("Error saving image: ".$image->get_error());
+                        }
+                        $count++;
+                    }
+                    
+    				# If no errors occured then run cron, set flash, and redirect home
+                    if(!Yii::app()->user->hasFlash("error")) {
+                        # Run Cron which will update every user's watchlists
+                        Cron::run_cron();                   
+                        # Success message and redirect!                   
+                        Yii::app()->user->setFlash("success","Successfully updated CU Property advertisement.");
+                        $this->redirect(Yii::app()->createUrl('index'));
+                        exit;
+                    }
                 }
             }
         }
-        
-		# Goto statement to view property page
-        render_property_view:
+        catch(Exception $e) {
+            Yii::app()->user->setFlash("error",$e->getMessage());
+        }
       
+        # Attach the loaded variables for the view
         $params["property"] = $property;
+        $params["error"] = $error;
+        
+        # Load the view
         $this->render('post',$params);
     }
 

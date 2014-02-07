@@ -7,6 +7,7 @@ $user = new UserObj(Yii::app()->user->name);
 # Load success/warning/error messages
 $flashes = new Flashes();
 $flashes->render();
+
 ?>
 
 <!-- Load Queue widget CSS and jQuery -->
@@ -39,7 +40,7 @@ $flashes->render();
         </tr>
         <?php endif; ?>
         <tr>
-            <th><div>Department/Program</div></th>
+            <th><div  <?php echo ($error == "department") ? 'class="error"' : ''; ?>>Department/Program</div></th>
             <td><input type="text" name="department" id="department" value="<?php echo @$property->department; ?>" /></td>
         </tr>
         <tr>
@@ -50,15 +51,15 @@ $flashes->render();
             </td>
         </tr>
         <tr>
-            <th><div>Contact Name</div></th>
+            <th><div <?php echo ($error == "contactname") ? 'class="error"' : ''; ?>>Contact Name</div></th>
             <td><input type="text" name="contactname" id="contactname" value="<?php echo @$property->contactname; ?>" /></td>
         </tr>
         <tr>
-            <th><div>Contact Email</div></th>
+            <th><div <?php echo ($error == "contactemail") ? 'class="error"' : ''; ?>>Contact Email</div></th>
             <td><input type="text" name="contactemail" id="contactemail" value="<?php echo @$property->contactemail; ?>" /></td>
         </tr>
         <tr>
-            <th><div>Description of CU Property</div></th>
+            <th><div <?php echo ($error == "description") ? 'class="error"' : ''; ?>>Description of CU Property</div></th>
             <td>
                 <textarea name="description" id="description" rows="8" cols="100" ><?php echo @$property->description; ?></textarea>
             </td>

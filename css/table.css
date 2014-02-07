@@ -114,3 +114,14 @@ div.button-container button {
 table#post-form-table tr td textarea {
     font-family: Verdana, Geneva, sans-serif;
 }
+table#post-form-table tr th div.highlight {
+	border:2px solid #ffcc33;
+	color:#ffcc33;
+	background-color:#fffcf0;
+	font-weight:bold;
+}
+table#post-form-table tr th div.error {
+	border:2px solid #CC0000;
+	background-color:#fff0f0;
+	color:#CC0000;
+}
