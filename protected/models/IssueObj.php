@@ -16,7 +16,6 @@ class IssueObj extends FactoryObj
      * @return  (array)
      */
     public function get_schema() {
-        # Schema version f75e0de0221fb5b3a87d543601a5e885
         return array(
             array(
                 "Field"     => "issueid",
@@ -67,6 +66,14 @@ class IssueObj extends FactoryObj
                 "Extra"     => "",
             ),
             array(
+                "Field"     => "date_submitted",
+                "Type"      => "datetime",
+                "Null"      => "NO",
+                "Key"       => "",
+                "Default"   => NULL,
+                "Extra"     => "",
+            ),
+            array(
                 "Field"     => "comment",
                 "Type"      => "text",
                 "Null"      => "YES",
@@ -83,7 +90,7 @@ class IssueObj extends FactoryObj
                 "Extra"     => "",
             ),
             array(
-                "Field"     => "date_submitted",
+                "Field"     => "date_commented",
                 "Type"      => "datetime",
                 "Null"      => "NO",
                 "Key"       => "",
@@ -104,5 +111,29 @@ class IssueObj extends FactoryObj
     public function upgrade()
     {
         return parent::upgrade();
+    }
+    
+    public function pre_save()
+    {
+        if(!$this->is_valid_id()) {
+            $this->date_submitted = date("Y-m-d H:i:s");
+        }
+    }
+    
+    public function run_check()
+    {
+        if(!isset($this->name) or $this->name == "") {
+            $this->error_field = "contactname";
+            return !$this->set_error("Contact Name cannot be empty.");
+        }
+        if(!isset($this->email) or $this->email == "") {
+            $this->error_field = "contactemail";
+            return !$this->set_error("Contact Email cannot be empty.");
+        }
+        if(!isset($this->description) or $this->description == "") {
+            $this->error_field = "description";
+            return !$this->set_error("Description of the issue/comment cannot be empty.");
+        }
+        return true;
     }
 }

@@ -9,3 +9,9 @@ $this->pageTitle=Yii::app()->name . ' - Error';
 $flashes = new Flashes;
 $flashes->render();
 ?>
+
+<div class="ui-state-error ui-corner-all notice">
+    <pre>
+        <?php var_dump($error); ?>
+    </pre>
+</div>

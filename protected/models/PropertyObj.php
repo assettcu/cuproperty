@@ -50,7 +50,6 @@ class PropertyObj extends FactoryObj
      * @return  (array)
      */
     public function get_schema() {
-        # Schema version 4f19fc27355339ab98b7a695eb3b5fce
         return array(
             array(
                 "Field"     => "propertyid",
@@ -267,6 +266,18 @@ class PropertyObj extends FactoryObj
         }
         
         return $this->images;
+    }
+    
+    /**
+     * Get Poster
+     * 
+     * Returns the poster's user information in the User object.
+     * 
+     * @return  (object[UserObj])
+     */
+    public function get_poster()
+    {
+        return new UserObj(@$this->postedby);
     }
     
 }

@@ -183,6 +183,58 @@ class UserObj extends FactoryObj
 		$login = new LoginObj();
 		$login->login($this->username);
 	}
+    
+    /**
+     * Returns the equivalent text for permission levels
+     */
+    public function permission()
+    {
+        $permission_levels = array(
+            "10" => "admin",
+            "3"  => "manager",
+            "1"  => "basic",
+            "0"  => "banned",
+        );
+        if(!array_key_exists($this->permission, $permission_levels)) {
+            return "unknown";
+        }
+        return $permission_levels[$this->permission];
+    }
+    
+    public function active()
+    {
+        return ($this->active==1) ? "active" : "inactive";
+    }
+    
+    public function num_emails()
+    {
+        $conn = Yii::app()->db;
+        $query = "
+            SELECT      COUNT(*)
+            FROM        {{emails}}
+            WHERE       emailfrom = :emailfrom
+        ";
+        $command = $conn->createCommand($query);
+        $command->bindParam(":emailfrom",$this->username);
+        return $command->queryScalar();
+    }
+    
+    public function num_postings()
+    {
+        $conn = Yii::app()->db;
+        $query = "
+            SELECT      COUNT(*)
+            FROM        {{property}}
+            WHERE       postedby = :postedby
+        ";
+        $command = $conn->createCommand($query);
+        $command->bindParam(":postedby",$this->username);
+        return $command->queryScalar();
+    }
+    
+    /**
+     * Below are the User Encryption Functions.
+     */
 
 	function create_hash($password)
 	{

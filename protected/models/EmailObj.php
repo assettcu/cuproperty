@@ -156,8 +156,7 @@ As of <?php echo StdLib::format_date($property->date_updated,"normal");?>
             
             $mail = new Mail;
             if($mail->send_mail($email_from,$email_to,$email_subject,$email_text)) {
-            	$values = array_values($email_from);
-                $this->emailfrom = array_pop($values);
+                $this->emailfrom = $user->username;
                 $this->email_to = $email_to;
                 $this->propertyid = $property->propertyid;
                 $this->date_sent = date("Y-m-d H:i:s");

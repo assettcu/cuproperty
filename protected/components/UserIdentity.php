@@ -35,6 +35,7 @@ class UserIdentity extends CUserIdentity
         if($adauth->authenticate($username, $password)){
             
             # !Important! User groups and their permission levels
+            # You can add your own AD Groups if you manage admin accounts through them
             $valid_groups = array(
                 "ASSETT-Programming"=>10,
                 "ASSETT-Admins"=>10,
@@ -43,6 +44,7 @@ class UserIdentity extends CUserIdentity
                 "ASSETT-Staff"=>3,
                 "ASSETT-ATCs"=>3,
                 "ASSETT-Design"=>3,
+                "ASSETT-Old"=>1,
             );
             
             # Empty for now
@@ -71,9 +73,26 @@ class UserIdentity extends CUserIdentity
             }
                 
             if(!$this->errorCode) {
+                /**
+                 * Load the system and check if an admin account exists (do not need to load each table object)
+                 * No users = no admin account, make the first person to login the user account if in DEBUG mode
+                 * This would be a security issue if someone leaves a production site in DEBUG mode and there's a fresh install
+                 * which is very unlikely.
+                 */
+                $system = new System(false);
+                if($system->count_users() == 0 and YII_DEBUG) {
+                    $user->permission = 10;
+                }
+                # Default the watchlist to their username
+                if(!$user->loaded) {
+                    $user->watchlist = $user->username;
+                }
+                # Continue to create the user
                 $user->last_login = date("Y-m-d H:i:s");
                 $user->attempts = 0;
                 $user->save();
+                
+                # After saving, reload the user to pull any information that automatically added to the database
                 $user->load();
             }
             

@@ -40,7 +40,7 @@ $flashes->render();
         </tr>
         <?php endif; ?>
         <tr>
-            <th><div  <?php echo ($error == "department") ? 'class="error"' : ''; ?>>Department/Program</div></th>
+            <th><div <?php echo ($error == "department") ? 'class="error"' : ''; ?>>Department/Program</div></th>
             <td><input type="text" name="department" id="department" value="<?php echo @$property->department; ?>" /></td>
         </tr>
         <tr>

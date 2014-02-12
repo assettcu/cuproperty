@@ -1,6 +1,9 @@
 <?php
 # Theme name from Jquery UI themes
 $theme = "bluebird";
+if(!Yii::app()->user->isGuest) {
+    $user = new UserObj(Yii::app()->user->name);
+}
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
@@ -19,6 +22,7 @@ $theme = "bluebird";
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/main.css" />
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/table.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/admin.css" />
 
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 
@@ -57,7 +61,10 @@ $theme = "bluebird";
 				<?php else: ?>
 				<a href="<?=Yii::app()->createUrl('logout')?>" id="mainmenu-login">Logout (<?=Yii::app()->user->name?>)</a>
 				<?php endif; ?>
-                <a href="<?=Yii::app()->createUrl('need');?>" id="mainmenu-need">Need?</a>
+				<?php if(!Yii::app()->user->isGuest and isset($user) and $user->permission >= 10): ?>
+                <a href="<?=Yii::app()->createUrl('admin/main');?>" id="mainmenu-admin">Administration</a>
+                <?php endif; ?>
+                <a href="<?=Yii::app()->createUrl('watchlist');?>" id="mainmenu-need">Watchlist</a>
                 <a href="<?=Yii::app()->createUrl('post');?>" id="mainmenu-addprop">Add CU Property</a>
 				<a href="<?=Yii::app()->baseUrl;?>/" id="mainmenu-home">Home</a>
 			</div>
@@ -70,11 +77,11 @@ $theme = "bluebird";
 	<div class="clear"></div>
 
 	<div id="footer">
-		<a id="assettlogo" href="http://assett.colorado.edu"></a>
-		<div style="padding-top:10px;">
+		<a id="assettlogo" href="http://assett.colorado.edu" target="_blank"></a>
+		<div style="padding-top:1px;">
 			Copyright &copy; <?php echo date('Y'); ?> by the University of Colorado Boulder.<br/>
-			Developed by the <a href="http://assett.colorado.edu">ASSETT program</a><br/>
-			Having issues? Contact the developers by leaving an issue ticket.
+			Developed by the <a href="http://assett.colorado.edu" target="_blank">ASSETT program</a> in collaboration with <a href="http://www.colorado.edu/fm/distribution-center/property-services" target="_blank">Property Services</a>.<br/>
+			Having issues? Contact the developers by leaving us <a href="<?php echo Yii::app()->createUrl('feedback'); ?>" id="footer-feedback-link">feedback</a>.
 		</div>
 	</div><!-- footer -->
 

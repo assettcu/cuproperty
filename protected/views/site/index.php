@@ -23,8 +23,7 @@ if(!Yii::app()->user->isGuest) {
     <thead>
         <tr>
             <th class="calign" width="50px">Post ID</th>
-            <th width="200px" id="haves-table-dept-header">Department/Program</th>
-            <th width="280px" id="haves-table-contact-header">Contact</th>
+            <th width="250px" id="haves-table-contact-header">Contact</th>
             <th id="haves-table-property-header">CU Property</th>
             <th class="calign" width="180px">Last Updated</th>
         </tr>
@@ -34,32 +33,36 @@ if(!Yii::app()->user->isGuest) {
         <?php $a=0; foreach($props as $property): $a++; ?>
             <tr class="<?php echo ($a%2==0) ? 'odd' : 'even'; ?>">
                 <td class="calign propid">
+                    <span class="postid"><?php echo $property->propertyid; ?></span>
+                </td>
+                <td class="tvalign lalign" style="padding-bottom:15px;">
                     <?php if(Yii::app()->user->name == $property->postedby) : ?>
                         <span title="You are the one who posted this advertisement">
                             <?php echo StdLib::load_image("star","16px","16px"); ?>
                         </span>
                     <?php endif; ?>
-                    <span class="postid"><?php echo $property->propertyid; ?></span>
-                </td>
-                <td><?php echo $property->department; ?></td>
-                <td>
+                    <span class="hint"><i><?php echo $property->department; ?></i></span><br/>
                     <span class="contactname"><?php echo $property->contactname; ?></span><br/>
                     <span class="contactemail"><?php echo $property->contactemail; ?></span>
                     <?php if(!Yii::app()->user->isGuest and $property->postedby != Yii::app()->user->name): ?>
-                        <a href="#" class="email-contact" title="Email this contact."><?php echo StdLib::load_image("mail_next","16px","16px"); ?></a>
+                        <a href="mailto:<?php echo $property->contactemail; ?>" class="email-contact" title="Email this contact.">
+                            <?php echo StdLib::load_image("mail_next","16px","16px"); ?>
+                        </a>
+                    <?php elseif(!Yii::app()->user->isGuest and $property->postedby == Yii::app()->user->name): ?>
+                        <br/><a href="<?=Yii::app()->createUrl('post');?>?id=<?php echo $property->propertyid;?>">edit this post</a>
                     <?php endif; ?>
                 </td>
                 <td>
                 <?php echo $property->description; ?>
-                <hr style="margin:5px 0px;"/>
                 
                 <?php
                     if($property->has_images()) {
+                        echo "<hr style=\"margin:5px 0px;\"/>";
                         echo "<div class='property-images' propertyid='".$property->propertyid."'>";
                         # echo "<div style='float:left;margin-right:5px;margin-top:15px;'>Images: </div>";
                         foreach($property->images as $image) {
                             // echo '<script>jQuery(document).ready(function($){$(".colorbox-group-'.$property->propertyid.'").colorbox();});</script>';
-                            $imager = new Imager(getcwd()."/".$image->location);
+                            $imager = new Imager(_LOCAL_ROOT_."/".$image->location);
                             echo "<div style='float:left;margin:3px;width:50px;min-height:30px;'><a href='".$image->location."' class='colorbox-image colorbox-group-".$property->propertyid."'>";
                             $imager->resize(50);
                             $imager->render();
@@ -70,9 +73,6 @@ if(!Yii::app()->user->isGuest) {
                 ?></td>
                 <td class="calign">
                     <?php echo StdLib::format_date($property->date_updated,"short-normal"); ?>
-                    <?php if(Yii::app()->user->name == $property->postedby) : ?>
-                        <a href="<?=Yii::app()->createUrl('post');?>?id=<?php echo $property->propertyid;?>">edit this post</a>
-                    <?php endif; ?>
                 </td>
             </tr>
         <?php endforeach; ?>
@@ -166,7 +166,9 @@ jQuery(function($) {
        }
     });
     
+    // REMOVED
     // On email open, set the input fields and open dialog
+    /**
     $(".email-contact").click(function(){
        var contactname      = $(this).parent().parent().find(".contactname").text();
        var contactemail     = $(this).parent().parent().find(".contactemail").text();
@@ -177,7 +179,7 @@ jQuery(function($) {
        $("#email-dialog").dialog("open");
        return false; 
     });
-    
+    **/
 });
 </script>
 
@@ -193,6 +195,9 @@ jQuery(function($) {
     </li>
     <li data-id="haves-table-contact-header" data-text="Next" data-options="tipLocation:top;tipAnimation:fade">
         <p>Like what you see? Then contact the poster by clicking on the mail icon next to their name.</p>
+    </li>
+    <li data-id="footer-feedback-link" data-text="Next" data-options="tipLocation:top;tipAnimation:fade">
+        <p>Is there a problem with a posting? Something wrong with the website? Have a suggestion? You can do this through the feedback page!</p>
     </li>
     <li data-id="mainmenu-addprop" data-button="Next" data-options="tipLocation:top;tipAnimation:fade">
         <p>Do you have CU Property to give away? The click here to get your property posted on the bulletin board.</p>

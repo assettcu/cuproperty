@@ -3774,3 +3774,834 @@ REQUEST_URI=/cuproperty/login
 in C:\web\compass.colorado.edu\cuproperty\protected\components\UserIdentity.php (62)
 in C:\web\compass.colorado.edu\cuproperty\protected\models\LoginForm.php (61)
 in C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php (277)
+2014/02/07 16:33:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "issue".' in C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php:483
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(270): CController->missingAction('issue')
+#1 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): CController->run('issue')
+#2 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController('site/issue')
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\web\compass.colorado.edu\cuproperty\index.php(35): CApplication->run()
+#5 {main}
+REQUEST_URI=/cuproperty/issue
+---
+2014/02/07 16:36:28 [error] [php] Undefined variable: error (C:\web\compass.colorado.edu\cuproperty\protected\views\site\issues.php:41)
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(869): SiteController->renderFile()
+#1 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(782): SiteController->renderPartial()
+#2 C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php(113): SiteController->render()
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\actions\CInlineAction.php(49): SiteController->actionIssues()
+#4 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(286): SiteController->runAction()
+#6 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#7 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): SiteController->run()
+#8 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\web\compass.colorado.edu\cuproperty\index.php(35): CWebApplication->run()
+REQUEST_URI=/cuproperty/issues
+in C:\web\compass.colorado.edu\cuproperty\protected\views\site\issues.php (41)
+in C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php (113)
+in C:\web\compass.colorado.edu\cuproperty\index.php (35)
+2014/02/07 16:38:43 [error] [php] Undefined variable: error (C:\web\compass.colorado.edu\cuproperty\protected\views\site\issues.php:41)
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(869): SiteController->renderFile()
+#1 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(782): SiteController->renderPartial()
+#2 C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php(113): SiteController->render()
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\actions\CInlineAction.php(49): SiteController->actionIssues()
+#4 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(286): SiteController->runAction()
+#6 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#7 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): SiteController->run()
+#8 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\web\compass.colorado.edu\cuproperty\index.php(35): CWebApplication->run()
+REQUEST_URI=/cuproperty/issues
+in C:\web\compass.colorado.edu\cuproperty\protected\views\site\issues.php (41)
+in C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php (113)
+in C:\web\compass.colorado.edu\cuproperty\index.php (35)
+2014/02/07 16:39:02 [error] [php] Undefined variable: error (C:\web\compass.colorado.edu\cuproperty\protected\views\site\issues.php:41)
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(869): SiteController->renderFile()
+#1 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(782): SiteController->renderPartial()
+#2 C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php(113): SiteController->render()
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\actions\CInlineAction.php(49): SiteController->actionIssues()
+#4 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(286): SiteController->runAction()
+#6 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#7 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): SiteController->run()
+#8 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\web\compass.colorado.edu\cuproperty\index.php(35): CWebApplication->run()
+REQUEST_URI=/cuproperty/issues
+in C:\web\compass.colorado.edu\cuproperty\protected\views\site\issues.php (41)
+in C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php (113)
+in C:\web\compass.colorado.edu\cuproperty\index.php (35)
+2014/02/10 11:56:34 [error] [php] include(IssuesObj.php): failed to open stream: No such file or directory (C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\YiiBase.php:432)
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php(116): spl_autoload_call()
+#1 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\actions\CInlineAction.php(49): SiteController->actionIssues()
+#2 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(286): SiteController->runAction()
+#4 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#5 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): SiteController->run()
+#6 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#8 C:\web\compass.colorado.edu\cuproperty\index.php(35): CWebApplication->run()
+REQUEST_URI=/cuproperty/issues
+in C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php (116)
+in C:\web\compass.colorado.edu\cuproperty\index.php (35)
+2014/02/10 11:56:56 [error] [php] Undefined property: IssueObj::$contactname (C:\web\compass.colorado.edu\cuproperty\protected\models\IssueObj.php:125)
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\actions\CInlineAction.php(49): SiteController->actionIssues()
+#1 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(286): SiteController->runAction()
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#4 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): SiteController->run()
+#5 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#7 C:\web\compass.colorado.edu\cuproperty\index.php(35): CWebApplication->run()
+REQUEST_URI=/cuproperty/issues
+in C:\web\compass.colorado.edu\cuproperty\protected\models\IssueObj.php (125)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (185)
+in C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php (128)
+2014/02/10 11:58:29 [error] [php] Undefined property: IssueObj::$contactname (C:\web\compass.colorado.edu\cuproperty\protected\models\IssueObj.php:125)
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\actions\CInlineAction.php(49): SiteController->actionIssues()
+#1 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(286): SiteController->runAction()
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#4 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): SiteController->run()
+#5 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#7 C:\web\compass.colorado.edu\cuproperty\index.php(35): CWebApplication->run()
+REQUEST_URI=/cuproperty/issues
+in C:\web\compass.colorado.edu\cuproperty\protected\models\IssueObj.php (125)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (185)
+in C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php (128)
+2014/02/10 11:58:40 [error] [php] Undefined property: IssueObj::$contactname (C:\web\compass.colorado.edu\cuproperty\protected\models\IssueObj.php:125)
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\actions\CInlineAction.php(49): SiteController->actionIssues()
+#1 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(286): SiteController->runAction()
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#4 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): SiteController->run()
+#5 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#7 C:\web\compass.colorado.edu\cuproperty\index.php(35): CWebApplication->run()
+REQUEST_URI=/cuproperty/issues
+in C:\web\compass.colorado.edu\cuproperty\protected\models\IssueObj.php (125)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (185)
+in C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php (128)
+2014/02/10 11:58:51 [error] [php] Undefined property: IssueObj::$contactname (C:\web\compass.colorado.edu\cuproperty\protected\models\IssueObj.php:125)
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\actions\CInlineAction.php(49): SiteController->actionIssues()
+#1 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(286): SiteController->runAction()
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#4 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): SiteController->run()
+#5 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#7 C:\web\compass.colorado.edu\cuproperty\index.php(35): CWebApplication->run()
+REQUEST_URI=/cuproperty/issues
+in C:\web\compass.colorado.edu\cuproperty\protected\models\IssueObj.php (125)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (185)
+in C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php (128)
+2014/02/10 11:59:18 [error] [php] Undefined property: IssueObj::$contactname (C:\web\compass.colorado.edu\cuproperty\protected\models\IssueObj.php:125)
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\actions\CInlineAction.php(49): SiteController->actionIssues()
+#1 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(286): SiteController->runAction()
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#4 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): SiteController->run()
+#5 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#7 C:\web\compass.colorado.edu\cuproperty\index.php(35): CWebApplication->run()
+REQUEST_URI=/cuproperty/issues
+in C:\web\compass.colorado.edu\cuproperty\protected\models\IssueObj.php (125)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (185)
+in C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php (128)
+2014/02/10 11:59:27 [error] [php] Undefined property: IssueObj::$contactname (C:\web\compass.colorado.edu\cuproperty\protected\models\IssueObj.php:125)
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\actions\CInlineAction.php(49): SiteController->actionIssues()
+#1 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(286): SiteController->runAction()
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#4 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): SiteController->run()
+#5 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#7 C:\web\compass.colorado.edu\cuproperty\index.php(35): CWebApplication->run()
+REQUEST_URI=/cuproperty/issues
+in C:\web\compass.colorado.edu\cuproperty\protected\models\IssueObj.php (125)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (185)
+in C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php (128)
+2014/02/10 11:59:53 [error] [php] Undefined property: IssueObj::$contactname (C:\web\compass.colorado.edu\cuproperty\protected\models\IssueObj.php:125)
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\actions\CInlineAction.php(49): SiteController->actionIssues()
+#1 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(286): SiteController->runAction()
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#4 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): SiteController->run()
+#5 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#7 C:\web\compass.colorado.edu\cuproperty\index.php(35): CWebApplication->run()
+REQUEST_URI=/cuproperty/issues
+in C:\web\compass.colorado.edu\cuproperty\protected\models\IssueObj.php (125)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (185)
+in C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php (128)
+2014/02/10 12:00:10 [error] [php] Undefined property: IssueObj::$contactname (C:\web\compass.colorado.edu\cuproperty\protected\models\IssueObj.php:125)
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\actions\CInlineAction.php(49): SiteController->actionIssues()
+#1 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(286): SiteController->runAction()
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#4 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): SiteController->run()
+#5 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#7 C:\web\compass.colorado.edu\cuproperty\index.php(35): CWebApplication->run()
+REQUEST_URI=/cuproperty/issues
+in C:\web\compass.colorado.edu\cuproperty\protected\models\IssueObj.php (125)
+in C:\web\compass.colorado.edu\cuproperty\protected\models\FactoryObj.php (185)
+in C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php (128)
+2014/02/10 12:20:02 [error] [php] Undefined property: UserObj::$watchlist (C:\web\compass.colorado.edu\cuproperty\protected\views\site\need.php:18)
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(869): SiteController->renderFile()
+#1 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(782): SiteController->renderPartial()
+#2 C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php(103): SiteController->render()
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\actions\CInlineAction.php(49): SiteController->actionNeed()
+#4 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(286): SiteController->runAction()
+#6 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#7 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): SiteController->run()
+#8 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\web\compass.colorado.edu\cuproperty\index.php(35): CWebApplication->run()
+REQUEST_URI=/cuproperty/need
+in C:\web\compass.colorado.edu\cuproperty\protected\views\site\need.php (18)
+in C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php (103)
+in C:\web\compass.colorado.edu\cuproperty\index.php (35)
+2014/02/10 12:22:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "watchlist".' in C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php:483
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(270): CController->missingAction('watchlist')
+#1 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): CController->run('watchlist')
+#2 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController('site/watchlist')
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\web\compass.colorado.edu\cuproperty\index.php(35): CApplication->run()
+#5 {main}
+REQUEST_URI=/cuproperty/watchlist
+HTTP_REFERER=https://compass.colorado.edu/cuproperty/
+---
+2014/02/10 12:23:25 [error] [php] Undefined property: UserObj::$watchlist (C:\web\compass.colorado.edu\cuproperty\protected\views\site\watchlist.php:18)
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(869): SiteController->renderFile()
+#1 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(782): SiteController->renderPartial()
+#2 C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php(103): SiteController->render()
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\actions\CInlineAction.php(49): SiteController->actionWatchlist()
+#4 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(286): SiteController->runAction()
+#6 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#7 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): SiteController->run()
+#8 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\web\compass.colorado.edu\cuproperty\index.php(35): CWebApplication->run()
+REQUEST_URI=/cuproperty/watchlist
+in C:\web\compass.colorado.edu\cuproperty\protected\views\site\watchlist.php (18)
+in C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php (103)
+in C:\web\compass.colorado.edu\cuproperty\index.php (35)
+2014/02/10 13:39:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "issues".' in C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php:483
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(270): CController->missingAction('issues')
+#1 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): CController->run('issues')
+#2 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController('site/issues')
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\web\compass.colorado.edu\cuproperty\index.php(35): CApplication->run()
+#5 {main}
+REQUEST_URI=/cuproperty/issues
+HTTP_REFERER=https://compass.colorado.edu/cuproperty/watchlist
+---
+2014/02/10 13:40:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "issues".' in C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php:483
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(270): CController->missingAction('issues')
+#1 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): CController->run('issues')
+#2 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController('site/issues')
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\web\compass.colorado.edu\cuproperty\index.php(35): CApplication->run()
+#5 {main}
+REQUEST_URI=/cuproperty/issues
+HTTP_REFERER=https://compass.colorado.edu/cuproperty/watchlist
+---
+2014/02/10 13:40:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "issues".' in C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php:483
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(270): CController->missingAction('issues')
+#1 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): CController->run('issues')
+#2 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController('site/issues')
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\web\compass.colorado.edu\cuproperty\index.php(35): CApplication->run()
+#5 {main}
+REQUEST_URI=/cuproperty/issues
+HTTP_REFERER=https://compass.colorado.edu/cuproperty/issues
+---
+2014/02/10 13:40:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "issues".' in C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php:483
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(270): CController->missingAction('issues')
+#1 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): CController->run('issues')
+#2 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController('site/issues')
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\web\compass.colorado.edu\cuproperty\index.php(35): CApplication->run()
+#5 {main}
+REQUEST_URI=/cuproperty/issues
+HTTP_REFERER=https://compass.colorado.edu/cuproperty/issues
+---
+2014/02/10 14:09:00 [error] [exception.CException] exception 'CException' with message 'SiteController cannot find the requested view "issues".' in C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php:878
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(782): CController->renderPartial('issues', Array, true)
+#1 C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php(141): CController->render('issues', Array)
+#2 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\actions\CInlineAction.php(49): SiteController->actionFeedback()
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): CController->run('feedback')
+#7 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController('site/feedback')
+#8 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\web\compass.colorado.edu\cuproperty\index.php(35): CApplication->run()
+#10 {main}
+REQUEST_URI=/cuproperty/feedback
+HTTP_REFERER=https://compass.colorado.edu/cuproperty/administration
+---
+2014/02/10 15:25:11 [error] [exception.CException] exception 'CException' with message 'SiteController cannot find the requested view "admin_feedback".' in C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php:878
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(782): CController->renderPartial('admin_feedback', NULL, true)
+#1 C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php(154): CController->render('admin_feedback')
+#2 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\actions\CInlineAction.php(49): SiteController->actionAdministration()
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): CController->run('administration')
+#7 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController('site/administra...')
+#8 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\web\compass.colorado.edu\cuproperty\index.php(35): CApplication->run()
+#10 {main}
+REQUEST_URI=/cuproperty/administration
+HTTP_REFERER=https://compass.colorado.edu/cuproperty/
+---
+2014/02/10 15:33:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "users".' in C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php:483
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(270): CController->missingAction('users')
+#1 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): CController->run('users')
+#2 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/users')
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\web\compass.colorado.edu\cuproperty\index.php(35): CApplication->run()
+#5 {main}
+REQUEST_URI=/cuproperty/admin/users
+HTTP_REFERER=https://compass.colorado.edu/cuproperty/admin/feedback
+---
+2014/02/10 15:33:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "reported".' in C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php:483
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(270): CController->missingAction('reported')
+#1 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): CController->run('reported')
+#2 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/reported')
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\web\compass.colorado.edu\cuproperty\index.php(35): CApplication->run()
+#5 {main}
+REQUEST_URI=/cuproperty/admin/reported
+HTTP_REFERER=https://compass.colorado.edu/cuproperty/admin/feedback
+---
+2014/02/10 15:33:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "emails".' in C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php:483
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(270): CController->missingAction('emails')
+#1 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): CController->run('emails')
+#2 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/emails')
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\web\compass.colorado.edu\cuproperty\index.php(35): CApplication->run()
+#5 {main}
+REQUEST_URI=/cuproperty/admin/emails
+HTTP_REFERER=https://compass.colorado.edu/cuproperty/admin/feedback
+---
+2014/02/10 15:33:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "removed".' in C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php:483
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(270): CController->missingAction('removed')
+#1 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): CController->run('removed')
+#2 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/removed')
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\web\compass.colorado.edu\cuproperty\index.php(35): CApplication->run()
+#5 {main}
+REQUEST_URI=/cuproperty/admin/removed
+HTTP_REFERER=https://compass.colorado.edu/cuproperty/admin/feedback
+---
+2014/02/10 16:25:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "users".' in C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php:483
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(270): CController->missingAction('users')
+#1 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): CController->run('users')
+#2 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/users')
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\web\compass.colorado.edu\cuproperty\index.php(35): CApplication->run()
+#5 {main}
+REQUEST_URI=/cuproperty/admin/users
+HTTP_REFERER=https://compass.colorado.edu/cuproperty/admin/main
+---
+2014/02/10 16:25:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "reported".' in C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php:483
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(270): CController->missingAction('reported')
+#1 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): CController->run('reported')
+#2 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/reported')
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\web\compass.colorado.edu\cuproperty\index.php(35): CApplication->run()
+#5 {main}
+REQUEST_URI=/cuproperty/admin/reported
+HTTP_REFERER=https://compass.colorado.edu/cuproperty/admin/main
+---
+2014/02/10 16:25:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "reported".' in C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php:483
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(270): CController->missingAction('reported')
+#1 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): CController->run('reported')
+#2 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/reported')
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\web\compass.colorado.edu\cuproperty\index.php(35): CApplication->run()
+#5 {main}
+REQUEST_URI=/cuproperty/admin/reported
+HTTP_REFERER=https://compass.colorado.edu/cuproperty/admin/main
+---
+2014/02/11 09:47:25 [error] [exception.CException] exception 'CException' with message 'CWebApplication and its behaviors do not have a method or closure named "setFlash".' in C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php(137): CComponent->__call('setFlash', Array)
+#1 C:\web\compass.colorado.edu\cuproperty\protected\controllers\SiteController.php(137): CWebApplication->setFlash('error', 'Could not save ...')
+#2 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\actions\CInlineAction.php(49): SiteController->actionFeedback()
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): CController->run('feedback')
+#7 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController('site/feedback')
+#8 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\web\compass.colorado.edu\cuproperty\index.php(35): CApplication->run()
+#10 {main}
+REQUEST_URI=/cuproperty/feedback
+HTTP_REFERER=https://compass.colorado.edu/cuproperty/feedback
+---
+2014/02/11 11:47:12 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'posted_by' in 'where clause'. The SQL statement executed was: 
+            SELECT      COUNT(*)
+            FROM        property
+            WHERE       posted_by = :posted_by
+        .
+in C:\web\compass.colorado.edu\cuproperty\protected\models\UserObj.php (232)
+in C:\web\compass.colorado.edu\cuproperty\protected\views\admin\users.php (50)
+in C:\web\compass.colorado.edu\cuproperty\protected\controllers\AdminController.php (18)
+2014/02/11 11:47:12 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'posted_by' in 'where clause'. The SQL statement executed was: 
+            SELECT      COUNT(*)
+            FROM        property
+            WHERE       posted_by = :posted_by
+        ' in C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\db\CDbCommand.php(433): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 C:\web\compass.colorado.edu\cuproperty\protected\models\UserObj.php(232): CDbCommand->queryScalar()
+#2 C:\web\compass.colorado.edu\cuproperty\protected\views\admin\users.php(50): UserObj->num_postings()
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CBaseController.php(126): require('C:\web\compass....')
+#4 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\web\compass....', NULL, true)
+#5 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(869): CBaseController->renderFile('C:\web\compass....', NULL, true)
+#6 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(782): CController->renderPartial('users', NULL, true)
+#7 C:\web\compass.colorado.edu\cuproperty\protected\controllers\AdminController.php(18): CController->render('users')
+#8 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\actions\CInlineAction.php(49): AdminController->actionUsers()
+#9 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#11 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): CController->run('users')
+#13 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/users')
+#14 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\web\compass.colorado.edu\cuproperty\index.php(35): CApplication->run()
+#16 {main}
+REQUEST_URI=/cuproperty/admin/users
+HTTP_REFERER=https://compass.colorado.edu/cuproperty/admin/main
+---
+2014/02/11 11:47:31 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'email_from' in 'where clause'. The SQL statement executed was: 
+            SELECT      COUNT(*)
+            FROM        emails
+            WHERE       email_from = :email_from
+        .
+in C:\web\compass.colorado.edu\cuproperty\protected\models\UserObj.php (219)
+in C:\web\compass.colorado.edu\cuproperty\protected\views\admin\users.php (51)
+in C:\web\compass.colorado.edu\cuproperty\protected\controllers\AdminController.php (18)
+2014/02/11 11:47:31 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'email_from' in 'where clause'. The SQL statement executed was: 
+            SELECT      COUNT(*)
+            FROM        emails
+            WHERE       email_from = :email_from
+        ' in C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\db\CDbCommand.php(433): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 C:\web\compass.colorado.edu\cuproperty\protected\models\UserObj.php(219): CDbCommand->queryScalar()
+#2 C:\web\compass.colorado.edu\cuproperty\protected\views\admin\users.php(51): UserObj->num_emails()
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CBaseController.php(126): require('C:\web\compass....')
+#4 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\web\compass....', NULL, true)
+#5 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(869): CBaseController->renderFile('C:\web\compass....', NULL, true)
+#6 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(782): CController->renderPartial('users', NULL, true)
+#7 C:\web\compass.colorado.edu\cuproperty\protected\controllers\AdminController.php(18): CController->render('users')
+#8 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\actions\CInlineAction.php(49): AdminController->actionUsers()
+#9 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#11 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): CController->run('users')
+#13 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/users')
+#14 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\web\compass.colorado.edu\cuproperty\index.php(35): CApplication->run()
+#16 {main}
+REQUEST_URI=/cuproperty/admin/users
+HTTP_REFERER=https://compass.colorado.edu/cuproperty/admin/main
+---
+2014/02/11 12:18:54 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'date_submitted' in 'order clause'. The SQL statement executed was: 
+            SELECT      propertyid
+            FROM        property
+            WHERE       reported != 0
+            ORDER BY    date_submitted DESC;
+        .
+in C:\web\compass.colorado.edu\cuproperty\protected\models\system\System.php (309)
+in C:\web\compass.colorado.edu\cuproperty\protected\views\admin\reported.php (3)
+in C:\web\compass.colorado.edu\cuproperty\protected\controllers\AdminController.php (24)
+2014/02/11 12:18:54 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'date_submitted' in 'order clause'. The SQL statement executed was: 
+            SELECT      propertyid
+            FROM        property
+            WHERE       reported != 0
+            ORDER BY    date_submitted DESC;
+        ' in C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\web\compass.colorado.edu\cuproperty\protected\models\system\System.php(309): CDbCommand->queryAll()
+#2 C:\web\compass.colorado.edu\cuproperty\protected\views\admin\reported.php(3): System->get_all_reported()
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CBaseController.php(126): require('C:\web\compass....')
+#4 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\web\compass....', NULL, true)
+#5 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(869): CBaseController->renderFile('C:\web\compass....', NULL, true)
+#6 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(782): CController->renderPartial('reported', NULL, true)
+#7 C:\web\compass.colorado.edu\cuproperty\protected\controllers\AdminController.php(24): CController->render('reported')
+#8 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\actions\CInlineAction.php(49): AdminController->actionReported()
+#9 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#11 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): CController->run('reported')
+#13 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/reported')
+#14 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\web\compass.colorado.edu\cuproperty\index.php(35): CApplication->run()
+#16 {main}
+REQUEST_URI=/cuproperty/admin/reported
+HTTP_REFERER=https://compass.colorado.edu/cuproperty/admin/removed
+---
+2014/02/11 12:25:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php:483
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(270): CController->missingAction('images')
+#1 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): CController->run('images')
+#2 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/images/pr...')
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\web\compass.colorado.edu\cuproperty\index.php(35): CApplication->run()
+#5 {main}
+REQUEST_URI=/cuproperty/admin/images/property/carneymo/p18fan964n1dgacb7qfg14sh1uhh5.jpg
+HTTP_REFERER=https://compass.colorado.edu/cuproperty/admin/reported
+---
+2014/02/11 12:25:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php:483
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(270): CController->missingAction('images')
+#1 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): CController->run('images')
+#2 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/images/pr...')
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\web\compass.colorado.edu\cuproperty\index.php(35): CApplication->run()
+#5 {main}
+REQUEST_URI=/cuproperty/admin/images/property/carneymo/p18fan964ng7a3j41h8mm76j394.jpg
+HTTP_REFERER=https://compass.colorado.edu/cuproperty/admin/reported
+---
+2014/02/11 12:25:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php:483
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(270): CController->missingAction('images')
+#1 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): CController->run('images')
+#2 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/images/pr...')
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\web\compass.colorado.edu\cuproperty\index.php(35): CApplication->run()
+#5 {main}
+REQUEST_URI=/cuproperty/admin/images/property/carneymo/p18fan964ood6ec71du670h1vfe6.jpg
+HTTP_REFERER=https://compass.colorado.edu/cuproperty/admin/reported
+---
+2014/02/11 12:25:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php:483
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(270): CController->missingAction('images')
+#1 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): CController->run('images')
+#2 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/images/pr...')
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\web\compass.colorado.edu\cuproperty\index.php(35): CApplication->run()
+#5 {main}
+REQUEST_URI=/cuproperty/admin/images/property/carneymo/p18fan964o5ff1ete8621rnbclo7.jpg
+HTTP_REFERER=https://compass.colorado.edu/cuproperty/admin/reported
+---
+2014/02/11 12:26:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php:483
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(270): CController->missingAction('images')
+#1 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): CController->run('images')
+#2 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/images/pr...')
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\web\compass.colorado.edu\cuproperty\index.php(35): CApplication->run()
+#5 {main}
+REQUEST_URI=/cuproperty/admin/images/property/carneymo/p18fan964ng7a3j41h8mm76j394.jpg
+HTTP_REFERER=https://compass.colorado.edu/cuproperty/admin/reported
+---
+2014/02/11 12:26:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php:483
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(270): CController->missingAction('images')
+#1 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): CController->run('images')
+#2 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/images/pr...')
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\web\compass.colorado.edu\cuproperty\index.php(35): CApplication->run()
+#5 {main}
+REQUEST_URI=/cuproperty/admin/images/property/carneymo/p18fan964n1dgacb7qfg14sh1uhh5.jpg
+HTTP_REFERER=https://compass.colorado.edu/cuproperty/admin/reported
+---
+2014/02/11 12:26:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php:483
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(270): CController->missingAction('images')
+#1 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): CController->run('images')
+#2 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/images/pr...')
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\web\compass.colorado.edu\cuproperty\index.php(35): CApplication->run()
+#5 {main}
+REQUEST_URI=/cuproperty/admin/images/property/carneymo/p18fan964ood6ec71du670h1vfe6.jpg
+HTTP_REFERER=https://compass.colorado.edu/cuproperty/admin/reported
+---
+2014/02/11 12:26:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php:483
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(270): CController->missingAction('images')
+#1 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): CController->run('images')
+#2 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/images/pr...')
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\web\compass.colorado.edu\cuproperty\index.php(35): CApplication->run()
+#5 {main}
+REQUEST_URI=/cuproperty/admin/images/property/carneymo/p18fan964o5ff1ete8621rnbclo7.jpg
+HTTP_REFERER=https://compass.colorado.edu/cuproperty/admin/reported
+---
+2014/02/11 12:27:01 [error] [php] Undefined property: Imager::$width (C:\web\compass.colorado.edu\cuproperty\protected\models\system\Imager.php:173)
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CBaseController.php(95): AdminController->renderInternal()
+#1 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(869): AdminController->renderFile()
+#2 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(782): AdminController->renderPartial()
+#3 C:\web\compass.colorado.edu\cuproperty\protected\controllers\AdminController.php(24): AdminController->render()
+#4 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\actions\CInlineAction.php(49): AdminController->actionReported()
+#5 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(308): CInlineAction->runWithParams()
+#6 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(286): AdminController->runAction()
+#7 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(265): AdminController->runActionWithFilters()
+#8 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): AdminController->run()
+#9 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\web\compass.colorado.edu\cuproperty\index.php(35): CWebApplication->run()
+REQUEST_URI=/cuproperty/admin/reported
+in C:\web\compass.colorado.edu\cuproperty\protected\models\system\Imager.php (173)
+in C:\web\compass.colorado.edu\cuproperty\protected\views\admin\reported.php (49)
+in C:\web\compass.colorado.edu\cuproperty\protected\controllers\AdminController.php (24)
+2014/02/11 12:28:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php:483
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(270): CController->missingAction('images')
+#1 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): CController->run('images')
+#2 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/images/pr...')
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\web\compass.colorado.edu\cuproperty\index.php(35): CApplication->run()
+#5 {main}
+REQUEST_URI=/cuproperty/admin/images/property/carneymo/p18fan964ng7a3j41h8mm76j394.jpg
+HTTP_REFERER=https://compass.colorado.edu/cuproperty/admin/reported
+---
+2014/02/11 12:28:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php:483
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(270): CController->missingAction('images')
+#1 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): CController->run('images')
+#2 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/images/pr...')
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\web\compass.colorado.edu\cuproperty\index.php(35): CApplication->run()
+#5 {main}
+REQUEST_URI=/cuproperty/admin/images/property/carneymo/p18fan964n1dgacb7qfg14sh1uhh5.jpg
+HTTP_REFERER=https://compass.colorado.edu/cuproperty/admin/reported
+---
+2014/02/11 12:28:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php:483
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(270): CController->missingAction('images')
+#1 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): CController->run('images')
+#2 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/images/pr...')
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\web\compass.colorado.edu\cuproperty\index.php(35): CApplication->run()
+#5 {main}
+REQUEST_URI=/cuproperty/admin/images/property/carneymo/p18fan964ood6ec71du670h1vfe6.jpg
+HTTP_REFERER=https://compass.colorado.edu/cuproperty/admin/reported
+---
+2014/02/11 12:28:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php:483
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(270): CController->missingAction('images')
+#1 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): CController->run('images')
+#2 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/images/pr...')
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\web\compass.colorado.edu\cuproperty\index.php(35): CApplication->run()
+#5 {main}
+REQUEST_URI=/cuproperty/admin/images/property/carneymo/p18fan964o5ff1ete8621rnbclo7.jpg
+HTTP_REFERER=https://compass.colorado.edu/cuproperty/admin/reported
+---
+2014/02/11 12:28:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php:483
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(270): CController->missingAction('images')
+#1 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): CController->run('images')
+#2 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/images/pr...')
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\web\compass.colorado.edu\cuproperty\index.php(35): CApplication->run()
+#5 {main}
+REQUEST_URI=/cuproperty/admin/images/property/carneymo/p18fan964ng7a3j41h8mm76j394.jpg
+HTTP_REFERER=https://compass.colorado.edu/cuproperty/admin/reported
+---
+2014/02/11 12:28:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php:483
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(270): CController->missingAction('images')
+#1 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): CController->run('images')
+#2 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/images/pr...')
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\web\compass.colorado.edu\cuproperty\index.php(35): CApplication->run()
+#5 {main}
+REQUEST_URI=/cuproperty/admin/images/property/carneymo/p18fan964n1dgacb7qfg14sh1uhh5.jpg
+HTTP_REFERER=https://compass.colorado.edu/cuproperty/admin/reported
+---
+2014/02/11 12:28:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php:483
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(270): CController->missingAction('images')
+#1 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): CController->run('images')
+#2 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/images/pr...')
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\web\compass.colorado.edu\cuproperty\index.php(35): CApplication->run()
+#5 {main}
+REQUEST_URI=/cuproperty/admin/images/property/carneymo/p18fan964ood6ec71du670h1vfe6.jpg
+HTTP_REFERER=https://compass.colorado.edu/cuproperty/admin/reported
+---
+2014/02/11 12:28:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php:483
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(270): CController->missingAction('images')
+#1 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): CController->run('images')
+#2 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/images/pr...')
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\web\compass.colorado.edu\cuproperty\index.php(35): CApplication->run()
+#5 {main}
+REQUEST_URI=/cuproperty/admin/images/property/carneymo/p18fan964o5ff1ete8621rnbclo7.jpg
+HTTP_REFERER=https://compass.colorado.edu/cuproperty/admin/reported
+---
+2014/02/11 12:29:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php:483
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(270): CController->missingAction('images')
+#1 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): CController->run('images')
+#2 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/images/pr...')
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\web\compass.colorado.edu\cuproperty\index.php(35): CApplication->run()
+#5 {main}
+REQUEST_URI=/cuproperty/admin/images/property/carneymo/p18fan964ng7a3j41h8mm76j394.jpg
+HTTP_REFERER=https://compass.colorado.edu/cuproperty/admin/reported
+---
+2014/02/11 12:29:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php:483
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(270): CController->missingAction('images')
+#1 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): CController->run('images')
+#2 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/images/pr...')
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\web\compass.colorado.edu\cuproperty\index.php(35): CApplication->run()
+#5 {main}
+REQUEST_URI=/cuproperty/admin/images/property/carneymo/p18fan964ood6ec71du670h1vfe6.jpg
+HTTP_REFERER=https://compass.colorado.edu/cuproperty/admin/reported
+---
+2014/02/11 12:29:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php:483
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(270): CController->missingAction('images')
+#1 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): CController->run('images')
+#2 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/images/pr...')
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\web\compass.colorado.edu\cuproperty\index.php(35): CApplication->run()
+#5 {main}
+REQUEST_URI=/cuproperty/admin/images/property/carneymo/p18fan964n1dgacb7qfg14sh1uhh5.jpg
+HTTP_REFERER=https://compass.colorado.edu/cuproperty/admin/reported
+---
+2014/02/11 12:29:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php:483
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(270): CController->missingAction('images')
+#1 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): CController->run('images')
+#2 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/images/pr...')
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\web\compass.colorado.edu\cuproperty\index.php(35): CApplication->run()
+#5 {main}
+REQUEST_URI=/cuproperty/admin/images/property/carneymo/p18fan964o5ff1ete8621rnbclo7.jpg
+HTTP_REFERER=https://compass.colorado.edu/cuproperty/admin/reported
+---
+2014/02/11 12:29:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php:483
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(270): CController->missingAction('images')
+#1 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): CController->run('images')
+#2 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/images/pr...')
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\web\compass.colorado.edu\cuproperty\index.php(35): CApplication->run()
+#5 {main}
+REQUEST_URI=/cuproperty/admin/images/property/carneymo/p18fan964ng7a3j41h8mm76j394.jpg
+HTTP_REFERER=https://compass.colorado.edu/cuproperty/admin/reported
+---
+2014/02/11 12:29:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php:483
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(270): CController->missingAction('images')
+#1 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): CController->run('images')
+#2 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/images/pr...')
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\web\compass.colorado.edu\cuproperty\index.php(35): CApplication->run()
+#5 {main}
+REQUEST_URI=/cuproperty/admin/images/property/carneymo/p18fan964n1dgacb7qfg14sh1uhh5.jpg
+HTTP_REFERER=https://compass.colorado.edu/cuproperty/admin/reported
+---
+2014/02/11 12:29:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php:483
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(270): CController->missingAction('images')
+#1 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): CController->run('images')
+#2 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/images/pr...')
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\web\compass.colorado.edu\cuproperty\index.php(35): CApplication->run()
+#5 {main}
+REQUEST_URI=/cuproperty/admin/images/property/carneymo/p18fan964ood6ec71du670h1vfe6.jpg
+HTTP_REFERER=https://compass.colorado.edu/cuproperty/admin/reported
+---
+2014/02/11 12:29:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php:483
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(270): CController->missingAction('images')
+#1 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): CController->run('images')
+#2 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/images/pr...')
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\web\compass.colorado.edu\cuproperty\index.php(35): CApplication->run()
+#5 {main}
+REQUEST_URI=/cuproperty/admin/images/property/carneymo/p18fan964o5ff1ete8621rnbclo7.jpg
+HTTP_REFERER=https://compass.colorado.edu/cuproperty/admin/reported
+---
+2014/02/11 12:30:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "compass.colorado.edu".' in C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php:483
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(270): CController->missingAction('compass.colorad...')
+#1 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): CController->run('compass.colorad...')
+#2 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/compass.c...')
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\web\compass.colorado.edu\cuproperty\index.php(35): CApplication->run()
+#5 {main}
+REQUEST_URI=/cuproperty/admin/compass.colorado.edu/cuproperty/images/property/carneymo/p18fan964ng7a3j41h8mm76j394.jpg
+HTTP_REFERER=https://compass.colorado.edu/cuproperty/admin/reported
+---
+2014/02/11 12:30:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "compass.colorado.edu".' in C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php:483
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(270): CController->missingAction('compass.colorad...')
+#1 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): CController->run('compass.colorad...')
+#2 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/compass.c...')
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\web\compass.colorado.edu\cuproperty\index.php(35): CApplication->run()
+#5 {main}
+REQUEST_URI=/cuproperty/admin/compass.colorado.edu/cuproperty/images/property/carneymo/p18fan964n1dgacb7qfg14sh1uhh5.jpg
+HTTP_REFERER=https://compass.colorado.edu/cuproperty/admin/reported
+---
+2014/02/11 12:30:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "compass.colorado.edu".' in C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php:483
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(270): CController->missingAction('compass.colorad...')
+#1 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): CController->run('compass.colorad...')
+#2 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/compass.c...')
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\web\compass.colorado.edu\cuproperty\index.php(35): CApplication->run()
+#5 {main}
+REQUEST_URI=/cuproperty/admin/compass.colorado.edu/cuproperty/images/property/carneymo/p18fan964o5ff1ete8621rnbclo7.jpg
+HTTP_REFERER=https://compass.colorado.edu/cuproperty/admin/reported
+---
+2014/02/11 12:30:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "compass.colorado.edu".' in C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php:483
+Stack trace:
+#0 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CController.php(270): CController->missingAction('compass.colorad...')
+#1 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(282): CController->run('compass.colorad...')
+#2 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/compass.c...')
+#3 C:\web\compass.colorado.edu\cuproperty\framework\yii-master\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\web\compass.colorado.edu\cuproperty\index.php(35): CApplication->run()
+#5 {main}
+REQUEST_URI=/cuproperty/admin/compass.colorado.edu/cuproperty/images/property/carneymo/p18fan964ood6ec71du670h1vfe6.jpg
+HTTP_REFERER=https://compass.colorado.edu/cuproperty/admin/reported
+---

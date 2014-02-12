@@ -84,15 +84,13 @@ class SiteController extends Controller
         $this->render('siteinfo');
     }
 
-    public function actionNeed()
+    public function actionWatchlist()
     {
+        # User Login Required
+        $this->noGuest();
+        
         # Load the user if they're logged in
-        if(!Yii::app()->user->isGuest) {
-            $user = new UserObj(Yii::app()->user->name);
-        }
-        else {
-            $user = new UserObj();
-        }
+        $user = new UserObj(Yii::app()->user->name);
         
         if(isset($_POST["issuesform"])) {
             # Submit issue here
@@ -100,17 +98,61 @@ class SiteController extends Controller
         
         $params["user"] = $user;
         
-        $this->render('need',$params);
+        $this->render('watchlist',$params);
     }
 
     /**
      * Leave an issue for the developers.
      */
-    public function actionIssues()
+    public function actionFeedback()
     {
-        $this->noGuest();
+        $error = "";
         
-        $this->render('issues');
+        try {
+            # If user submitted form...
+            if(isset($_POST["issuesform"])) {
+                $issue = new IssueObj();
+                if(Yii::app()->user->isGuest) {
+                    $issue->name = $_REQUEST["contactname"];
+                    $issue->email = $_REQUEST["contactemail"];
+                }
+                else {
+                    $user = new UserObj(Yii::app()->user->name);
+                    $issue->name = $user->name;
+                    $issue->email = $user->email;
+                }
+                $issue->category = $_REQUEST["category"];
+                $issue->description = $_REQUEST["description"];
+                if(!$issue->save()) {
+                    throw new Exception("Could not save issue: ".$issue->get_error());
+                }
+                else {
+                    Yii::app()->user->setFlash("success","Successfully submitted feedback to the developers! Thank you for making the website better!");
+                    $this->redirect(Yii::app()->baseUrl);
+                    exit;
+                }
+            }
+        }
+        catch(Exception $e) {
+            Yii::app()->setFlash("error",$e->getMessage());
+        }
+        
+        $params["error"] = $error;
+        $this->render('feedback',$params);
+    }
+    
+    /**
+     * Management action.
+     */
+    public function actionAdministration()
+    {
+        $this->restrictPermission(10,true);
+        
+        switch(@$_REQUEST["tab"]) {
+            case "feedback":
+            default:
+                $this->render("admin_feedback");
+        }
     }
     
 	/**
@@ -164,7 +206,7 @@ class SiteController extends Controller
 	    	if(Yii::app()->request->isAjaxRequest)
 	    		echo $error['message'];
 	    	else
-	        	$this->render('error', $error);
+	        	$this->render('error', array("error"=>$error));
 	    }
 	}
 
@@ -516,6 +558,37 @@ class SiteController extends Controller
 			exit();
 		}
 	}
+    
+    /**
+     * Restricts pages from view if under a certain permission level.
+     * Will not show a warning by default
+     * 
+     * @param   (int)       $level          This is the level the user must at least be in order to not be redirected away
+     * @param   (boolean)   $show_warning   Whether to show unauthorized access or not (default = false)
+     */
+    private function restrictPermission($level,$show_warning=FALSE) {
+        try {
+            # No Guests allowed
+            if(Yii::app()->user->isGuest) {
+                throw new Exception("1");
+            }
+            # Load user, check permission level
+            $user = new UserObj(Yii::app()->user->name);
+            if(!$user->loaded or !isset($user->permission) or $user->permission < $level) {
+                throw new Exception("2");
+            }
+        }
+        # Got to here? User does not have enough permission to view page, to be redirected
+        catch (Exception $e) {
+            if($show_warning === TRUE) {
+                Yii::app()->user->setFlash("warning","You do not have proper permissions to view that page. (".$e->getMessage().")");
+            }
+            $this->redirect(Yii::app()->baseUrl);
+            exit;
+        }
+        
+        # No further action required
+    }
     
 	/**
 	 * Checks to see if a user is logged into the application.

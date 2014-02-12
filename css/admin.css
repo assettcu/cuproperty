@@ -1,0 +1,41 @@
+/** CSS management for the admin control panels **/
+div#administration {
+    position:relative;
+    margin-bottom:45px;
+}
+ul.admin-nav {
+    width:206px;
+    position:absolute;
+    left:0px;
+    list-style:none;
+    margin-left:0;
+    padding-left:0;
+    top:20px;
+}
+ul.admin-nav li {
+	text-decoration:none;
+    font-size:13px;
+    border:2px solid #aaa;
+    border-top-left-radius:5px;
+    border-bottom-left-radius:5px;
+    padding:6px;
+    margin-bottom:3px;
+    cursor:pointer;
+    border-right:none;
+    background-color:#f0f0f0;
+}
+ul.admin-nav li.selected {
+    font-weight:bold;
+    background-color:#fff;
+    cursor:default;
+    width:194px;
+}
+div.admin-panel {
+    min-width:550px;
+    width:80.5%;
+    border:2px solid #aaa;
+    min-height:250px;
+    float:right;
+    padding:10px;
+    background-color:#fff;
+}

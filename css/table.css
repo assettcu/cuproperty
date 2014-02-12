@@ -14,9 +14,6 @@ table.fancy-table thead tr th {
 table.fancy-table tbody tr td {
     padding:5px;
 }
-table.fancy-table tbody tr td:first-child {
-    text-align:right;
-}
 table.fancy-table tbody tr td.label {
     width:150px;
     font-weight:bold;
@@ -32,6 +29,11 @@ table.fancy-table tbody tr td span.hint {
 }
 table.fancy-table tbody tr.odd td {
     background-color:#f5f5f9;
+}
+table tbody tr td.empty {
+	padding:20px;
+	text-align:center;
+	vertical-align:middle;
 }
 
 /** Front-page table **/
@@ -124,4 +126,26 @@ table#post-form-table tr th div.error {
 	border:2px solid #CC0000;
 	background-color:#fff0f0;
 	color:#CC0000;
+}
+
+/** Admin Feedback Table **/
+table#issues-table {
+	border-collapse:separate;
+	border-spacing:2px;
+	font-size:11px;
+}
+table#issues-table tbody tr td {
+	padding:5px;
+	border:2px solid #ccc;
+}
+table#issues-table tbody tr.even td {
+	background-color:#fff;
+}
+table#issues-table tbody tr.odd td {
+	background-color:#fff;
+}
+table#issues-table tbody tr td.empty {
+	padding:20px;
+	text-align:center;
+	vertical-align:middle;
 }

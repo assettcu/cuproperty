@@ -204,6 +204,156 @@ class System
         return true;
     }
     
+    /**
+     * Count Users
+     * 
+     * Queries the system to count how many users there are. This is usually to check
+     * if the system is new and has no administrative account.
+     * 
+     * @return  (boolean)
+     */
+    public function count_users()
+    {
+        $conn = Yii::app()->db;
+        $query = "
+            SELECT      COUNT(*)
+            FROM        {{users}}
+            WHERE       1=1;
+        ";
+        return (($conn->createCommand($query)->queryScalar()) != 0);
+    }
+    
+    /**
+     * Get All Users
+     * 
+     * Queries the system for all the users.
+     * 
+     * @return  (array[UserObj])
+     */
+    public function get_all_users()
+    {
+        # Setup the query
+        $conn = Yii::app()->db;
+        $query = "
+            SELECT      username
+            FROM        {{users}}
+            WHERE       1=1
+            ORDER BY    username ASC;
+        ";
+        $result = $conn->createCommand($query)->queryAll();
+        
+        # Return if errors crop up, or no results (no users?)
+        if(!$result or empty($result)) {
+            return array();
+        }
+        
+        # Load each of the User objects
+        foreach($result as $row) {
+            $users[] = new UserObj($row["username"]);
+        }
+        
+        # Return the users
+        return $users;
+    }
+    
+    
+    /**
+     * Get All Issues
+     * 
+     * Queries the system for all the issues.
+     * 
+     * @return  (array[IssueObj])
+     */
+    public function get_all_issues()
+    {
+        # Query for all submitted issues
+        $conn = Yii::app()->db;
+        $query = "
+            SELECT      issueid
+            FROM        {{issues}}
+            WHERE       1=1
+            ORDER BY    date_submitted DESC;
+        ";
+        $result = $conn->createCommand($query)->queryAll();
+        # Return empty array if nothing found
+        if(!$result or empty($result)) {
+            return array();
+        }
+        
+        # Loop and grab each issue object
+        $issues = array();
+        foreach($result as $row) {
+            $issues[] = new IssueObj($row["issueid"]);
+        }
+        
+        return $issues;
+    }
+    
+    /**
+     * Get All Reported
+     * 
+     * Queries the system for all reported property listings.
+     * 
+     * @return  (array[PropertyObj])
+     */
+    public function get_all_reported()
+    {
+        # Query for all submitted issues
+        $conn = Yii::app()->db;
+        $query = "
+            SELECT      propertyid
+            FROM        {{property}}
+            WHERE       reported > 0
+            ORDER BY    date_added DESC;
+        ";
+        $result = $conn->createCommand($query)->queryAll();
+        # Return empty array if nothing found
+        if(!$result or empty($result)) {
+            return array();
+        }
+        
+        # Loop and grab each issue object
+        $listings = array();
+        foreach($result as $row) {
+            $listings[] = new PropertyObj($row["propertyid"]);
+        }
+        
+        return $listings;
+    }
+    
+    /**
+     * Get All Removed
+     * 
+     * Queries the system for all removed property listings.
+     * 
+     * @return  (array[PropertyObj])
+     */
+    public function get_all_removed()
+    {
+        # Query for all submitted issues
+        $conn = Yii::app()->db;
+        $query = "
+            SELECT      propertyid
+            FROM        {{property}}
+            WHERE       status = 'removed'
+            ORDER BY    date_updated DESC;
+        ";
+        $result = $conn->createCommand($query)->queryAll();
+        # Return empty array if nothing found
+        if(!$result or empty($result)) {
+            return array();
+        }
+        
+        # Loop and grab each issue object
+        $listings = array();
+        foreach($result as $row) {
+            $listings[] = new PropertyObj($row["propertyid"]);
+        }
+        
+        return $listings;
+    }
+     
+         
     private function set_error($message) {
         $this->error_flag   = TRUE;
         $this->error_msg    = $message;
